@@ -8,24 +8,42 @@ The [.NET Foundation](http://www.dotnetfoundation.org/) is an independent organi
 Source License
 --------------
 
-The .NET project uses multiple licenses for the various project repositories.
+.NET project source is licensed with the [MIT License](https://github.com/dotnet/runtime/blob/main/LICENSE.TXT).
 
-- The [MIT License](https://opensource.org/licenses/MIT) is used for [code](https://github.com/dotnet/runtime/).
-- The [Creative Commons Attribution 4.0 International Public License (CC-BY)](https://creativecommons.org/licenses/by/4.0/) is used for [documentation](https://github.com/dotnet/docs/) and [swag](https://github.com/dotnet/swag).
+There are also historical uses of the Apache 2 license.
 
-Binary License
---------------
+Contributions
+-------------
 
-.NET distributions are licensed with a variety of licenses, dependent on the content. By default, the MIT license is used, the exact same as the [source license](https://github.com/dotnet/core/blob/master/LICENSE.TXT), with the same copyright holder. There are some cases where that isn't possible because a given component includes a proprietary Microsoft binary. This is typically only the case for Windows distributions.
+Contributors sign a [.NET Foundation CLA](https://cla.dotnetfoundation.org/), which enables the .NET Foundation to use the MIT license for all contributions.
 
-The following rules are used for determining the binary license:
+Contributions can be made with code that is:
 
-- .NET binary distributions (zips, nuget packages, …) are licensed as MIT (identical to the [.NET source license](https://github.com/dotnet/core/blob/master/LICENSE.TXT)).
-- The license link (if there is one) should point to the repository where the file came from, for example: [dotnet/runtime](https://github.com/dotnet/runtime/blob/main/LICENSE.TXT).
-- If the contained binaries are built from multiple .NET repositories, the license should point to [dotnet/core](https://github.com/dotnet/core/blob/master/LICENSE.TXT).
-- If the contents are not 100% open source, the distribution should be licensed with the [.NET Library license](https://www.microsoft.com/net/dotnet_library_license.htm).
-- It is OK for licensing to be asymmetric for a single distribution type. For example, it’s possible that the .NET SDK distribution might be fully open source for Linux but include a closed-source component on Windows. In this case, the SDK would be licensed as MIT on Linux and use the .NET Library License on Windows. It is better to have more open licenses than less.
-- It is OK for the source and binary licenses not to match. For example, the source might be Apache 2 but ships as an MIT binary.  The third party notices file should capture the Apache 2 license. This only works for a permissive licenses, however, we have limited the project to that class of licenses already. The value of this approach is that binary licenses are uniform.
+- New, and not otherwise licened (other than with the .NET Foundation CLA).
+- Existing, and licensed with a [permissive license](https://en.wikipedia.org/wiki/Permissive_free_software_licence)
+- Existing, and considered public domain.
+
+As required, license attribution is provided in a [third party notice file](https://github.com/dotnet/runtime/blob/main/THIRD-PARTY-NOTICES.TXT), in each repository. Non-shipping code, like tests, have their own [third party notice file](https://github.com/dotnet/runtime/blob/main/src/tests/GC/Scenarios/GCBench/THIRD-PARTY-NOTICES), as needed.
+
+We accept contributions with the following specific licenses. Please ask before contributing if you want to contribute code with a different license.
+
+- [Apache 2](https://opensource.org/licenses/Apache-2.0)
+- [BSD](https://opensource.org/licenses/BSD-3-Clause)
+- [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+- [MIT](https://opensource.org/licenses/MIT)
+
+We do not accept code contributions with [GPL](https://www.gnu.org/licenses/gpl-3.0.en.html), or [LGPL](https://www.gnu.org/licenses/lgpl-3.0.en.html) licenses.
+
+
+Distributions
+-------------
+
+.NET [source](https://github.com/dotnet/source-build) and [binary](https://github.com/dotnet/installer) distributions use the MIT license, the same as the [repo source](https://github.com/dotnet/core/blob/master/LICENSE.TXT). Additional [licenses apply for Windows distributions](https://github.com/dotnet/core/blob/main/license-information-windows.md).
+
+Third-party distributions
+-------------------------
+
+You must include relevant third party notice files in your distributions. The MIT license that the .NET project uses does not require attribution. However, if third party distributions attribute their use of .NET, that is appreciated.
 
 Patents
 -------

@@ -94,9 +94,7 @@ Also do your best to factor commits appropriately, not too large with unrelated 
 
 You must sign a [.NET Foundation Contribution License Agreement (CLA)](https://cla.dotnetfoundation.org) before your PR will be merged. This is a one-time requirement for projects in the .NET Foundation. You can read more about [Contribution License Agreements (CLA)](http://en.wikipedia.org/wiki/Contributor_License_Agreement) on Wikipedia.
 
-The agreement: [net-foundation-contribution-license-agreement.pdf](https://github.com/dotnet/home/blob/master/guidance/net-foundation-contribution-license-agreement.pdf)
-
-You don't have to do this up-front. You can simply clone, fork, and submit your pull-request as usual. When your pull-request is created, it is classified by a CLA bot. If the change is trivial (for example, you just fixed a typo), then the PR is labelled with `cla-not-required`. Otherwise it's classified as `cla-required`. Once you signed a CLA, the current and all future pull-requests will be labelled as `cla-signed`.
+The agreement: https://cla.dotnetfoundation.org/
 
 ## File Headers
 
@@ -151,7 +149,7 @@ Ports have a weaker contribution bar, at least initially. A functionally correct
 
 The following rules must be followed for PRs that include files from another project:
 
-- The license of the file is [permissive](https://en.wikipedia.org/wiki/Permissive_free_software_licence).
+- The license is a permissive license, per [.NET copyright](docs/project/copyright.md).
 - The license of the file is left in-tact.
 - The contribution is correctly attributed in the [3rd party notices](./THIRD-PARTY-NOTICES.TXT) file in the repository, as needed.
 
