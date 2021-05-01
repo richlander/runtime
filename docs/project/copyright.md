@@ -19,13 +19,13 @@ Contributors sign a [.NET Foundation CLA](https://cla.dotnetfoundation.org/), wh
 
 Contributions can be made with code that is:
 
-- New, and not otherwise licened (other than with the .NET Foundation CLA).
+- New, and licensed per [project contributing requirements](https://github.com/richlander/runtime/blob/copyright/CONTRIBUTING.md#contributor-license-agreement)
 - Existing, and licensed with a [permissive license](https://en.wikipedia.org/wiki/Permissive_free_software_licence)
 - Existing, and considered public domain.
 
 As required, license attribution is provided in a [third party notice file](https://github.com/dotnet/runtime/blob/main/THIRD-PARTY-NOTICES.TXT), in each repository. Non-shipping code, like tests, have their own [third party notice file](https://github.com/dotnet/runtime/blob/main/src/tests/GC/Scenarios/GCBench/THIRD-PARTY-NOTICES), as needed.
 
-We accept contributions with the following specific licenses. Please ask before contributing if you want to contribute code with a different license.
+We accept contributions with the following licenses. Please ask before contributing if you want to contribute code with a different license.
 
 - [Apache 2](https://opensource.org/licenses/Apache-2.0)
 - [BSD](https://opensource.org/licenses/BSD-3-Clause)
