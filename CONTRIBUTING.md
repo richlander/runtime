@@ -94,8 +94,6 @@ Also do your best to factor commits appropriately, not too large with unrelated 
 
 You must sign a [.NET Foundation Contribution License Agreement (CLA)](https://cla.dotnetfoundation.org) before your PR will be merged. This is a one-time requirement for projects in the .NET Foundation. You can read more about [Contribution License Agreements (CLA)](http://en.wikipedia.org/wiki/Contributor_License_Agreement) on Wikipedia.
 
-The agreement: https://cla.dotnetfoundation.org/
-
 ## File Headers
 
 The following file header is the used for .NET Core. Please use it for new files.
