@@ -19,7 +19,7 @@ Contributors sign a [.NET Foundation CLA](https://cla.dotnetfoundation.org/), wh
 
 Contributions can be made with code that is:
 
-- New, and licensed per [project contributing requirements](https://github.com/richlander/runtime/blob/copyright/CONTRIBUTING.md#contributor-license-agreement)
+- New, and licensed per [project contributing requirements](https://github.com/dotnet/runtime/blob/copyright/CONTRIBUTING.md#contributor-license-agreement)
 - Existing, and licensed with a [permissive license](https://en.wikipedia.org/wiki/Permissive_free_software_licence)
 - Existing, and considered public domain.
 
