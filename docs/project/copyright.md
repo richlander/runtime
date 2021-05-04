@@ -15,7 +15,7 @@ There are also historical uses of the Apache 2 license.
 Contributions
 -------------
 
-Contributors sign a [.NET Foundation CLA](https://cla.dotnetfoundation.org/), which enables the .NET Foundation to use the MIT license for all contributions.
+Contributors sign a [.NET Foundation CLA](https://cla.dotnetfoundation.org/), which enables the .NET Foundation to license contributions.
 
 Contributions can be made with code that is:
 
@@ -35,15 +35,15 @@ We accept contributions with the following licenses. Please ask before contribut
 We do not accept code contributions with [GPL](https://www.gnu.org/licenses/gpl-3.0.en.html), or [LGPL](https://www.gnu.org/licenses/lgpl-3.0.en.html) licenses.
 
 
-Distributions
--------------
+Microsoft distributions
+-----------------------
 
-.NET [source](https://github.com/dotnet/source-build) and [binary](https://github.com/dotnet/installer) distributions use the MIT license, the same as the [repo source](https://github.com/dotnet/core/blob/master/LICENSE.TXT). Additional [licenses apply for Windows distributions](https://github.com/dotnet/core/blob/main/license-information-windows.md).
+Microsoft [source](https://github.com/dotnet/source-build) and [binary](https://dotnet.microsoft.com/download/dotnet) distributions use the MIT license, the same as the [repo source](https://github.com/dotnet/core/blob/master/LICENSE.TXT). Additional [licenses apply for Windows distributions](https://github.com/dotnet/core/blob/main/license-information-windows.md).
 
 Third-party distributions
 -------------------------
 
-You must include relevant third party notice files in your distributions. The MIT license that the .NET project uses does not require attribution. However, if third party distributions attribute their use of .NET, that is appreciated.
+You must include relevant third party notice files in your distributions. You must also attribute your use of .NET.
 
 Patents
 -------
