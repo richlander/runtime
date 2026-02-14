@@ -1,0 +1,87 @@
+{
+  "M:System.Collections.Generic.HashSet`1.Add(`0)": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "AddAndContains",
+    "title": "Adding, querying, removing, and clearing elements"
+  },
+  "M:System.Collections.Generic.HashSet`1.Contains(`0)": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "AddAndContains",
+    "title": "Adding, querying, removing, and clearing elements"
+  },
+  "M:System.Collections.Generic.HashSet`1.Remove(`0)": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "AddAndContains",
+    "title": "Adding, querying, removing, and clearing elements"
+  },
+  "M:System.Collections.Generic.HashSet`1.Clear": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "AddAndContains",
+    "title": "Adding, querying, removing, and clearing elements"
+  },
+  "P:System.Collections.Generic.HashSet`1.Count": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "AddAndContains",
+    "title": "Adding, querying, removing, and clearing elements"
+  },
+  "M:System.Collections.Generic.HashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Union, intersection, difference, and symmetric difference"
+  },
+  "M:System.Collections.Generic.HashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Union, intersection, difference, and symmetric difference"
+  },
+  "M:System.Collections.Generic.HashSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Union, intersection, difference, and symmetric difference"
+  },
+  "M:System.Collections.Generic.HashSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Union, intersection, difference, and symmetric difference"
+  },
+  "M:System.Collections.Generic.HashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Subset, superset, overlap, and equality comparisons"
+  },
+  "M:System.Collections.Generic.HashSet`1.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "Capacity",
+    "title": "Managing HashSet capacity"
+  },
+  "M:System.Collections.Generic.HashSet`1.TrimExcess": {
+    "file": "System/Collections/Generic/HashSet.Examples.cs",
+    "method": "Capacity",
+    "title": "Managing HashSet capacity"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "T:System.Collections.Generic.Queue`1": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.#ctor": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.Enqueue(`0)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.Dequeue": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.Peek": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.TryDequeue(`0@)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.TryPeek(`0@)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "P:System.Collections.Generic.Queue`1.Count": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Queue<T> EnqueueAndDequeue"
+  },
+  "M:System.Collections.Generic.Queue`1.Contains(`0)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Queue<T> BulkOperations"
+  },
+  "M:System.Collections.Generic.Queue`1.Clear": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Queue<T> BulkOperations"
+  },
+  "M:System.Collections.Generic.Queue`1.ToArray": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Queue<T> BulkOperations"
+  },
+  "M:System.Collections.Generic.Queue`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Queue<T> BulkOperations"
+  },
+  "P:System.Collections.Generic.Queue`1.Capacity": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "Capacity",
+    "title": "Queue<T> Capacity"
+  },
+  "M:System.Collections.Generic.Queue`1.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "Capacity",
+    "title": "Queue<T> Capacity"
+  },
+  "M:System.Collections.Generic.Queue`1.TrimExcess": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "Capacity",
+    "title": "Queue<T> Capacity"
+  },
+  "M:System.Collections.Generic.Queue`1.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/Queue.Examples.cs",
+    "method": "Capacity",
+    "title": "Queue<T> Capacity"
+  }
+}
