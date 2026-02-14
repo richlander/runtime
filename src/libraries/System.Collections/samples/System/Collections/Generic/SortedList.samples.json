@@ -1,0 +1,137 @@
+{
+  "T:System.Collections.Generic.SortedList`2": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Capacity": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity"
+  },
+  "M:System.Collections.Generic.SortedList`2.Clear": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Comparer": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Count": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetKeyAtIndex(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetValueAtIndex(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.IndexOfKey(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.IndexOfValue(`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "P:System.Collections.Generic.SortedList`2.Item(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Keys": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.RemoveAt(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.SetValueAtIndex(System.Int32,`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.TrimExcess": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity"
+  },
+  "M:System.Collections.Generic.SortedList`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Values": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  }
+}
