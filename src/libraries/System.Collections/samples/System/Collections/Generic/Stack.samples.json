@@ -1,0 +1,122 @@
+{
+  "T:System.Collections.Generic.Stack`1": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing a Stack from a collection"
+  },
+  "M:System.Collections.Generic.Stack`1.Push(`0)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Pop": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Peek": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PeekExample",
+    "title": "Peeking at the top of a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.TryPeek(`0@)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "TryPeekAndTryPop",
+    "title": "Using TryPeek and TryPop on a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.TryPop(`0@)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "TryPeekAndTryPop",
+    "title": "Using TryPeek and TryPop on a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Contains(`0)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "ContainsExample",
+    "title": "Checking if a Stack contains an item"
+  },
+  "P:System.Collections.Generic.Stack`1.Count": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CountAndClear",
+    "title": "Counting items and clearing a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Clear": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CountAndClear",
+    "title": "Counting items and clearing a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array"
+  },
+  "M:System.Collections.Generic.Stack`1.ToArray": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array"
+  },
+  "M:System.Collections.Generic.Stack`1.GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack"
+  },
+  "P:System.Collections.Generic.Stack`1.Capacity": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing Stack capacity"
+  },
+  "M:System.Collections.Generic.Stack`1.TrimExcess": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing Stack capacity"
+  },
+  "M:System.Collections.Generic.Stack`1.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#Generic#IEnumerable<T>#GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array"
+  },
+  "P:System.Collections.Generic.Stack`1.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "P:System.Collections.Generic.Stack`1.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  }
+}

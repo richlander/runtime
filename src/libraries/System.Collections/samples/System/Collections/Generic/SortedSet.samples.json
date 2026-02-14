@@ -1,0 +1,147 @@
+{
+  "T:System.Collections.Generic.SortedSet`1": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CustomComparerExample",
+    "title": "Using a SortedSet with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Add(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Clear": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Comparer": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CustomComparerExample",
+    "title": "Using a SortedSet with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Contains(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[])": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array"
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array"
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[],System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Count": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.GetViewBetween(`0,`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Max": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Min": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.RemoveWhere(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RemoveWhereExample",
+    "title": "Removing elements matching a predicate"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Reverse": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "M:System.Collections.Generic.SortedSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  }
+}

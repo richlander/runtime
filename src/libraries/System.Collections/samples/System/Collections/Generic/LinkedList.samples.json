@@ -1,0 +1,157 @@
+{
+  "T:System.Collections.Generic.LinkedList`1": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.#ctor": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddFirst(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddFirst(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddLast(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddLast(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Remove(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Remove(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.RemoveFirst": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.RemoveLast": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Clear": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Find(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.FindLast(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Contains(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList"
+  },
+  "P:System.Collections.Generic.LinkedList`1.First": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedList`1.Last": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedList`1.Count": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "M:System.Collections.Generic.LinkedList`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying a LinkedList to an array"
+  },
+  "M:System.Collections.Generic.LinkedList`1.GetEnumerator": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "T:System.Collections.Generic.LinkedListNode`1": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "M:System.Collections.Generic.LinkedListNode`1.#ctor(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Value": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Next": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Previous": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.List": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.ValueRef": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  }
+}
