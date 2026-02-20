@@ -1,0 +1,280 @@
+{
+  "T:System.Collections.Generic.List`1": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "AddAndInsert",
+    "title": "Create a List and add items",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.#ctor": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Create lists and manage capacity",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Create a List with initial capacity"
+  },
+  "M:System.Collections.Generic.List`1.Add(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "AddAndInsert",
+    "title": "Add items to a List"
+  },
+  "M:System.Collections.Generic.List`1.AddRange(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "AddAndInsert",
+    "title": "Add a range of items to a List"
+  },
+  "M:System.Collections.Generic.List`1.AsReadOnly": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Create a read-only wrapper",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.BinarySearch(System.Int32,System.Int32,`0,System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Binary search within a range",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.BinarySearch(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Binary search a sorted List"
+  },
+  "M:System.Collections.Generic.List`1.BinarySearch(`0,System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Binary search with a comparer"
+  },
+  "P:System.Collections.Generic.List`1.Capacity": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Manage List capacity"
+  },
+  "M:System.Collections.Generic.List`1.Clear": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Clear all items from a List",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.Contains(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Check if a List contains an item"
+  },
+  "M:System.Collections.Generic.List`1.ConvertAll``1(System.Converter{`0,``0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Convert all items in a List"
+  },
+  "M:System.Collections.Generic.List`1.CopyTo(System.Int32,`0[],System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Copy a range of items to an array"
+  },
+  "M:System.Collections.Generic.List`1.CopyTo(`0[])": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Copy List to an array"
+  },
+  "M:System.Collections.Generic.List`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Copy List to an array at an index"
+  },
+  "P:System.Collections.Generic.List`1.Count": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Get the number of items in a List"
+  },
+  "M:System.Collections.Generic.List`1.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Ensure minimum capacity"
+  },
+  "M:System.Collections.Generic.List`1.Exists(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Check if any item matches a predicate"
+  },
+  "M:System.Collections.Generic.List`1.Find(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find the first matching item",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.FindAll(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find all matching items"
+  },
+  "M:System.Collections.Generic.List`1.FindIndex(System.Int32,System.Int32,System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find index within a range"
+  },
+  "M:System.Collections.Generic.List`1.FindIndex(System.Int32,System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find index starting at an offset"
+  },
+  "M:System.Collections.Generic.List`1.FindIndex(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find the index of the first match"
+  },
+  "M:System.Collections.Generic.List`1.FindLast(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find the last matching item"
+  },
+  "M:System.Collections.Generic.List`1.FindLastIndex(System.Int32,System.Int32,System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find last index within a range"
+  },
+  "M:System.Collections.Generic.List`1.FindLastIndex(System.Int32,System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find last index up to an offset"
+  },
+  "M:System.Collections.Generic.List`1.FindLastIndex(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "FindItems",
+    "title": "Find the index of the last match"
+  },
+  "M:System.Collections.Generic.List`1.ForEach(System.Action{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "Iterate",
+    "title": "Execute an action on each item",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.GetEnumerator": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "Iterate",
+    "title": "Get an enumerator for the List"
+  },
+  "M:System.Collections.Generic.List`1.GetRange(System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Get a range of items as a new List"
+  },
+  "M:System.Collections.Generic.List`1.IndexOf(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the index of an item"
+  },
+  "M:System.Collections.Generic.List`1.IndexOf(`0,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the index starting at an offset"
+  },
+  "M:System.Collections.Generic.List`1.IndexOf(`0,System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the index within a range"
+  },
+  "M:System.Collections.Generic.List`1.Insert(System.Int32,`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "AddAndInsert",
+    "title": "Insert an item at an index"
+  },
+  "M:System.Collections.Generic.List`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "AddAndInsert",
+    "title": "Insert a range of items at an index"
+  },
+  "P:System.Collections.Generic.List`1.Item(System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "Indexer",
+    "title": "Access items by index"
+  },
+  "M:System.Collections.Generic.List`1.LastIndexOf(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the last index of an item"
+  },
+  "M:System.Collections.Generic.List`1.LastIndexOf(`0,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the last index up to an offset"
+  },
+  "M:System.Collections.Generic.List`1.LastIndexOf(`0,System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Find the last index within a range"
+  },
+  "M:System.Collections.Generic.List`1.Remove(`0)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Remove the first occurrence of an item"
+  },
+  "M:System.Collections.Generic.List`1.RemoveAll(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Remove all items matching a predicate"
+  },
+  "M:System.Collections.Generic.List`1.RemoveAt(System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Remove an item at an index"
+  },
+  "M:System.Collections.Generic.List`1.RemoveRange(System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Remove a range of items"
+  },
+  "M:System.Collections.Generic.List`1.Reverse": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Reverse the order of items",
+    "primary": true
+  },
+  "M:System.Collections.Generic.List`1.Reverse(System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Reverse a range of items"
+  },
+  "M:System.Collections.Generic.List`1.Slice(System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Get a slice of items as a new List"
+  },
+  "M:System.Collections.Generic.List`1.Sort": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Sort items in default order"
+  },
+  "M:System.Collections.Generic.List`1.Sort(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Sort items with a comparer"
+  },
+  "M:System.Collections.Generic.List`1.Sort(System.Comparison{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Sort items with a comparison delegate"
+  },
+  "M:System.Collections.Generic.List`1.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SortAndReverse",
+    "title": "Sort a range of items"
+  },
+  "M:System.Collections.Generic.List`1.ToArray": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "ConvertAndCopy",
+    "title": "Convert a List to an array"
+  },
+  "M:System.Collections.Generic.List`1.TrimExcess": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "CapacityAndCount",
+    "title": "Trim excess capacity"
+  },
+  "M:System.Collections.Generic.List`1.TrueForAll(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/List.Examples.cs",
+    "method": "SearchItems",
+    "title": "Check if all items match a predicate"
+  }
+}

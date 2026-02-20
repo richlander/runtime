@@ -1,0 +1,354 @@
+{
+  "T:System.Collections.Generic.OrderedDictionary`2": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Item(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Count": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.GetAt(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.IndexOf(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.RemoveAt(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Insert(System.Int32,`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0,`1@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Clear": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1,System.Int32@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryGetValue(`0,`1@,System.Int32@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Capacity": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TrimExcess": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Comparer": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Add(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Contains(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Remove(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IEnumerable<System#Collections#Generic#KeyValuePair<TKey,TValue>>#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IndexOf(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Insert(System.Int32,System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Add(System.Object,System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Contains(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#IsFixedSize": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Item(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Remove(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Add(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Contains(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IndexOf(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Insert(System.Int32,System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IsFixedSize": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Remove(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  }
+}

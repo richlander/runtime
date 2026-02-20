@@ -1,0 +1,116 @@
+{
+  "T:System.Collections.Generic.PriorityQueue`2": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}},System.Collections.Generic.IComparer{`1})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`1})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Capacity": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Clear": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Comparer": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Count": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Dequeue": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.DequeueEnqueue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueDequeueAndDequeueEnqueue",
+    "title": "Using EnqueueDequeue and DequeueEnqueue",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Enqueue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueDequeue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueDequeueAndDequeueEnqueue",
+    "title": "Using EnqueueDequeue and DequeueEnqueue"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{`0},`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Peek": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Remove(`0,`0@,`1@,System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TrimExcess": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TryDequeue(`0@,`1@)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TryPeek(`0@,`1@)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.UnorderedItems": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  }
+}

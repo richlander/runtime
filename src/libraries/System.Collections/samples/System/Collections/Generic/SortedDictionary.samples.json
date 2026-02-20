@@ -1,0 +1,207 @@
+{
+  "T:System.Collections.Generic.SortedDictionary`2": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary with various constructors",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary from an existing dictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary from a dictionary with a comparer"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items to a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Clear": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Clearing all items from a SortedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Comparer": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Accessing the comparer of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a key"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a value"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying SortedDictionary entries to an array",
+    "primary": true
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Count": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Getting the count of items in a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating key-value pairs in a SortedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Item(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing items by key in a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting the keys of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing an item from a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Trying to get a value from a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting the values of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Add(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items to a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Contains(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a key-value pair"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IsReadOnly": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is read-only"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Remove(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing a key-value pair from a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IEnumerable<System#Collections#Generic#KeyValuePair<TKey,TValue>>#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IEnumerable interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IReadOnlyDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IReadOnlyDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying SortedDictionary entries to an array"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking synchronization support"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing synchronization root"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Add(System.Object,System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Contains(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking containment via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#IsFixedSize": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is fixed size"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#IsReadOnly": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is read-only via IDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Item(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing items via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Remove(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing an item via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IEnumerable interface"
+  }
+}

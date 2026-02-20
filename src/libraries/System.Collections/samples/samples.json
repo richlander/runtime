@@ -1,0 +1,1260 @@
+{
+  "T:System.Collections.Generic.LinkedList`1": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList",
+    "primary": true
+  },
+  "M:System.Collections.Generic.LinkedList`1.#ctor": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList",
+    "primary": true
+  },
+  "M:System.Collections.Generic.LinkedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddFirst(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddFirst(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddLast(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddLast(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddAfter(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.AddBefore(System.Collections.Generic.LinkedListNode{`0},System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Remove(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Remove(System.Collections.Generic.LinkedListNode{`0})": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.RemoveFirst": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.RemoveLast": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Clear": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "RemoveNodes",
+    "title": "Removing nodes from a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Find(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList",
+    "primary": true
+  },
+  "M:System.Collections.Generic.LinkedList`1.FindLast(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList"
+  },
+  "M:System.Collections.Generic.LinkedList`1.Contains(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "FindNodes",
+    "title": "Finding nodes in a LinkedList"
+  },
+  "P:System.Collections.Generic.LinkedList`1.First": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties",
+    "primary": true
+  },
+  "P:System.Collections.Generic.LinkedList`1.Last": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedList`1.Count": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "M:System.Collections.Generic.LinkedList`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying a LinkedList to an array",
+    "primary": true
+  },
+  "M:System.Collections.Generic.LinkedList`1.GetEnumerator": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "AddNodes",
+    "title": "Adding nodes to a LinkedList"
+  },
+  "T:System.Collections.Generic.LinkedListNode`1": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "M:System.Collections.Generic.LinkedListNode`1.#ctor(`0)": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Value": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Next": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.Previous": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.List": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "P:System.Collections.Generic.LinkedListNode`1.ValueRef": {
+    "file": "System/Collections/Generic/LinkedList.Examples.cs",
+    "method": "NavigateNodes",
+    "title": "Navigating LinkedListNode properties"
+  },
+  "T:System.Collections.Generic.OrderedDictionary`2": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}},System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing an OrderedDictionary from collections"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Item(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Count": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.GetAt(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.IndexOf(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.RemoveAt(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Insert(System.Int32,`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0,`1@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.Clear": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1,System.Int32@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TryGetValue(`0,`1@,System.Int32@)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "TryAddAndTryGetValue",
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Capacity": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary",
+    "primary": true
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TrimExcess": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.Comparer": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "CapacityManagement",
+    "title": "Managing capacity of an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Add(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Contains(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Remove(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IEnumerable<System#Collections#Generic#KeyValuePair<TKey,TValue>>#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IndexOf(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Insert(System.Int32,System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#Generic#IReadOnlyList<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Add(System.Object,System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Contains(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#IsFixedSize": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Item(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Keys": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Remove(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IDictionary#Values": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "KeysValuesAndEnumerate",
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Add(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Contains(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IndexOf(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Insert(System.Int32,System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IsFixedSize": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#IsReadOnly": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in an OrderedDictionary"
+  },
+  "P:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Item(System.Int32)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Index-based access in an OrderedDictionary"
+  },
+  "M:System.Collections.Generic.OrderedDictionary`2.System#Collections#IList#Remove(System.Object)": {
+    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
+    "method": "InsertAndRemove",
+    "title": "Inserting and removing items in an OrderedDictionary"
+  },
+  "T:System.Collections.Generic.PriorityQueue`2": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IComparer{`1})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}},System.Collections.Generic.IComparer{`1})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`1})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Capacity": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Clear": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Comparer": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.Count": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Dequeue": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.DequeueEnqueue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueDequeueAndDequeueEnqueue",
+    "title": "Using EnqueueDequeue and DequeueEnqueue",
+    "primary": true
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Enqueue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueDequeue(`0,`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueDequeueAndDequeueEnqueue",
+    "title": "Using EnqueueDequeue and DequeueEnqueue"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{`0},`1)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Peek": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.Remove(`0,`0@,`1@,System.Collections.Generic.IEqualityComparer{`0})": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TrimExcess": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnsureCapacityAndTrimExcess",
+    "title": "Managing priority queue capacity"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TryDequeue(`0@,`1@)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "M:System.Collections.Generic.PriorityQueue`2.TryPeek(`0@,`1@)": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueAndDequeue",
+    "title": "Enqueuing and dequeuing items by priority"
+  },
+  "P:System.Collections.Generic.PriorityQueue`2.UnorderedItems": {
+    "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
+    "method": "EnqueueRangeDemo",
+    "title": "Initializing and enqueuing ranges of items"
+  },
+  "T:System.Collections.Generic.SortedDictionary`2": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary with various constructors",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary from an existing dictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Creating a SortedDictionary from a dictionary with a comparer"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items to a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Clear": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Clearing all items from a SortedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Comparer": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "Constructors",
+    "title": "Accessing the comparer of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a key"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a value"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying SortedDictionary entries to an array"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Count": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Getting the count of items in a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating key-value pairs in a SortedDictionary",
+    "primary": true
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Item(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing items by key in a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting the keys of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing an item from a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Trying to get a value from a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting the values of a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Add(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items to a SortedDictionary"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Contains(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary contains a key-value pair"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#IsReadOnly": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is read-only"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#ICollection<System#Collections#Generic#KeyValuePair<TKey,TValue>>#Remove(System.Collections.Generic.KeyValuePair{`0,`1})": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing a key-value pair from a SortedDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IEnumerable<System#Collections#Generic#KeyValuePair<TKey,TValue>>#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IEnumerable interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IReadOnlyDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#Generic#IReadOnlyDictionary<TKey,TValue>#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IReadOnlyDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "CopyToArray",
+    "title": "Copying SortedDictionary entries to an array"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking synchronization support"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing synchronization root"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Add(System.Object,System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding items via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Contains(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking containment via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#IsFixedSize": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is fixed size"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#IsReadOnly": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Checking if a SortedDictionary is read-only via IDictionary"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Item(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Accessing items via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Keys": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting keys via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Remove(System.Object)": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing an item via IDictionary interface"
+  },
+  "P:System.Collections.Generic.SortedDictionary`2.System#Collections#IDictionary#Values": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Getting values via IDictionary interface"
+  },
+  "M:System.Collections.Generic.SortedDictionary`2.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Enumerating via IEnumerable interface"
+  },
+  "T:System.Collections.Generic.SortedList`2": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Capacity": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity"
+  },
+  "M:System.Collections.Generic.SortedList`2.Clear": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Comparer": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "ConstructWithComparer",
+    "title": "Constructing a SortedList with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedList`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Count": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetKeyAtIndex(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.GetValueAtIndex(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.IndexOfKey(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.IndexOfValue(`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "P:System.Collections.Generic.SortedList`2.Item(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Keys": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.RemoveAt(System.Int32)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "RemoveAndClear",
+    "title": "Removing items and clearing a SortedList"
+  },
+  "M:System.Collections.Generic.SortedList`2.SetValueAtIndex(System.Int32,`1)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IndexBasedAccess",
+    "title": "Accessing SortedList elements by index"
+  },
+  "M:System.Collections.Generic.SortedList`2.TrimExcess": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing SortedList capacity"
+  },
+  "M:System.Collections.Generic.SortedList`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Adding and accessing items in a SortedList"
+  },
+  "P:System.Collections.Generic.SortedList`2.Values": {
+    "file": "System/Collections/Generic/SortedList.Examples.cs",
+    "method": "IterateKeysAndValues",
+    "title": "Iterating keys, values, and pairs in a SortedList"
+  },
+  "T:System.Collections.Generic.SortedSet`1": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IComparer{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CustomComparerExample",
+    "title": "Using a SortedSet with a custom comparer",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.Add(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Clear": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Comparer": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CustomComparerExample",
+    "title": "Using a SortedSet with a custom comparer"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Contains(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[])": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array"
+  },
+  "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[],System.Int32,System.Int32)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "CopyToExample",
+    "title": "Copying a SortedSet to an array"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Count": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.GetEnumerator": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.GetViewBetween(`0,`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections",
+    "primary": true
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Max": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "P:System.Collections.Generic.SortedSet`1.Min": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Remove(`0)": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "AddContainsRemoveClear",
+    "title": "Adding, checking, and removing items from a SortedSet"
+  },
+  "M:System.Collections.Generic.SortedSet`1.RemoveWhere(System.Predicate{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RemoveWhereExample",
+    "title": "Removing elements matching a predicate"
+  },
+  "M:System.Collections.Generic.SortedSet`1.Reverse": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "RangeViews",
+    "title": "Using range views, Min, Max, and Reverse"
+  },
+  "M:System.Collections.Generic.SortedSet`1.SetEquals(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetComparisons",
+    "title": "Comparing SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "M:System.Collections.Generic.SortedSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/SortedSet.Examples.cs",
+    "method": "SetOperations",
+    "title": "Performing set operations on SortedSet collections"
+  },
+  "T:System.Collections.Generic.Stack`1": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Stack`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "ConstructFromCollection",
+    "title": "Constructing a Stack from a collection"
+  },
+  "M:System.Collections.Generic.Stack`1.Push(`0)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Pop": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Peek": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PeekExample",
+    "title": "Peeking at the top of a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.TryPeek(`0@)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "TryPeekAndTryPop",
+    "title": "Using TryPeek and TryPop on a Stack",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Stack`1.TryPop(`0@)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "TryPeekAndTryPop",
+    "title": "Using TryPeek and TryPop on a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.Contains(`0)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "ContainsExample",
+    "title": "Checking if a Stack contains an item"
+  },
+  "P:System.Collections.Generic.Stack`1.Count": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CountAndClear",
+    "title": "Counting items and clearing a Stack",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Stack`1.Clear": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CountAndClear",
+    "title": "Counting items and clearing a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.CopyTo(`0[],System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Stack`1.ToArray": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array"
+  },
+  "M:System.Collections.Generic.Stack`1.GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack",
+    "primary": true
+  },
+  "P:System.Collections.Generic.Stack`1.Capacity": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing Stack capacity"
+  },
+  "M:System.Collections.Generic.Stack`1.TrimExcess": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CapacityAndTrimExcess",
+    "title": "Managing Stack capacity"
+  },
+  "M:System.Collections.Generic.Stack`1.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnsureCapacityExample",
+    "title": "Ensuring capacity and trimming a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#Generic#IEnumerable<T>#GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#IEnumerable#GetEnumerator": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "EnumerateStack",
+    "title": "Enumerating items in a Stack"
+  },
+  "M:System.Collections.Generic.Stack`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "CopyToAndToArray",
+    "title": "Copying a Stack to an array"
+  },
+  "P:System.Collections.Generic.Stack`1.System#Collections#ICollection#IsSynchronized": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  },
+  "P:System.Collections.Generic.Stack`1.System#Collections#ICollection#SyncRoot": {
+    "file": "System/Collections/Generic/Stack.Examples.cs",
+    "method": "PushAndPop",
+    "title": "Pushing and popping items from a Stack"
+  }
+}

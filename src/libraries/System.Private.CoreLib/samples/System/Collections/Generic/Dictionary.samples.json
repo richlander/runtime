@@ -1,0 +1,96 @@
+{
+  "T:System.Collections.Generic.Dictionary`2": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Dictionary`2.Add(`0,`1)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "P:System.Collections.Generic.Dictionary`2.Item(`0)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "M:System.Collections.Generic.Dictionary`2.TryGetValue(`0,`1@)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "M:System.Collections.Generic.Dictionary`2.ContainsKey(`0)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "M:System.Collections.Generic.Dictionary`2.ContainsValue(`1)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "P:System.Collections.Generic.Dictionary`2.Count": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "AddAndAccess",
+    "title": "Dictionary<TKey,TValue> AddAndAccess"
+  },
+  "M:System.Collections.Generic.Dictionary`2.Remove(`0)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Dictionary<TKey,TValue> RemoveItems",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Dictionary`2.Remove(`0,`1@)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Dictionary<TKey,TValue> RemoveItems"
+  },
+  "M:System.Collections.Generic.Dictionary`2.Clear": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "RemoveItems",
+    "title": "Dictionary<TKey,TValue> RemoveItems"
+  },
+  "P:System.Collections.Generic.Dictionary`2.Keys": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Dictionary<TKey,TValue> BulkOperations",
+    "primary": true
+  },
+  "P:System.Collections.Generic.Dictionary`2.Values": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Dictionary<TKey,TValue> BulkOperations"
+  },
+  "M:System.Collections.Generic.Dictionary`2.GetEnumerator": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "BulkOperations",
+    "title": "Dictionary<TKey,TValue> BulkOperations"
+  },
+  "P:System.Collections.Generic.Dictionary`2.Capacity": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "CapacityOperations",
+    "title": "Dictionary<TKey,TValue> CapacityOperations",
+    "primary": true
+  },
+  "M:System.Collections.Generic.Dictionary`2.EnsureCapacity(System.Int32)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "CapacityOperations",
+    "title": "Dictionary<TKey,TValue> CapacityOperations"
+  },
+  "M:System.Collections.Generic.Dictionary`2.TrimExcess": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "CapacityOperations",
+    "title": "Dictionary<TKey,TValue> CapacityOperations"
+  },
+  "M:System.Collections.Generic.Dictionary`2.TrimExcess(System.Int32)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "CapacityOperations",
+    "title": "Dictionary<TKey,TValue> CapacityOperations"
+  },
+  "M:System.Collections.Generic.Dictionary`2.TryAdd(`0,`1)": {
+    "file": "System/Collections/Generic/Dictionary.Examples.cs",
+    "method": "TryOperations",
+    "title": "Dictionary<TKey,TValue> TryOperations"
+  }
+}
