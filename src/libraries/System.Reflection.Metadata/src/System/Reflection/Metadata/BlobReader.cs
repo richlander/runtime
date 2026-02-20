@@ -35,6 +35,17 @@ namespace System.Reflection.Metadata
 
         }
 
+        /// <summary>
+        /// Creates a reader of the specified memory block.
+        /// </summary>
+        /// <param name="buffer">Pointer to the start of the memory block.</param>
+        /// <param name="length">Length in bytes of the memory block.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="buffer"/> is null and <paramref name="length"/> is greater than zero.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="length"/> is negative.</exception>
+        /// <exception cref="PlatformNotSupportedException">The current platform is not little-endian.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is <see langword="null"/> and <paramref name="length"/> is greater than zero.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="length"/> is negative.</exception>
+        /// <exception cref="T:System.PlatformNotSupportedException">The current platform is not little-endian.</exception>
         internal BlobReader(MemoryBlock block)
         {
             Debug.Assert(block.Length >= 0 && (block.Pointer != null || block.Length == 0));

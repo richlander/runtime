@@ -25,6 +25,12 @@ namespace System.Reflection.Metadata
         /// </summary>
         public ImmutableArray<int> LowerBounds { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Reflection.Metadata.ArrayShape"/> structure.
+        /// </summary>
+        /// <param name="rank">The number of dimensions in the array.</param>
+        /// <param name="sizes">The size of each dimension.</param>
+        /// <param name="lowerBounds">The lower-bound of each dimension.</param>
         public ArrayShape(int rank, ImmutableArray<int> sizes, ImmutableArray<int> lowerBounds)
         {
             Rank = rank;

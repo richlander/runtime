@@ -72,6 +72,14 @@ namespace System.Reflection.Metadata
         {
         }
 
+        /// <summary>
+        /// Creates a metadata reader from the metadata stored at the given memory location.
+        /// </summary>
+        /// <param name="metadata">A pointer to the first byte in a block of metadata.</param>
+        /// <param name="length">The number of bytes in the block.</param>
+        /// <remarks>
+        /// The memory is owned by the caller and it must be kept memory alive and unmodified throughout the lifetime of the <see cref="MetadataReader"/>.
+        /// </remarks>
         internal unsafe MetadataReader(byte* metadata, int length, MetadataReaderOptions options, MetadataStringDecoder? utf8Decoder, object? memoryOwner)
         {
             // Do not throw here when length is 0. We'll throw BadImageFormatException later on, so that the caller doesn't need to
@@ -1058,11 +1066,13 @@ namespace System.Reflection.Metadata
             return new AssemblyDefinition(this);
         }
 
+        /// <param name="handle">To be added.</param>
         public string GetString(StringHandle handle)
         {
             return StringHeap.GetString(handle, UTF8Decoder);
         }
 
+        /// <param name="handle">To be added.</param>
         public string GetString(NamespaceDefinitionHandle handle)
         {
             if (handle.HasFullName)
@@ -1073,11 +1083,13 @@ namespace System.Reflection.Metadata
             return NamespaceCache.GetFullName(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public byte[] GetBlobBytes(BlobHandle handle)
         {
             return BlobHeap.GetBytes(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public ImmutableArray<byte> GetBlobContent(BlobHandle handle)
         {
             // TODO: We can skip a copy for virtual blobs.
@@ -1085,21 +1097,25 @@ namespace System.Reflection.Metadata
             return ImmutableCollectionsMarshal.AsImmutableArray(bytes);
         }
 
+        /// <param name="handle">To be added.</param>
         public BlobReader GetBlobReader(BlobHandle handle)
         {
             return BlobHeap.GetBlobReader(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public BlobReader GetBlobReader(StringHandle handle)
         {
             return StringHeap.GetBlobReader(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public string GetUserString(UserStringHandle handle)
         {
             return UserStringHeap.GetString(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public Guid GetGuid(GuidHandle handle)
         {
             return GuidHeap.GetGuid(handle);
@@ -1115,11 +1131,13 @@ namespace System.Reflection.Metadata
             return new ModuleDefinition(this);
         }
 
+        /// <param name="handle">To be added.</param>
         public AssemblyReference GetAssemblyReference(AssemblyReferenceHandle handle)
         {
             return new AssemblyReference(this, handle.Value);
         }
 
+        /// <param name="handle">To be added.</param>
         public TypeDefinition GetTypeDefinition(TypeDefinitionHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1132,6 +1150,7 @@ namespace System.Reflection.Metadata
             return new NamespaceDefinition(data);
         }
 
+        /// <param name="handle">To be added.</param>
         public NamespaceDefinition GetNamespaceDefinition(NamespaceDefinitionHandle handle)
         {
             NamespaceData data = NamespaceCache.GetNamespaceData(handle);
@@ -1149,6 +1168,7 @@ namespace System.Reflection.Metadata
             return CalculateTypeDefTreatmentAndRowId(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public TypeReference GetTypeReference(TypeReferenceHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1166,16 +1186,19 @@ namespace System.Reflection.Metadata
             return CalculateTypeRefTreatmentAndRowId(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public ExportedType GetExportedType(ExportedTypeHandle handle)
         {
             return new ExportedType(this, handle.RowId);
         }
 
+        /// <param name="handle">To be added.</param>
         public CustomAttributeHandleCollection GetCustomAttributes(EntityHandle handle)
         {
             return new CustomAttributeHandleCollection(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public CustomAttribute GetCustomAttribute(CustomAttributeHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1193,17 +1216,20 @@ namespace System.Reflection.Metadata
             return TreatmentAndRowId((byte)CustomAttributeTreatment.WinMD, handle.RowId);
         }
 
+        /// <param name="handle">To be added.</param>
         public DeclarativeSecurityAttribute GetDeclarativeSecurityAttribute(DeclarativeSecurityAttributeHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
             return new DeclarativeSecurityAttribute(this, handle.RowId);
         }
 
+        /// <param name="handle">To be added.</param>
         public Constant GetConstant(ConstantHandle handle)
         {
             return new Constant(this, handle.RowId);
         }
 
+        /// <param name="handle">To be added.</param>
         public MethodDefinition GetMethodDefinition(MethodDefinitionHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1221,6 +1247,7 @@ namespace System.Reflection.Metadata
             return CalculateMethodDefTreatmentAndRowId(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public FieldDefinition GetFieldDefinition(FieldDefinitionHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1238,21 +1265,25 @@ namespace System.Reflection.Metadata
             return CalculateFieldDefTreatmentAndRowId(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public PropertyDefinition GetPropertyDefinition(PropertyDefinitionHandle handle)
         {
             return new PropertyDefinition(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public EventDefinition GetEventDefinition(EventDefinitionHandle handle)
         {
             return new EventDefinition(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public MethodImplementation GetMethodImplementation(MethodImplementationHandle handle)
         {
             return new MethodImplementation(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public MemberReference GetMemberReference(MemberReferenceHandle handle)
         {
             // PERF: This code pattern is JIT friendly and results in very efficient code.
@@ -1270,51 +1301,61 @@ namespace System.Reflection.Metadata
             return CalculateMemberRefTreatmentAndRowId(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public MethodSpecification GetMethodSpecification(MethodSpecificationHandle handle)
         {
             return new MethodSpecification(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public Parameter GetParameter(ParameterHandle handle)
         {
             return new Parameter(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public GenericParameter GetGenericParameter(GenericParameterHandle handle)
         {
             return new GenericParameter(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public GenericParameterConstraint GetGenericParameterConstraint(GenericParameterConstraintHandle handle)
         {
             return new GenericParameterConstraint(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public ManifestResource GetManifestResource(ManifestResourceHandle handle)
         {
             return new ManifestResource(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public AssemblyFile GetAssemblyFile(AssemblyFileHandle handle)
         {
             return new AssemblyFile(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public StandaloneSignature GetStandaloneSignature(StandaloneSignatureHandle handle)
         {
             return new StandaloneSignature(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public TypeSpecification GetTypeSpecification(TypeSpecificationHandle handle)
         {
             return new TypeSpecification(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public ModuleReference GetModuleReference(ModuleReferenceHandle handle)
         {
             return new ModuleReference(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public InterfaceImplementation GetInterfaceImplementation(InterfaceImplementationHandle handle)
         {
             return new InterfaceImplementation(this, handle);
@@ -1370,61 +1411,73 @@ namespace System.Reflection.Metadata
             return PropertyMapTable.FindTypeContainingProperty(propertyDef.RowId, PropertyTable.NumberOfRows);
         }
 
+        /// <param name="handle">To be added.</param>
         public string GetString(DocumentNameBlobHandle handle)
         {
             return BlobHeap.GetDocumentName(handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public Document GetDocument(DocumentHandle handle)
         {
             return new Document(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public MethodDebugInformation GetMethodDebugInformation(MethodDebugInformationHandle handle)
         {
             return new MethodDebugInformation(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public MethodDebugInformation GetMethodDebugInformation(MethodDefinitionHandle handle)
         {
             return new MethodDebugInformation(this, MethodDebugInformationHandle.FromRowId(handle.RowId));
         }
 
+        /// <param name="handle">To be added.</param>
         public LocalScope GetLocalScope(LocalScopeHandle handle)
         {
             return new LocalScope(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public LocalVariable GetLocalVariable(LocalVariableHandle handle)
         {
             return new LocalVariable(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public LocalConstant GetLocalConstant(LocalConstantHandle handle)
         {
             return new LocalConstant(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public ImportScope GetImportScope(ImportScopeHandle handle)
         {
             return new ImportScope(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public CustomDebugInformation GetCustomDebugInformation(CustomDebugInformationHandle handle)
         {
             return new CustomDebugInformation(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public CustomDebugInformationHandleCollection GetCustomDebugInformation(EntityHandle handle)
         {
             return new CustomDebugInformationHandleCollection(this, handle);
         }
 
+        /// <param name="handle">To be added.</param>
         public LocalScopeHandleCollection GetLocalScopes(MethodDefinitionHandle handle)
         {
             return new LocalScopeHandleCollection(this, handle.RowId);
         }
 
+        /// <param name="handle">To be added.</param>
         public LocalScopeHandleCollection GetLocalScopes(MethodDebugInformationHandle handle)
         {
             return new LocalScopeHandleCollection(this, handle.RowId);

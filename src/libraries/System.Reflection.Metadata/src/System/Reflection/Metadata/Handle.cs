@@ -160,11 +160,17 @@ namespace System.Reflection.Metadata
             }
         }
 
+        /// <param name="obj">To be added.</param>
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
             return obj is Handle handle && Equals(handle);
         }
 
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
         public bool Equals(Handle other)
         {
             return _value == other._value && _vType == other._vType;
@@ -175,11 +181,15 @@ namespace System.Reflection.Metadata
             return _value ^ (_vType << 24);
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator ==(Handle left, Handle right)
         {
             return left.Equals(right);
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator !=(Handle left, Handle right)
         {
             return !left.Equals(right);

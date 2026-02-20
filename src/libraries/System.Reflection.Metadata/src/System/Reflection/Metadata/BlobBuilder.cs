@@ -52,6 +52,7 @@ namespace System.Reflection.Metadata
         private uint FrozenLength => _length | IsFrozenMask;
         private Span<byte> Span => _buffer.AsSpan(0, Length);
 
+        /// <param name="capacity">To be added.</param>
         public BlobBuilder(int capacity = DefaultChunkSize)
         {
             if (capacity < 0)
@@ -63,6 +64,7 @@ namespace System.Reflection.Metadata
             _buffer = new byte[Math.Max(MinChunkSize, capacity)];
         }
 
+        /// <param name="minimalSize">To be added.</param>
         protected virtual BlobBuilder AllocateChunk(int minimalSize)
         {
             return new BlobBuilder(Math.Max(_buffer.Length, minimalSize));
@@ -789,6 +791,15 @@ namespace System.Reflection.Metadata
             WriteBytes(buffer.AsSpan(start, byteCount));
         }
 
+        /// <summary>
+        /// Writes a specified number of occurrences of a byte value to the builder.
+        /// </summary>
+        /// <param name="value">To be added.</param>
+        /// <param name="byteCount">The number of occurences of <paramref name="value"/> to write.</param>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="byteCount"/> is negative.</exception>
+        /// <exception cref="InvalidOperationException">Builder is not writable, it has been linked with another one.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount"/> is negative.</exception>
+        /// <exception cref="T:System.InvalidOperationException">The builder is not writable, it has been linked with another one.</exception>
         internal void WriteBytes(ReadOnlySpan<byte> buffer)
         {
             if (!IsHead)
@@ -991,6 +1002,14 @@ namespace System.Reflection.Metadata
             WriteUTF16(value.AsSpan());
         }
 
+        /// <summary>
+        /// Writes UTF-16 (little-endian) encoded string at the current position.
+        /// </summary>
+        /// <param name="value">To be added.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
+        /// <exception cref="InvalidOperationException">Builder is not writable, it has been linked with another one.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.InvalidOperationException">Builder is not writable, it has been linked with another one.</exception>
         private void WriteUTF16(ReadOnlySpan<char> value)
         {
             if (!IsHead)
@@ -1072,6 +1091,15 @@ namespace System.Reflection.Metadata
             WriteUTF8(value, 0, value.Length, allowUnpairedSurrogates, prependSize: false);
         }
 
+        /// <summary>
+        /// Writes UTF-8 encoded string at the current position.
+        /// </summary>
+        /// <param name="value">Constant value.</param>
+        /// <param name="allowUnpairedSurrogates"> True to encode unpaired surrogates as specified, otherwise replace them with U+FFFD character. </param>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
+        /// <exception cref="InvalidOperationException">Builder is not writable, it has been linked with another one.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.InvalidOperationException">Builder is not writable, it has been linked with another one.</exception>
         internal unsafe void WriteUTF8(string str, int start, int length, bool allowUnpairedSurrogates, bool prependSize)
         {
             Debug.Assert(start >= 0);

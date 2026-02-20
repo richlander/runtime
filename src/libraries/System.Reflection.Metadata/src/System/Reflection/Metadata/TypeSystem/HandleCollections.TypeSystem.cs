@@ -23,6 +23,10 @@ namespace System.Reflection.Metadata
             _count = count;
         }
 
+        /// <summary>
+        /// Gets the number of elements in the collection.
+        /// </summary>
+        /// <value>The number of elements in the collection.</value>
         public int Count
         {
             get
@@ -31,6 +35,11 @@ namespace System.Reflection.Metadata
             }
         }
 
+        /// <summary>
+        /// Gets the element at the specified index in the read-only list.
+        /// </summary>
+        /// <param name="index">The zero-based index of the element to get.</param>
+        /// <value>The element at the specified index in the read-only list.</value>
         public GenericParameterHandle this[int index]
         {
             get

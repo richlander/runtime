@@ -256,6 +256,9 @@ namespace System.Reflection.Metadata
         }
     }
 
+    /// <summary>
+    /// Provides a handle to a namespace definition.
+    /// </summary>
     public readonly struct MethodDefinitionHandle : IEquatable<MethodDefinitionHandle>
     {
         private const uint tokenType = TokenTypeIds.MethodDef;
@@ -313,16 +316,20 @@ namespace System.Reflection.Metadata
 
         internal int RowId { get { return _rowId; } }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator ==(MethodDefinitionHandle left, MethodDefinitionHandle right)
         {
             return left._rowId == right._rowId;
         }
 
+        /// <param name="obj">To be added.</param>
         public override bool Equals(object? obj)
         {
             return obj is MethodDefinitionHandle && ((MethodDefinitionHandle)obj)._rowId == _rowId;
         }
 
+        /// <param name="obj">To be added.</param>
         public bool Equals(MethodDefinitionHandle other)
         {
             return _rowId == other._rowId;
@@ -333,6 +340,8 @@ namespace System.Reflection.Metadata
             return _rowId.GetHashCode();
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator !=(MethodDefinitionHandle left, MethodDefinitionHandle right)
         {
             return left._rowId != right._rowId;

@@ -7,6 +7,16 @@ using System.Runtime.CompilerServices;
 
 namespace System.Reflection.Metadata
 {
+    /// <summary>
+    /// Reads metadata as defined by the ECMA 335 CLI specification.
+    /// </summary>
+    /// <remarks>
+    /// <see cref="System.Reflection.Metadata.MetadataReader"/> reads the contents of tables and heaps from the specified CLI metadata. It operates low-level constructs such as type and method definitions. For a higher level API to inspect the contents of assemblies using reflection constructs, see <see cref="System.Reflection.MetadataLoadContext"/>.
+    /// You can use constructors, such as <see cref="System.Reflection.Metadata.MetadataReader.#ctor(System.Byte,System.Int32)"/>, to create an instance of <see cref="System.Reflection.Metadata.MetadataReader"/> for a given memory location. To read metadata from the Portable Executable assembly file, create <see cref="System.Reflection.PortableExecutable.PEReader"/> and use the <see cref="System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)"/> extension method.
+    /// The format of CLI metadata is defined by the ECMA-335 specification. For more information, see [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) on the Ecma International Web site.
+    /// This example shows how to create <see cref="System.Reflection.Metadata.MetadataReader"/> for an assembly and read all type definitions from it:
+    /// <code lang="csharp" source="~/snippets/csharp/System.Reflection.Metadata/MetadataReader/MetadataReaderSnippets.cs" id="SnippetMetadataReader" />
+    /// </remarks>
     public partial class MetadataReader
     {
         internal const string ClrPrefix = "<CLR>";
