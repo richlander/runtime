@@ -268,6 +268,10 @@ namespace System.Collections.Immutable
 
         #region ICollection<KeyValuePair<TKey, TValue>> Properties
 
+        /// <summary>
+        /// Gets a value indicating whether the <see cref="ICollection{T}"/> is read-only.
+        /// </summary>
+        /// <returns>true if the <see cref="ICollection{T}"/> is read-only; otherwise, false. </returns>
         bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly
         {
             get { return true; }
@@ -315,6 +319,9 @@ namespace System.Collections.Immutable
             return this.AddRange(pairs, false);
         }
 
+        /// <summary>
+        /// See the <see cref="IImmutableDictionary{TKey, TValue}"/> interface.
+        /// </summary>
         internal ImmutableDictionary<TKey, TValue> AddRange(ReadOnlySpan<KeyValuePair<TKey, TValue>> pairs, KeyCollisionBehavior collisionBehavior = KeyCollisionBehavior.ThrowIfValueDifferent)
         {
             return AddRange(pairs, this.Origin, collisionBehavior).Finalize(this);
@@ -598,21 +605,35 @@ namespace System.Collections.Immutable
 
         #region ICollection<KeyValuePair<TKey, TValue>> Methods
 
+        /// <summary>
+        /// See the <see cref="IImmutableDictionary{TKey, TValue}"/> interface.
+        /// </summary>
         void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item)
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// See the <see cref="IImmutableDictionary{TKey, TValue}"/> interface.
+        /// </summary>
         void ICollection<KeyValuePair<TKey, TValue>>.Clear()
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// See the <see cref="IImmutableDictionary{TKey, TValue}"/> interface.
+        /// </summary>
         bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Copies the elements of the <see cref="ICollection"/> to an <see cref="Array"/>, starting at a particular <see cref="Array"/> index.
+        /// </summary>
+        /// <param name="array">The one-dimensional <see cref="Array"/> that is the destination of the elements copied from <see cref="ICollection"/>. The <see cref="Array"/> must have zero-based indexing.</param>
+        /// <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
         void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
         {
             Requires.NotNull(array, nameof(array));

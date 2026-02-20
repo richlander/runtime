@@ -11,6 +11,10 @@ using System.Runtime.Versioning;
 
 namespace System.Collections.Immutable
 {
+    /// <summary>
+    /// Provides methods for creating an array that is immutable; meaning it cannot be changed once it is created.
+    /// **NuGet package**: <see href="https://www.nuget.org/packages/System.Collections.Immutable/">System.Collections.Immutable</see> (<see href="https://learn.microsoft.com/dotnet/api/system.collections.immutable?#remarks">about immutable collections and how to install</see>)
+    /// </summary>
     [CollectionBuilder(typeof(ImmutableArray), nameof(ImmutableArray.Create))]
     public readonly partial struct ImmutableArray<T> : IReadOnlyList<T>, IList<T>, IEquatable<ImmutableArray<T>>, IList, IImmutableArray, IStructuralComparable, IStructuralEquatable, IImmutableList<T>
     {
@@ -1040,26 +1044,51 @@ namespace System.Collections.Immutable
 
         #region Explicit interface methods
 
+        /// <summary>
+        /// Returns a new array with the specified value inserted at the specified position.
+        /// </summary>
+        /// <param name="index">The 0-based index into the array at which the new item should be added.</param>
+        /// <param name="item">The item to insert at the start of the array.</param>
+        /// <returns>A new array.</returns>
         void IList<T>.Insert(int index, T item)
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Returns an array with the element at the specified position removed.
+        /// </summary>
+        /// <param name="index">The 0-based index into the array for the element to omit from the returned array.</param>
+        /// <returns>The new array.</returns>
         void IList<T>.RemoveAt(int index)
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Returns a new array with the specified value inserted at the end.
+        /// </summary>
+        /// <param name="item">The item to insert at the end of the array.</param>
+        /// <returns>A new array.</returns>
         void ICollection<T>.Add(T item)
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Returns an empty array.
+        /// </summary>
         void ICollection<T>.Clear()
         {
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Returns an array with the first occurrence of the specified element removed from the array.
+        /// If no match is found, the current array is returned.
+        /// </summary>
+        /// <param name="item">The item to remove.</param>
+        /// <returns>The new array.</returns>
         bool ICollection<T>.Remove(T item)
         {
             throw new NotSupportedException();
