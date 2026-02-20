@@ -2,22 +2,20 @@
   "T:System.Collections.Generic.SortedList`2": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Adding and accessing items in a SortedList"
-  },
-  "M:System.Collections.Generic.SortedList`2.#ctor": {
-    "file": "System/Collections/Generic/SortedList.Examples.cs",
-    "method": "AddAndAccess",
-    "title": "Adding and accessing items in a SortedList"
+    "title": "Adding and accessing items in a SortedList",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "CapacityAndTrimExcess",
-    "title": "Managing SortedList capacity"
+    "title": "Managing SortedList capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "ConstructWithComparer",
-    "title": "Constructing a SortedList with a custom comparer"
+    "title": "Constructing a SortedList with a custom comparer",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
@@ -47,7 +45,8 @@
   "M:System.Collections.Generic.SortedList`2.Clear": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "RemoveAndClear",
-    "title": "Removing items and clearing a SortedList"
+    "title": "Removing items and clearing a SortedList",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedList`2.Comparer": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
@@ -72,12 +71,14 @@
   "M:System.Collections.Generic.SortedList`2.GetEnumerator": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "IterateKeysAndValues",
-    "title": "Iterating keys, values, and pairs in a SortedList"
+    "title": "Iterating keys, values, and pairs in a SortedList",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.GetKeyAtIndex(System.Int32)": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "IndexBasedAccess",
-    "title": "Accessing SortedList elements by index"
+    "title": "Accessing SortedList elements by index",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.GetValueAtIndex(System.Int32)": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",

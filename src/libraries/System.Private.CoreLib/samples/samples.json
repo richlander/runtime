@@ -2,12 +2,8 @@
   "T:System.Collections.Generic.Dictionary`2": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Dictionary<TKey,TValue> AddAndAccess"
-  },
-  "M:System.Collections.Generic.Dictionary`2.#ctor": {
-    "file": "System/Collections/Generic/Dictionary.Examples.cs",
-    "method": "AddAndAccess",
-    "title": "Dictionary<TKey,TValue> AddAndAccess"
+    "title": "Dictionary<TKey,TValue> AddAndAccess",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.Add(`0,`1)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -42,7 +38,8 @@
   "M:System.Collections.Generic.Dictionary`2.Remove(`0)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "RemoveItems",
-    "title": "Dictionary<TKey,TValue> RemoveItems"
+    "title": "Dictionary<TKey,TValue> RemoveItems",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.Remove(`0,`1@)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -57,7 +54,8 @@
   "P:System.Collections.Generic.Dictionary`2.Keys": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "BulkOperations",
-    "title": "Dictionary<TKey,TValue> BulkOperations"
+    "title": "Dictionary<TKey,TValue> BulkOperations",
+    "primary": true
   },
   "P:System.Collections.Generic.Dictionary`2.Values": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -72,7 +70,8 @@
   "P:System.Collections.Generic.Dictionary`2.Capacity": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "CapacityOperations",
-    "title": "Dictionary<TKey,TValue> CapacityOperations"
+    "title": "Dictionary<TKey,TValue> CapacityOperations",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -97,7 +96,8 @@
   "M:System.Collections.Generic.HashSet`1.Add(`0)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "AddAndContains",
-    "title": "Adding, querying, removing, and clearing elements"
+    "title": "Adding, querying, removing, and clearing elements",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.Contains(`0)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -122,7 +122,8 @@
   "M:System.Collections.Generic.HashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "SetOperations",
-    "title": "Union, intersection, difference, and symmetric difference"
+    "title": "Union, intersection, difference, and symmetric difference",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -142,7 +143,8 @@
   "M:System.Collections.Generic.HashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "SetComparisons",
-    "title": "Subset, superset, overlap, and equality comparisons"
+    "title": "Subset, superset, overlap, and equality comparisons",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -172,7 +174,8 @@
   "M:System.Collections.Generic.HashSet`1.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "Capacity",
-    "title": "Managing HashSet capacity"
+    "title": "Managing HashSet capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.TrimExcess": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -182,12 +185,14 @@
   "T:System.Collections.Generic.List`1": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "AddAndInsert",
-    "title": "Create a List and add items"
+    "title": "Create a List and add items",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.#ctor": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "CapacityAndCount",
-    "title": "Create lists and manage capacity"
+    "title": "Create lists and manage capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/List.Examples.cs",
@@ -212,12 +217,14 @@
   "M:System.Collections.Generic.List`1.AsReadOnly": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "ConvertAndCopy",
-    "title": "Create a read-only wrapper"
+    "title": "Create a read-only wrapper",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.BinarySearch(System.Int32,System.Int32,`0,System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "SearchItems",
-    "title": "Binary search within a range"
+    "title": "Binary search within a range",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.BinarySearch(`0)": {
     "file": "System/Collections/Generic/List.Examples.cs",
@@ -282,7 +289,8 @@
   "M:System.Collections.Generic.List`1.Find(System.Predicate{`0})": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "FindItems",
-    "title": "Find the first matching item"
+    "title": "Find the first matching item",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.FindAll(System.Predicate{`0})": {
     "file": "System/Collections/Generic/List.Examples.cs",
@@ -327,7 +335,8 @@
   "M:System.Collections.Generic.List`1.ForEach(System.Action{`0})": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "Iterate",
-    "title": "Execute an action on each item"
+    "title": "Execute an action on each item",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.GetEnumerator": {
     "file": "System/Collections/Generic/List.Examples.cs",
@@ -407,7 +416,8 @@
   "M:System.Collections.Generic.List`1.Reverse": {
     "file": "System/Collections/Generic/List.Examples.cs",
     "method": "SortAndReverse",
-    "title": "Reverse the order of items"
+    "title": "Reverse the order of items",
+    "primary": true
   },
   "M:System.Collections.Generic.List`1.Reverse(System.Int32,System.Int32)": {
     "file": "System/Collections/Generic/List.Examples.cs",
@@ -457,7 +467,8 @@
   "T:System.Collections.Generic.Queue`1": {
     "file": "System/Collections/Generic/Queue.Examples.cs",
     "method": "EnqueueAndDequeue",
-    "title": "Queue<T> EnqueueAndDequeue"
+    "title": "Queue<T> EnqueueAndDequeue",
+    "primary": true
   },
   "M:System.Collections.Generic.Queue`1.#ctor": {
     "file": "System/Collections/Generic/Queue.Examples.cs",

@@ -2,7 +2,8 @@
   "M:System.Collections.Generic.HashSet`1.Add(`0)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "AddAndContains",
-    "title": "Adding, querying, removing, and clearing elements"
+    "title": "Adding, querying, removing, and clearing elements",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.Contains(`0)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -27,7 +28,8 @@
   "M:System.Collections.Generic.HashSet`1.UnionWith(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "SetOperations",
-    "title": "Union, intersection, difference, and symmetric difference"
+    "title": "Union, intersection, difference, and symmetric difference",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -47,7 +49,8 @@
   "M:System.Collections.Generic.HashSet`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "SetComparisons",
-    "title": "Subset, superset, overlap, and equality comparisons"
+    "title": "Subset, superset, overlap, and equality comparisons",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
@@ -77,7 +80,8 @@
   "M:System.Collections.Generic.HashSet`1.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",
     "method": "Capacity",
-    "title": "Managing HashSet capacity"
+    "title": "Managing HashSet capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.HashSet`1.TrimExcess": {
     "file": "System/Collections/Generic/HashSet.Examples.cs",

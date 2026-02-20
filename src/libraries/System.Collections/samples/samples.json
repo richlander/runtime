@@ -2,12 +2,14 @@
   "T:System.Collections.Generic.LinkedList`1": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
     "method": "AddNodes",
-    "title": "Adding nodes to a LinkedList"
+    "title": "Adding nodes to a LinkedList",
+    "primary": true
   },
   "M:System.Collections.Generic.LinkedList`1.#ctor": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
     "method": "RemoveNodes",
-    "title": "Removing nodes from a LinkedList"
+    "title": "Removing nodes from a LinkedList",
+    "primary": true
   },
   "M:System.Collections.Generic.LinkedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
@@ -82,7 +84,8 @@
   "M:System.Collections.Generic.LinkedList`1.Find(`0)": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
     "method": "FindNodes",
-    "title": "Finding nodes in a LinkedList"
+    "title": "Finding nodes in a LinkedList",
+    "primary": true
   },
   "M:System.Collections.Generic.LinkedList`1.FindLast(`0)": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
@@ -97,7 +100,8 @@
   "P:System.Collections.Generic.LinkedList`1.First": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
     "method": "NavigateNodes",
-    "title": "Navigating LinkedListNode properties"
+    "title": "Navigating LinkedListNode properties",
+    "primary": true
   },
   "P:System.Collections.Generic.LinkedList`1.Last": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
@@ -112,7 +116,8 @@
   "M:System.Collections.Generic.LinkedList`1.CopyTo(`0[],System.Int32)": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
     "method": "CopyToArray",
-    "title": "Copying a LinkedList to an array"
+    "title": "Copying a LinkedList to an array",
+    "primary": true
   },
   "M:System.Collections.Generic.LinkedList`1.GetEnumerator": {
     "file": "System/Collections/Generic/LinkedList.Examples.cs",
@@ -157,7 +162,8 @@
   "T:System.Collections.Generic.OrderedDictionary`2": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Adding and accessing items in an OrderedDictionary"
+    "title": "Adding and accessing items in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.#ctor": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -167,7 +173,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "ConstructFromCollection",
-    "title": "Constructing an OrderedDictionary from collections"
+    "title": "Constructing an OrderedDictionary from collections",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -232,7 +239,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.GetAt(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "IndexBasedAccess",
-    "title": "Index-based access in an OrderedDictionary"
+    "title": "Index-based access in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -257,7 +265,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.Insert(System.Int32,`0,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "InsertAndRemove",
-    "title": "Inserting and removing items in an OrderedDictionary"
+    "title": "Inserting and removing items in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -277,7 +286,8 @@
   "P:System.Collections.Generic.OrderedDictionary`2.Keys": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "KeysValuesAndEnumerate",
-    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.OrderedDictionary`2.Values": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -292,7 +302,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "TryAddAndTryGetValue",
-    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1,System.Int32@)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -307,7 +318,8 @@
   "P:System.Collections.Generic.OrderedDictionary`2.Capacity": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "CapacityManagement",
-    "title": "Managing capacity of an OrderedDictionary"
+    "title": "Managing capacity of an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -507,7 +519,8 @@
   "T:System.Collections.Generic.PriorityQueue`2": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
     "method": "EnqueueAndDequeue",
-    "title": "Enqueuing and dequeuing items by priority"
+    "title": "Enqueuing and dequeuing items by priority",
+    "primary": true
   },
   "M:System.Collections.Generic.PriorityQueue`2.#ctor": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
@@ -522,12 +535,14 @@
   "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
     "method": "EnqueueRangeDemo",
-    "title": "Initializing and enqueuing ranges of items"
+    "title": "Initializing and enqueuing ranges of items",
+    "primary": true
   },
   "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
     "method": "EnsureCapacityAndTrimExcess",
-    "title": "Managing priority queue capacity"
+    "title": "Managing priority queue capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}},System.Collections.Generic.IComparer{`1})": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
@@ -567,7 +582,8 @@
   "M:System.Collections.Generic.PriorityQueue`2.DequeueEnqueue(`0,`1)": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
     "method": "EnqueueDequeueAndDequeueEnqueue",
-    "title": "Using EnqueueDequeue and DequeueEnqueue"
+    "title": "Using EnqueueDequeue and DequeueEnqueue",
+    "primary": true
   },
   "M:System.Collections.Generic.PriorityQueue`2.Enqueue(`0,`1)": {
     "file": "System/Collections/Generic/PriorityQueue.Examples.cs",
@@ -632,7 +648,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.#ctor": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "Constructors",
-    "title": "Creating a SortedDictionary with various constructors"
+    "title": "Creating a SortedDictionary with various constructors",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -657,7 +674,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.Clear": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "RemoveAndClear",
-    "title": "Clearing all items from a SortedDictionary"
+    "title": "Clearing all items from a SortedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedDictionary`2.Comparer": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -687,7 +705,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.GetEnumerator": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "IterateKeysAndValues",
-    "title": "Enumerating key-value pairs in a SortedDictionary"
+    "title": "Enumerating key-value pairs in a SortedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedDictionary`2.Item(`0)": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -837,12 +856,14 @@
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "CapacityAndTrimExcess",
-    "title": "Managing SortedList capacity"
+    "title": "Managing SortedList capacity",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
     "method": "ConstructWithComparer",
-    "title": "Constructing a SortedList with a custom comparer"
+    "title": "Constructing a SortedList with a custom comparer",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedList`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedList.Examples.cs",
@@ -962,7 +983,8 @@
   "T:System.Collections.Generic.SortedSet`1": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "AddContainsRemoveClear",
-    "title": "Adding, checking, and removing items from a SortedSet"
+    "title": "Adding, checking, and removing items from a SortedSet",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.#ctor": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
@@ -972,12 +994,14 @@
   "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "CustomComparerExample",
-    "title": "Using a SortedSet with a custom comparer"
+    "title": "Using a SortedSet with a custom comparer",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "SetOperations",
-    "title": "Performing set operations on SortedSet collections"
+    "title": "Performing set operations on SortedSet collections",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.Add(`0)": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
@@ -1002,7 +1026,8 @@
   "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[])": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "CopyToExample",
-    "title": "Copying a SortedSet to an array"
+    "title": "Copying a SortedSet to an array",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.CopyTo(`0[],System.Int32)": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
@@ -1032,7 +1057,8 @@
   "M:System.Collections.Generic.SortedSet`1.GetViewBetween(`0,`0)": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "RangeViews",
-    "title": "Using range views, Min, Max, and Reverse"
+    "title": "Using range views, Min, Max, and Reverse",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
@@ -1042,7 +1068,8 @@
   "M:System.Collections.Generic.SortedSet`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
     "method": "SetComparisons",
-    "title": "Comparing SortedSet collections"
+    "title": "Comparing SortedSet collections",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedSet`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/SortedSet.Examples.cs",
@@ -1107,7 +1134,8 @@
   "T:System.Collections.Generic.Stack`1": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "PushAndPop",
-    "title": "Pushing and popping items from a Stack"
+    "title": "Pushing and popping items from a Stack",
+    "primary": true
   },
   "M:System.Collections.Generic.Stack`1.#ctor": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
@@ -1117,7 +1145,8 @@
   "M:System.Collections.Generic.Stack`1.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "EnsureCapacityExample",
-    "title": "Ensuring capacity and trimming a Stack"
+    "title": "Ensuring capacity and trimming a Stack",
+    "primary": true
   },
   "M:System.Collections.Generic.Stack`1.#ctor(System.Collections.Generic.IEnumerable{`0})": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
@@ -1142,7 +1171,8 @@
   "M:System.Collections.Generic.Stack`1.TryPeek(`0@)": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "TryPeekAndTryPop",
-    "title": "Using TryPeek and TryPop on a Stack"
+    "title": "Using TryPeek and TryPop on a Stack",
+    "primary": true
   },
   "M:System.Collections.Generic.Stack`1.TryPop(`0@)": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
@@ -1157,7 +1187,8 @@
   "P:System.Collections.Generic.Stack`1.Count": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "CountAndClear",
-    "title": "Counting items and clearing a Stack"
+    "title": "Counting items and clearing a Stack",
+    "primary": true
   },
   "M:System.Collections.Generic.Stack`1.Clear": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
@@ -1167,7 +1198,8 @@
   "M:System.Collections.Generic.Stack`1.CopyTo(`0[],System.Int32)": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "CopyToAndToArray",
-    "title": "Copying a Stack to an array"
+    "title": "Copying a Stack to an array",
+    "primary": true
   },
   "M:System.Collections.Generic.Stack`1.ToArray": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
@@ -1177,7 +1209,8 @@
   "M:System.Collections.Generic.Stack`1.GetEnumerator": {
     "file": "System/Collections/Generic/Stack.Examples.cs",
     "method": "EnumerateStack",
-    "title": "Enumerating items in a Stack"
+    "title": "Enumerating items in a Stack",
+    "primary": true
   },
   "P:System.Collections.Generic.Stack`1.Capacity": {
     "file": "System/Collections/Generic/Stack.Examples.cs",

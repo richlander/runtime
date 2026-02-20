@@ -2,17 +2,14 @@
   "T:System.Collections.Generic.OrderedDictionary`2": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Adding and accessing items in an OrderedDictionary"
-  },
-  "M:System.Collections.Generic.OrderedDictionary`2.#ctor": {
-    "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
-    "method": "AddAndAccess",
-    "title": "Adding and accessing items in an OrderedDictionary"
+    "title": "Adding and accessing items in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "ConstructFromCollection",
-    "title": "Constructing an OrderedDictionary from collections"
+    "title": "Constructing an OrderedDictionary from collections",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -77,7 +74,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.GetAt(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "IndexBasedAccess",
-    "title": "Index-based access in an OrderedDictionary"
+    "title": "Index-based access in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.SetAt(System.Int32,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -102,7 +100,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.Insert(System.Int32,`0,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "InsertAndRemove",
-    "title": "Inserting and removing items in an OrderedDictionary"
+    "title": "Inserting and removing items in an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.Remove(`0)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -122,7 +121,8 @@
   "P:System.Collections.Generic.OrderedDictionary`2.Keys": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "KeysValuesAndEnumerate",
-    "title": "Enumerating keys, values, and entries in an OrderedDictionary"
+    "title": "Enumerating keys, values, and entries in an OrderedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.OrderedDictionary`2.Values": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -137,7 +137,8 @@
   "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "TryAddAndTryGetValue",
-    "title": "Using TryAdd and TryGetValue with an OrderedDictionary"
+    "title": "Using TryAdd and TryGetValue with an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.TryAdd(`0,`1,System.Int32@)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
@@ -152,7 +153,8 @@
   "P:System.Collections.Generic.OrderedDictionary`2.Capacity": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",
     "method": "CapacityManagement",
-    "title": "Managing capacity of an OrderedDictionary"
+    "title": "Managing capacity of an OrderedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.OrderedDictionary`2.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/OrderedDictionary.Examples.cs",

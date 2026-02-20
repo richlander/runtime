@@ -2,12 +2,14 @@
   "T:System.Collections.Generic.SortedDictionary`2": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Adding and accessing items in a SortedDictionary"
+    "title": "Adding and accessing items in a SortedDictionary",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedDictionary`2.#ctor": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "Constructors",
-    "title": "Creating a SortedDictionary with various constructors"
+    "title": "Creating a SortedDictionary with various constructors",
+    "primary": true
   },
   "M:System.Collections.Generic.SortedDictionary`2.#ctor(System.Collections.Generic.IComparer{`0})": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -32,7 +34,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.Clear": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "RemoveAndClear",
-    "title": "Clearing all items from a SortedDictionary"
+    "title": "Clearing all items from a SortedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedDictionary`2.Comparer": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -52,7 +55,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "CopyToArray",
-    "title": "Copying SortedDictionary entries to an array"
+    "title": "Copying SortedDictionary entries to an array",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedDictionary`2.Count": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
@@ -62,7 +66,8 @@
   "M:System.Collections.Generic.SortedDictionary`2.GetEnumerator": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",
     "method": "IterateKeysAndValues",
-    "title": "Enumerating key-value pairs in a SortedDictionary"
+    "title": "Enumerating key-value pairs in a SortedDictionary",
+    "primary": true
   },
   "P:System.Collections.Generic.SortedDictionary`2.Item(`0)": {
     "file": "System/Collections/Generic/SortedDictionary.Examples.cs",

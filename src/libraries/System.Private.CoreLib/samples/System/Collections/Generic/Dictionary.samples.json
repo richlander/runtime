@@ -2,12 +2,8 @@
   "T:System.Collections.Generic.Dictionary`2": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "AddAndAccess",
-    "title": "Dictionary<TKey,TValue> AddAndAccess"
-  },
-  "M:System.Collections.Generic.Dictionary`2.#ctor": {
-    "file": "System/Collections/Generic/Dictionary.Examples.cs",
-    "method": "AddAndAccess",
-    "title": "Dictionary<TKey,TValue> AddAndAccess"
+    "title": "Dictionary<TKey,TValue> AddAndAccess",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.Add(`0,`1)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -42,7 +38,8 @@
   "M:System.Collections.Generic.Dictionary`2.Remove(`0)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "RemoveItems",
-    "title": "Dictionary<TKey,TValue> RemoveItems"
+    "title": "Dictionary<TKey,TValue> RemoveItems",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.Remove(`0,`1@)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -57,7 +54,8 @@
   "P:System.Collections.Generic.Dictionary`2.Keys": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "BulkOperations",
-    "title": "Dictionary<TKey,TValue> BulkOperations"
+    "title": "Dictionary<TKey,TValue> BulkOperations",
+    "primary": true
   },
   "P:System.Collections.Generic.Dictionary`2.Values": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
@@ -72,7 +70,8 @@
   "P:System.Collections.Generic.Dictionary`2.Capacity": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
     "method": "CapacityOperations",
-    "title": "Dictionary<TKey,TValue> CapacityOperations"
+    "title": "Dictionary<TKey,TValue> CapacityOperations",
+    "primary": true
   },
   "M:System.Collections.Generic.Dictionary`2.EnsureCapacity(System.Int32)": {
     "file": "System/Collections/Generic/Dictionary.Examples.cs",
