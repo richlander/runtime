@@ -147,16 +147,24 @@ namespace System.Reflection.Metadata
 
         internal int RowId { get { return _rowId; } }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator ==(MethodDebugInformationHandle left, MethodDebugInformationHandle right)
         {
             return left._rowId == right._rowId;
         }
 
+        /// <param name="obj">To be added.</param>
         public override bool Equals(object? obj)
         {
             return obj is MethodDebugInformationHandle mdih && mdih._rowId == _rowId;
         }
 
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
         public bool Equals(MethodDebugInformationHandle other)
         {
             return _rowId == other._rowId;
@@ -167,6 +175,8 @@ namespace System.Reflection.Metadata
             return _rowId.GetHashCode();
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator !=(MethodDebugInformationHandle left, MethodDebugInformationHandle right)
         {
             return left._rowId != right._rowId;

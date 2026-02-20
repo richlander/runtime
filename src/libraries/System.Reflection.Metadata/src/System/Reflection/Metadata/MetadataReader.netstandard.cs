@@ -10,8 +10,31 @@ using Microsoft.Win32.SafeHandles;
 
 namespace System.Reflection.Metadata
 {
+    /// <summary>
+    /// Reads metadata as defined by the ECMA 335 CLI specification.
+    /// </summary>
+    /// <remarks>
+    /// <see cref="System.Reflection.Metadata.MetadataReader"/> reads the contents of tables and heaps from the specified CLI metadata. It operates low-level constructs such as type and method definitions. For a higher level API to inspect the contents of assemblies using reflection constructs, see <see cref="System.Reflection.MetadataLoadContext"/>.
+    /// You can use constructors, such as <see cref="System.Reflection.Metadata.MetadataReader.#ctor(System.Byte,System.Int32)"/>, to create an instance of <see cref="System.Reflection.Metadata.MetadataReader"/> for a given memory location. To read metadata from the Portable Executable assembly file, create <see cref="System.Reflection.PortableExecutable.PEReader"/> and use the <see cref="System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(System.Reflection.PortableExecutable.PEReader)"/> extension method.
+    /// The format of CLI metadata is defined by the ECMA-335 specification. For more information, see [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) on the Ecma International Web site.
+    /// This example shows how to create <see cref="System.Reflection.Metadata.MetadataReader"/> for an assembly and read all type definitions from it:
+    /// <code lang="csharp" source="~/snippets/csharp/System.Reflection.Metadata/MetadataReader/MetadataReaderSnippets.cs" id="SnippetMetadataReader" />
+    /// </remarks>
     public sealed partial class MetadataReader
     {
+        /// <summary>
+        /// Gets the <see cref="AssemblyName"/> for a given file.
+        /// </summary>
+        /// <param name="assemblyFile">The path for the assembly which <see cref="AssemblyName"/> is to be returned.</param>
+        /// <returns>An <see cref="AssemblyName"/> that represents the given <paramref name="assemblyFile"/>.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="assemblyFile"/> is null.</exception>
+        /// <exception cref="ArgumentException">If <paramref name="assemblyFile"/> is invalid.</exception>
+        /// <exception cref="FileNotFoundException">If <paramref name="assemblyFile"/> is not found.</exception>
+        /// <exception cref="BadImageFormatException">If <paramref name="assemblyFile"/> is not a valid assembly.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="assemblyFile"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="assemblyFile"/> is invalid.</exception>
+        /// <exception cref="T:System.IO.FileNotFoundException"><paramref name="assemblyFile"/> is not found.</exception>
+        /// <exception cref="T:System.BadImageFormatException"><paramref name="assemblyFile"/> is not a valid assembly.</exception>
         internal AssemblyName GetAssemblyName(StringHandle nameHandle, Version version, StringHandle cultureHandle, BlobHandle publicKeyOrTokenHandle, AssemblyHashAlgorithm assemblyHashAlgorithm, AssemblyFlags flags)
         {
             string name = GetString(nameHandle);

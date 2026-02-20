@@ -54,11 +54,17 @@ namespace System.Reflection.Metadata
             get { return _heapOffset == 0; }
         }
 
+        /// <param name="obj">To be added.</param>
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
             return obj is DocumentNameBlobHandle documentHandle && Equals(documentHandle);
         }
 
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
         public bool Equals(DocumentNameBlobHandle other)
         {
             return _heapOffset == other._heapOffset;
@@ -69,11 +75,15 @@ namespace System.Reflection.Metadata
             return _heapOffset;
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator ==(DocumentNameBlobHandle left, DocumentNameBlobHandle right)
         {
             return left.Equals(right);
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator !=(DocumentNameBlobHandle left, DocumentNameBlobHandle right)
         {
             return !left.Equals(right);

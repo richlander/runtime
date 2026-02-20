@@ -20,21 +20,27 @@ namespace System.Reflection.Metadata
         // position in buffer relative to the beginning of the array:
         private int _position;
 
+        /// <param name="size">To be added.</param>
         public BlobWriter(int size)
             : this(new byte[size])
         {
         }
 
+        /// <param name="buffer">To be added.</param>
         public BlobWriter(byte[] buffer)
             : this(buffer, 0, buffer.Length)
         {
         }
 
+        /// <param name="blob">To be added.</param>
         public BlobWriter(Blob blob)
             : this(blob.Buffer, blob.Start, blob.Length)
         {
         }
 
+        /// <param name="buffer">To be added.</param>
+        /// <param name="start">To be added.</param>
+        /// <param name="count">To be added.</param>
         public BlobWriter(byte[] buffer, int start, int count)
         {
             Debug.Assert(buffer != null);
@@ -147,6 +153,10 @@ namespace System.Reflection.Metadata
             WriteBytes(new ReadOnlySpan<byte>(buffer, byteCount));
         }
 
+        /// <param name="value">To be added.</param>
+        /// <param name="byteCount">To be added.</param>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="byteCount"/> is negative.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="byteCount"/> is negative.</exception>
         internal void WriteBytes(ReadOnlySpan<byte> buffer)
         {
             int start = Advance(buffer.Length);
@@ -234,112 +244,132 @@ namespace System.Reflection.Metadata
             WriteBytes(buffer.AsSpan(start, byteCount));
         }
 
+        /// <param name="offset">To be added.</param>
         public void PadTo(int offset)
         {
             WriteBytes(0, offset - Offset);
         }
 
+        /// <param name="alignment">To be added.</param>
         public void Align(int alignment)
         {
             int offset = Offset;
             WriteBytes(0, BitArithmetic.Align(offset, alignment) - offset);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteBoolean(bool value)
         {
             WriteByte((byte)(value ? 1 : 0));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteByte(byte value)
         {
             int start = Advance(sizeof(byte));
             _buffer[start] = value;
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteSByte(sbyte value)
         {
             WriteByte(unchecked((byte)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteDouble(double value)
         {
             int start = Advance(sizeof(double));
             _buffer.WriteDouble(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteSingle(float value)
         {
             int start = Advance(sizeof(float));
             _buffer.WriteSingle(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteInt16(short value)
         {
             WriteUInt16(unchecked((ushort)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteUInt16(ushort value)
         {
             int start = Advance(sizeof(ushort));
             _buffer.WriteUInt16(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteInt16BE(short value)
         {
             WriteUInt16BE(unchecked((ushort)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteUInt16BE(ushort value)
         {
             int start = Advance(sizeof(ushort));
             _buffer.WriteUInt16BE(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteInt32BE(int value)
         {
             WriteUInt32BE(unchecked((uint)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteUInt32BE(uint value)
         {
             int start = Advance(sizeof(uint));
             _buffer.WriteUInt32BE(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteInt32(int value)
         {
             WriteUInt32(unchecked((uint)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteUInt32(uint value)
         {
             int start = Advance(sizeof(uint));
             _buffer.WriteUInt32(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteInt64(long value)
         {
             WriteUInt64(unchecked((ulong)value));
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteUInt64(ulong value)
         {
             int start = Advance(sizeof(ulong));
             _buffer.WriteUInt64(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteDecimal(decimal value)
         {
             int start = Advance(BlobUtilities.SizeOfSerializedDecimal);
             _buffer.WriteDecimal(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteGuid(Guid value)
         {
             int start = Advance(BlobUtilities.SizeOfGuid);
             _buffer.WriteGuid(start, value);
         }
 
+        /// <param name="value">To be added.</param>
         public void WriteDateTime(DateTime value)
         {
             WriteInt64(value.Ticks);
@@ -393,6 +423,12 @@ namespace System.Reflection.Metadata
             WriteUTF16(value.AsSpan());
         }
 
+        /// <summary>
+        /// Writes UTF-16 (little-endian) encoded string at the current position.
+        /// </summary>
+        /// <param name="value">To be added.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
         private void WriteUTF16(ReadOnlySpan<char> value)
         {
             if (BitConverter.IsLittleEndian)
@@ -464,6 +500,13 @@ namespace System.Reflection.Metadata
             WriteUTF8(value, 0, value.Length, allowUnpairedSurrogates, prependSize: false);
         }
 
+        /// <summary>
+        /// Writes UTF-8 encoded string at the current position.
+        /// </summary>
+        /// <param name="value">To be added.</param>
+        /// <param name="allowUnpairedSurrogates">To be added.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
         private unsafe void WriteUTF8(string str, int start, int length, bool allowUnpairedSurrogates, bool prependSize)
         {
             fixed (char* strPtr = str)

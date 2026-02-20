@@ -9,6 +9,15 @@ using System.Runtime.InteropServices;
 
 namespace System.Reflection.Metadata
 {
+    /// <summary>
+    /// Represents the method body in ECMA 335 assembly.
+    /// </summary>
+    /// <remarks>
+    /// The method body contains Common Intermediate Language (CIL) instructions that make up a method and information about its local variables and exception regions. You can use the <see cref="System.Reflection.Metadata.PEReaderExtensions.GetMethodBody"/> method to get a <c>MethodBodyBlock</c> instance for the specified method.
+    /// The format of CIL instructions and metadata is defined by the ECMA-335 specification. For more information, see [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) on the Ecma International Web site.
+    /// This example shows how to read method bodies for all methods in the specified type definition and display method body information:
+    /// [!code-csharp[](~/snippets/csharp/System.Reflection.Metadata/MethodBodyBlock/MethodBodyBlockSnippets.cs#PrintMethods)]
+    /// </remarks>
     public sealed class MethodBodyBlock
     {
         private readonly MemoryBlock _il;
@@ -44,37 +53,65 @@ namespace System.Reflection.Metadata
             get { return _size; }
         }
 
+        /// <summary>
+        /// Gets the maximum number of items on the evaluation stack for this method.
+        /// </summary>
+        /// <value>The maximum number of items on the evaluation stack.</value>
         public int MaxStack
         {
             get { return _maxStack; }
         }
 
+        /// <summary>
+        /// Gets a value that indicates whether local variables in this method are initialized to default values of their types.
+        /// </summary>
+        /// <value><see langword="true"/> if local variables are initialized; otherwise, <see langword="false"/>.</value>
         public bool LocalVariablesInitialized
         {
             get { return _localVariablesInitialized; }
         }
 
+        /// <summary>
+        /// Gets the handle to the local variables signature.
+        /// </summary>
+        /// <value>The handle to the local variables signature.</value>
         public StandaloneSignatureHandle LocalSignature
         {
             get { return _localSignature; }
         }
 
+        /// <summary>
+        /// Gets the array of exception regions in this method body.
+        /// </summary>
+        /// <value>The array of exception regions.</value>
         public ImmutableArray<ExceptionRegion> ExceptionRegions
         {
             get { return _exceptionRegions; }
         }
 
+        /// <summary>
+        /// Gets the IL bytecode of this method body as a byte array.
+        /// </summary>
+        /// <returns>A byte array with the IL bytecode of this method body.</returns>
         public byte[]? GetILBytes()
         {
             return _il.ToArray();
         }
 
+        /// <summary>
+        /// Gets the IL bytecode of this method body as an immutable array.
+        /// </summary>
+        /// <returns>An immutable byte array with the IL bytecode of this method body.</returns>
         public ImmutableArray<byte> GetILContent()
         {
             byte[]? bytes = GetILBytes();
             return ImmutableCollectionsMarshal.AsImmutableArray(bytes);
         }
 
+        /// <summary>
+        /// Gets a blob reader that reads the IL bytecode of this method body.
+        /// </summary>
+        /// <returns>A blob reader that reads the IL bytecode of this method body.</returns>
         public BlobReader GetILReader()
         {
             return new BlobReader(_il);
@@ -91,6 +128,12 @@ namespace System.Reflection.Metadata
         private const byte SectEHTable = 0x01;
         private const byte SectFatFormat = 0x40;
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="T:System.Reflection.Metadata.MethodBodyBlock"/> class using the specified blob reader.
+        /// </summary>
+        /// <param name="reader">The blob reader to read the method body.</param>
+        /// <returns>A new instance of the <see cref="T:System.Reflection.Metadata.MethodBodyBlock"/> class.</returns>
+        /// <exception cref="T:System.BadImageFormatException"> The method body data in the specified blob reader is invalid.</exception>
         public static MethodBodyBlock Create(BlobReader reader)
         {
             int startOffset = reader.Offset;

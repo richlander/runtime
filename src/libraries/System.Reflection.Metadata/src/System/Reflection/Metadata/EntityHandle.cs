@@ -95,26 +95,44 @@ namespace System.Reflection.Metadata
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether the current instance and the specified object are equal.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance.</param>
+        /// <returns><see langword="true"/> if <paramref name="obj"/> is an <see cref="T:System.Reflection.Metadata.EntityHandle"/> and is equal to the current instance; otherwise, <see langword="false"/>.</returns>
         public override bool Equals([NotNullWhen(true)] object? obj)
         {
             return obj is EntityHandle entityHandle && Equals(entityHandle);
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether the current instance and the specified <see cref="T:System.Reflection.Metadata.EntityHandle"/> are equal.
+        /// </summary>
+        /// <param name="other">The value to compare with the current instance.</param>
+        /// <returns><see langword="true"/> if the current instance and <paramref name="other"/> are equal; otherwise, <see langword="false"/>.</returns>
         public bool Equals(EntityHandle other)
         {
             return _vToken == other._vToken;
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>The hash code for this instance.</returns>
         public override int GetHashCode()
         {
             return unchecked((int)_vToken);
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator ==(EntityHandle left, EntityHandle right)
         {
             return left.Equals(right);
         }
 
+        /// <param name="left">To be added.</param>
+        /// <param name="right">To be added.</param>
         public static bool operator !=(EntityHandle left, EntityHandle right)
         {
             return !left.Equals(right);

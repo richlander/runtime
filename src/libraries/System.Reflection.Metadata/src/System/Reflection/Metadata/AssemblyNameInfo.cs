@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
@@ -49,6 +49,16 @@ namespace System.Reflection.Metadata
         }
 #endif
 
+        /// <summary>
+        /// Initializes a new instance of the AssemblyNameInfo class.
+        /// </summary>
+        /// <param name="name">The simple name of the assembly.</param>
+        /// <param name="version">The version of the assembly.</param>
+        /// <param name="cultureName">The name of the culture associated with the assembly.</param>
+        /// <param name="flags">The attributes of the assembly.</param>
+        /// <param name="publicKeyOrToken">The public key or its token. Set <paramref name="flags"/> to <see cref="AssemblyNameFlags.PublicKey"/> when it's public key.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="name"/> is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="name"/> is <see langword="null"/>.</exception>
         internal AssemblyNameInfo(AssemblyNameParser.AssemblyNameParts parts)
         {
             Name = parts._name;

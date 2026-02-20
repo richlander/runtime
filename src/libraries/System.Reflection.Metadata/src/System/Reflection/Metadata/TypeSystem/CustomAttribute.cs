@@ -6,6 +6,14 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace System.Reflection.Metadata
 {
+    /// <summary>
+    /// Provides information about a custom attribute.
+    /// </summary>
+    /// <remarks>
+    /// A custom attribute is an annotation that associates additional information with a metadata element, such as an assembly, type, or method. You can use the <see cref="System.Reflection.Metadata.MetadataReader.GetCustomAttribute(System.Reflection.Metadata.CustomAttributeHandle)"/> method to get a custom attribute instance. For more information about attributes in .NET, see [Extend metadata using attributes](/dotnet/standard/attributes/).
+    /// This example shows how to print all custom attributes applied to the type definition:
+    /// <code lang="csharp" source="~/snippets/csharp/System.Reflection.Metadata/CustomAttribute/Overview/CustomAttributeSnippets.cs" id="SnippetPrintAttributes" />
+    /// </remarks>
     public readonly struct CustomAttribute
     {
         private readonly MetadataReader _reader;

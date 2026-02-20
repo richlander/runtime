@@ -55,11 +55,16 @@ namespace System.Reflection.Metadata
             _reader = reader;
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
         public bool Equals(StringHandle handle, string value)
         {
             return Equals(handle, value, ignoreCase: false);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
+        /// <param name="ignoreCase">To be added.</param>
         public bool Equals(StringHandle handle, string value, bool ignoreCase)
         {
             ArgumentNullException.ThrowIfNull(value);
@@ -67,11 +72,16 @@ namespace System.Reflection.Metadata
             return _reader.StringHeap.Equals(handle, value, _reader.UTF8Decoder, ignoreCase);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
         public bool Equals(NamespaceDefinitionHandle handle, string value)
         {
             return Equals(handle, value, ignoreCase: false);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
+        /// <param name="ignoreCase">To be added.</param>
         public bool Equals(NamespaceDefinitionHandle handle, string value, bool ignoreCase)
         {
             ArgumentNullException.ThrowIfNull(value);
@@ -84,11 +94,16 @@ namespace System.Reflection.Metadata
             return value == _reader.NamespaceCache.GetFullName(handle);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
         public bool Equals(DocumentNameBlobHandle handle, string value)
         {
             return Equals(handle, value, ignoreCase: false);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
+        /// <param name="ignoreCase">To be added.</param>
         public bool Equals(DocumentNameBlobHandle handle, string value, bool ignoreCase)
         {
             ArgumentNullException.ThrowIfNull(value);
@@ -96,11 +111,16 @@ namespace System.Reflection.Metadata
             return _reader.BlobHeap.DocumentNameEquals(handle, value, ignoreCase);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
         public bool StartsWith(StringHandle handle, string value)
         {
             return StartsWith(handle, value, ignoreCase: false);
         }
 
+        /// <param name="handle">To be added.</param>
+        /// <param name="value">To be added.</param>
+        /// <param name="ignoreCase">To be added.</param>
         public bool StartsWith(StringHandle handle, string value, bool ignoreCase)
         {
             ArgumentNullException.ThrowIfNull(value);
