@@ -611,6 +611,12 @@ namespace System.Collections.Generic
             return IndexOf(key, ref _, ref _);
         }
 
+        /// <summary>
+        /// Determines the index of a specific key in the <see cref="OrderedDictionary{TKey, TValue}"/>.
+        /// </summary>
+        /// <param name="key">The key to locate.</param>
+        /// <returns>The index of <paramref name="key"/> if found; otherwise, -1.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
         private int IndexOf(TKey key, ref uint outHashCode, ref uint outCollisionCount)
         {
             Debug.Assert(key is not null, "Key nullness should have been validated by caller.");

@@ -11,6 +11,41 @@ using System.Runtime.Serialization;
 
 namespace System.Collections.Generic
 {
+    /// <summary>
+    /// Represents a collection of keys and values.
+    /// </summary>
+    /// <typeparam name="TKey">The type of the keys in the dictionary.</typeparam>
+    /// <typeparam name="TValue">The type of the values in the dictionary.</typeparam>
+    /// <remarks>
+    /// <note type="note">
+    /// The speed of retrieval depends on the quality of the hashing algorithm of the type specified for <c>TKey</c>.
+    /// </note>
+    /// <note type="note">
+    /// For example, you can use the case-insensitive string comparers provided by the <see cref="System.StringComparer"/> class to create dictionaries with case-insensitive string keys.
+    /// </note>
+    /// <note type="note">
+    /// Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the <see cref="System.Type.Equals"/> method.
+    /// </note>
+    /// The <see cref="System.Collections.Generic.Dictionary{T,U}"/> generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is very fast, close to O(1), because the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class is implemented as a hash table.
+    /// As long as an object is used as a key in the <see cref="System.Collections.Generic.Dictionary{T,U}"/>, it must not change in any way that affects its hash value. Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the dictionary's equality comparer. A key cannot be <c>null</c>, but a value can be, if its type <c>TValue</c> is a reference type.
+    /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter; if you do not specify an implementation, the default generic equality comparer <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see> is used. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation.
+    /// The capacity of a <see cref="System.Collections.Generic.Dictionary{T,U}"/> is the number of elements the <see cref="System.Collections.Generic.Dictionary{T,U}"/> can hold. As elements are added to a <see cref="System.Collections.Generic.Dictionary{T,U}"/>, the capacity is automatically increased as required by reallocating the internal array.
+    /// **.NET Framework only:** For very large <see cref="System.Collections.Generic.Dictionary{T,U}"/> objects, you can increase the maximum capacity to 2 billion elements on a 64-bit system by setting the <c>enabled</c> attribute of the [<c>&lt;gcAllowVeryLargeObjects&gt;</c>](/dotnet/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element) configuration element to <c>true</c> in the run-time environment.
+    /// For purposes of enumeration, each item in the dictionary is treated as a <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> structure representing a value and its key. The order in which the items are returned is undefined.
+    /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) returns an object of the type of the elements in the collection. Since the <see cref="System.Collections.Generic.Dictionary{T,U}"/> is a collection of keys and values, the element type is not the type of the key or the type of the value. Instead, the element type is a <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> of the key type and the value type. For example:
+    /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source2.cs" id="Snippet11" />
+    /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source2.fs" id="Snippet11" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source2.vb" id="Snippet11" />
+    /// The <c>foreach</c> statement is a wrapper around the enumerator, which allows only reading from the collection, not writing to it.
+    /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+    /// The example uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property (the indexer in C#) to retrieve values, demonstrating that a <see cref="System.Collections.Generic.KeyNotFoundException"/> is thrown when a requested key is not present, and showing that the value associated with a key can be replaced.
+    /// The example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.TryGetValue"/> method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.ContainsKey"/> method to test whether a key exists before calling the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method.
+    /// The example shows how to enumerate the keys and values in the dictionary and how to enumerate the keys and values alone using the <see cref="System.Collections.Generic.Dictionary{T,U}.Keys"/> property and the <see cref="System.Collections.Generic.Dictionary{T,U}.Values"/> property.
+    /// Finally, the example demonstrates the <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> method.
+    /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet1":::
+    /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet1" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet1" />
+    /// </remarks>
     [DebuggerTypeProxy(typeof(IDictionaryDebugView<,>))]
     [DebuggerDisplay("Count = {Count}")]
     [Serializable]
@@ -37,12 +72,76 @@ namespace System.Collections.Generic
         private ValueCollection? _values;
         private const int StartOfFreeList = -3;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary() : this(0, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the specified initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <param name="capacity">The initial number of elements that the <see cref="T:System.Collections.Generic.Dictionary`2"/> can contain.</param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="capacity"/> is less than 0.</exception>
+        /// <remarks>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// The capacity of a <see cref="System.Collections.Generic.Dictionary{T,U}"/> is the number of elements that can be added to the <see cref="System.Collections.Generic.Dictionary{T,U}"/> before resizing is necessary. As elements are added to a <see cref="System.Collections.Generic.Dictionary{T,U}"/>, the capacity is automatically increased as required by reallocating the internal array.
+        /// If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates a dictionary with an initial capacity of 4 and populates it with 4 entries.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/.ctor/source3.cs" id="Snippet1" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/.ctor/source3.fs" id="Snippet1" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/.ctor/source3.vb" id="Snippet1" />
+        /// </remarks>
         public Dictionary(int capacity) : this(capacity, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(IEqualityComparer<TKey>? comparer) : this(0, comparer) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(int capacity, IEqualityComparer<TKey>? comparer)
         {
             if (capacity < 0)
@@ -82,8 +181,40 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(IDictionary<TKey, TValue> dictionary) : this(dictionary, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(IDictionary<TKey, TValue> dictionary, IEqualityComparer<TKey>? comparer) :
             this(dictionary?.Count ?? 0, comparer)
         {
@@ -95,8 +226,40 @@ namespace System.Collections.Generic
             AddRange(dictionary);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection) : this(collection, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.
+        /// </summary>
+        /// <remarks>
+        /// <note type="note">
+        /// If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// </note>
+        /// Every key in a <see cref="System.Collections.Generic.Dictionary{T,U}"/> must be unique according to the default equality comparer.
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public Dictionary(IEnumerable<KeyValuePair<TKey, TValue>> collection, IEqualityComparer<TKey>? comparer) :
             this((collection as ICollection<KeyValuePair<TKey, TValue>>)?.Count ?? 0, comparer)
         {
@@ -180,6 +343,14 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.Dictionary`2"/> class with serialized data.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object containing the information required to serialize the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure containing the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</param>
+        /// <remarks>
+        /// This constructor is called during deserialization to reconstitute an object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         protected Dictionary(SerializationInfo info, StreamingContext context)
@@ -190,6 +361,14 @@ namespace System.Collections.Generic
             HashHelpers.SerializationInfoTable.Add(this, info);
         }
 
+        /// <summary>
+        /// Gets the <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> that is used to determine equality of keys for the dictionary.
+        /// </summary>
+        /// <value>The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> generic interface implementation that is used to determine equality of keys for the current <see cref="T:System.Collections.Generic.Dictionary`2"/> and to provide hash values for the keys.</value>
+        /// <remarks>
+        /// <see cref="System.Collections.Generic.Dictionary{T,U}"/> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter; if you do not specify one, the default generic equality comparer <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see> is used.
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         public IEqualityComparer<TKey> Comparer
         {
             get
@@ -206,6 +385,15 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Gets the number of key/value pairs contained in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <value>The number of key/value pairs contained in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</value>
+        /// <remarks>
+        /// The capacity of a <see cref="System.Collections.Generic.Dictionary{T,U}"/> is the number of elements that the <see cref="System.Collections.Generic.Dictionary{T,U}"/> can store. The <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> property is the number of elements that are actually in the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// The capacity is always greater than or equal to <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>. If <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         public int Count => _count - _freeCount;
 
         /// <summary>
@@ -213,16 +401,66 @@ namespace System.Collections.Generic
         /// </summary>
         public int Capacity => _entries?.Length ?? 0;
 
+        /// <summary>
+        /// Gets a collection containing the keys in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <value>A <see cref="T:System.Collections.Generic.Dictionary`2.KeyCollection"/> containing the keys in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</value>
+        /// <remarks>
+        /// The order of the keys in the <see cref="System.Collections.Generic.Dictionary{T,U}.KeyCollection"/> is unspecified, but it is the same order as the associated values in the <see cref="System.Collections.Generic.Dictionary{T,U}.ValueCollection"/> returned by the <see cref="System.Collections.Generic.Dictionary{T,U}.Values"/> property.
+        /// The returned <see cref="System.Collections.Generic.Dictionary{T,U}.KeyCollection"/> is not a static copy; instead, the <see cref="System.Collections.Generic.Dictionary{T,U}.KeyCollection"/> refers back to the keys in the original <see cref="System.Collections.Generic.Dictionary{T,U}"/>. Therefore, changes to the <see cref="System.Collections.Generic.Dictionary{T,U}"/> continue to be reflected in the <see cref="System.Collections.Generic.Dictionary{T,U}.KeyCollection"/>.
+        /// Getting the value of this property is an O(1) operation.
+        /// The following code example shows how to enumerate the keys in the dictionary using the <see cref="System.Collections.Generic.Dictionary{T,U}.Keys"/> property, and how to enumerate the keys and values in the dictionary.
+        /// This code is part of a larger example that can be compiled and executed (<c>openWith</c> is the name of the Dictionary used in this example). See <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet9" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet9" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet9" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet7" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet7" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet7" />
+        /// </remarks>
         public KeyCollection Keys => _keys ??= new KeyCollection(this);
 
+        /// <summary>
+        /// Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the keys of the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+        /// </summary>
+        /// <value>An <see cref="T:System.Collections.Generic.ICollection`1"/> of type <paramref name="TKey"/> containing the keys of the <see cref="T:System.Collections.Generic.IDictionary`2"/>.</value>
         ICollection<TKey> IDictionary<TKey, TValue>.Keys => Keys;
 
+        /// <summary>
+        /// Gets a collection containing the keys of the <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/>.
+        /// </summary>
+        /// <value>A collection containing the keys of the <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/>.</value>
         IEnumerable<TKey> IReadOnlyDictionary<TKey, TValue>.Keys => Keys;
 
+        /// <summary>
+        /// Gets a collection containing the values in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <value>A <see cref="T:System.Collections.Generic.Dictionary`2.ValueCollection"/> containing the values in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</value>
+        /// <remarks>
+        /// The order of the values in the <see cref="System.Collections.Generic.Dictionary{T,U}.ValueCollection"/> is unspecified, but it is the same order as the associated keys in the <see cref="System.Collections.Generic.Dictionary{T,U}.KeyCollection"/> returned by the <see cref="System.Collections.Generic.Dictionary{T,U}.Keys"/> property.
+        /// The returned <see cref="System.Collections.Generic.Dictionary{T,U}.ValueCollection"/> is not a static copy; instead, the <see cref="System.Collections.Generic.Dictionary{T,U}.ValueCollection"/> refers back to the values in the original <see cref="System.Collections.Generic.Dictionary{T,U}"/>. Therefore, changes to the <see cref="System.Collections.Generic.Dictionary{T,U}"/> continue to be reflected in the <see cref="System.Collections.Generic.Dictionary{T,U}.ValueCollection"/>.
+        /// Getting the value of this property is an O(1) operation.
+        /// This code example shows how to enumerate the values in the dictionary using the <see cref="System.Collections.Generic.Dictionary{T,U}.Values"/> property, and how to enumerate the keys and values in the dictionary.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class (<c>openWith</c> is the name of the Dictionary used in this example).
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet8" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet8" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet8" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet7" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet7" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet7" />
+        /// </remarks>
         public ValueCollection Values => _values ??= new ValueCollection(this);
 
+        /// <summary>
+        /// Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the values in the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+        /// </summary>
+        /// <value>An <see cref="T:System.Collections.Generic.ICollection`1"/> of type <paramref name="TValue"/> containing the values in the <see cref="T:System.Collections.Generic.IDictionary`2"/>.</value>
         ICollection<TValue> IDictionary<TKey, TValue>.Values => Values;
 
+        /// <summary>
+        /// Gets a collection containing the values of the <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/>.
+        /// </summary>
+        /// <value>A collection containing the values of the <see cref="T:System.Collections.Generic.IReadOnlyDictionary`2"/>.</value>
         IEnumerable<TValue> IReadOnlyDictionary<TKey, TValue>.Values => Values;
 
         public TValue this[TKey key]
@@ -245,6 +483,24 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Adds the specified key and value to the dictionary.
+        /// </summary>
+        /// <param name="key">The key of the element to add.</param>
+        /// <param name="value">The value of the element to add. The value can be <see langword="null"/> for reference types.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentException">An element with the same key already exists in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</exception>
+        /// <remarks>
+        /// You can also use the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property to add new elements by setting the value of a key that does not exist in the <see cref="System.Collections.Generic.Dictionary{T,U}"/>; for example, <c>myCollection[myKey] = myValue</c> (in Visual Basic, <c>myCollection(myKey) = myValue</c>). However, if the specified key already exists in the <see cref="System.Collections.Generic.Dictionary{T,U}"/>, setting the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property overwrites the old value. In contrast, the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an exception if a value with the specified key already exists.
+        /// If the <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> property value already equals the capacity, the capacity of the <see cref="System.Collections.Generic.Dictionary{T,U}"/> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
+        /// A key cannot be <c>null</c>, but a value can be, if <c>TValue</c> is a reference type.
+        /// If <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> is less than the capacity, this method approaches an O(1) operation. If the capacity must be increased to accommodate the new element, this method becomes an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet2" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public void Add(TKey key, TValue value)
         {
             bool modified = TryInsert(key, value, InsertionBehavior.ThrowOnExisting);
@@ -277,6 +533,14 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Removes all keys and values from the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <remarks>
+        /// The <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is the capacity of the dictionary.
+        /// .NET Core 3.0+ only: this mutating method may be safely called without invalidating active enumerators on the <see cref="System.Collections.Generic.Dictionary{T,U}"/> instance. This does not imply thread safety.
+        /// </remarks>
         public void Clear()
         {
             int count = _count;
@@ -294,9 +558,38 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Determines whether the <see cref="T:System.Collections.Generic.Dictionary`2"/> contains the specified key.
+        /// </summary>
+        /// <param name="key">The key to locate in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.Dictionary`2"/> contains an element with the specified key; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method approaches an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.ContainsKey"/> method to test whether a key exists prior to calling the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method. It also shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.TryGetValue"/> method to retrieve values, which is an efficient way to retrieve values when a program frequently tries keys that are not in the dictionary. Finally, it shows the least efficient way to test whether keys exist, by using the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property (the indexer in C#).
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class (<c>openWith</c> is the name of the Dictionary used in this example).
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet6" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet6" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet6" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet5" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet5" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet5" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet4" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet4" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet4" />
+        /// </remarks>
         public bool ContainsKey(TKey key) =>
             !Unsafe.IsNullRef(ref FindValue(key));
 
+        /// <summary>
+        /// Determines whether the <see cref="T:System.Collections.Generic.Dictionary`2"/> contains a specific value.
+        /// </summary>
+        /// <param name="value">The value to locate in the <see cref="T:System.Collections.Generic.Dictionary`2"/>. The value can be <see langword="null"/> for reference types.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.Dictionary`2"/> contains an element with the specified value; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// This method determines equality using the default equality comparer <see cref="System.Collections.Generic.EqualityComparer{T}.Default">Default</see> for <c>TValue</c>, the type of values in the dictionary.
+        /// This method performs a linear search; therefore, the average execution time is proportional to <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>. That is, this method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// </remarks>
         public bool ContainsValue(TValue value)
         {
             Entry[]? entries = _entries;
@@ -339,6 +632,21 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">The one-dimensional array that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than 0.</exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional. -or- <paramref name="array"/> does not have zero-based indexing. -or- The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>. -or- The type of the source <see cref="T:System.Collections.Generic.ICollection`1"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+        /// <remarks>
+        /// <note type="note">
+        /// If the type of the source <see cref="System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <c>array</c>, the nongeneric implementations of <see cref="System.Collections.ICollection.CopyTo">CopyTo</see> throw an <see cref="System.InvalidCastException"/>, whereas the generic implementations throw an <see cref="System.ArgumentException"/>.
+        /// </note>
+        /// Each element copied from a <see cref="System.Collections.Generic.Dictionary{T,U}"/> is a <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> structure representing a value and its key.
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// </remarks>
         private void CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
         {
             if (array == null)
@@ -367,12 +675,42 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Returns an enumerator that iterates through the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <returns>A <see cref="T:System.Collections.Generic.Dictionary`2.Enumerator"/> structure for the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</returns>
+        /// <remarks>
+        /// For purposes of enumeration, each item is a <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> structure representing a value and its key.
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended, instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. At this position, <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/> is undefined. You must call the <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/>.
+        /// The <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/> property returns the same element until the <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> method is called. <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> sets <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/> to the next element.
+        /// If <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/> is undefined. You cannot set <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.Current"/> to the first element of the collection again; you must create a new enumerator instance instead.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding elements or changing the capacity, the enumerator is irrecoverably invalidated and the next call to <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> or <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.System#Collections#IEnumerator#Reset"/> throws an <see cref="System.InvalidOperationException"/>.
+        /// .NET Core 3.0+ only: The only mutating methods which do not invalidate enumerators are <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> and <see cref="System.Collections.Generic.Dictionary{T,U}.Clear"/>.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// </remarks>
         public Enumerator GetEnumerator() => new Enumerator(this, Enumerator.KeyValuePair);
 
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>An enumerator that can be used to iterate through the collection.</returns>
         IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator() =>
             Count == 0 ? GenericEmptyEnumerator<KeyValuePair<TKey, TValue>>.Instance :
             GetEnumerator();
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface and returns the data needed to serialize the <see cref="T:System.Collections.Generic.Dictionary`2"/> instance.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object that contains the information required to serialize the <see cref="T:System.Collections.Generic.Dictionary`2"/> instance.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.Dictionary`2"/> instance.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="info"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -1197,6 +1535,14 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface and raises the deserialization event when the deserialization is complete.
+        /// </summary>
+        /// <param name="sender">The source of the deserialization event.</param>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object associated with the current <see cref="T:System.Collections.Generic.Dictionary`2"/> instance is invalid.</exception>
+        /// <remarks>
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// </remarks>
         public virtual void OnDeserialization(object? sender)
         {
             HashHelpers.SerializationInfoTable.TryGetValue(this, out SerializationInfo? siInfo);
@@ -1289,6 +1635,22 @@ namespace System.Collections.Generic
             _entries = entries;
         }
 
+        /// <summary>
+        /// Removes the value with the specified key from the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <param name="key">The key of the element to remove.</param>
+        /// <returns><see langword="true"/> if the element is successfully found and removed; otherwise, <see langword="false"/>. This method returns <see langword="false"/> if <paramref name="key"/> is not found in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.Dictionary{T,U}"/> does not contain an element with the specified key, the <see cref="System.Collections.Generic.Dictionary{T,U}"/> remains unchanged. No exception is thrown.
+        /// This method approaches an O(1) operation.
+        /// .NET Core 3.0+ only: this mutating method may be safely called without invalidating active enumerators on the <see cref="System.Collections.Generic.Dictionary{T,U}"/> instance. This does not imply thread safety.
+        /// The following code example shows how to remove a key/value pair from a dictionary using the <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> method.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class (<c>openWith</c> is the name of the Dictionary used in this example).
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet10" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet10" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet10" />
+        /// </remarks>
         public bool Remove(TKey key)
         {
             // The overload Remove(TKey key, out TValue value) is a copy of this method with one additional
@@ -1362,6 +1724,22 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Removes the value with the specified key from the <see cref="T:System.Collections.Generic.Dictionary`2"/>.
+        /// </summary>
+        /// <param name="key">The key of the element to remove.</param>
+        /// <returns><see langword="true"/> if the element is successfully found and removed; otherwise, <see langword="false"/>. This method returns <see langword="false"/> if <paramref name="key"/> is not found in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.Dictionary{T,U}"/> does not contain an element with the specified key, the <see cref="System.Collections.Generic.Dictionary{T,U}"/> remains unchanged. No exception is thrown.
+        /// This method approaches an O(1) operation.
+        /// .NET Core 3.0+ only: this mutating method may be safely called without invalidating active enumerators on the <see cref="System.Collections.Generic.Dictionary{T,U}"/> instance. This does not imply thread safety.
+        /// The following code example shows how to remove a key/value pair from a dictionary using the <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> method.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class (<c>openWith</c> is the name of the Dictionary used in this example).
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet10" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet10" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet10" />
+        /// </remarks>
         public bool Remove(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             // This overload is a copy of the overload Remove(TKey key) with one additional
@@ -1439,6 +1817,27 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Gets the value associated with the specified key.
+        /// </summary>
+        /// <param name="key">The key of the value to get.</param>
+        /// <param name="value">When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the <paramref name="value"/> parameter. This parameter is passed uninitialized.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.Dictionary`2"/> contains an element with the specified key; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method combines the functionality of the <see cref="System.Collections.Generic.Dictionary{T,U}.ContainsKey"/> method and the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property.
+        /// If the key is not found, then the <c>value</c> parameter gets the appropriate default value for the type <c>TValue</c>; for example, 0 (zero) for integer types, <c>false</c> for Boolean types, and <c>null</c> for reference types.
+        /// Use the <see cref="System.Collections.Generic.Dictionary{T,U}.TryGetValue"/> method if your code frequently attempts to access keys that are not in the dictionary. Using this method is more efficient than catching the <see cref="System.Collections.Generic.KeyNotFoundException"/> thrown by the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property.
+        /// This method approaches an O(1) operation.
+        /// The example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.TryGetValue"/> method as a more efficient way to retrieve values in a program that frequently tries keys that are not in the dictionary. For contrast, the example also shows how the <see cref="System.Collections.Generic.Dictionary{T,U}.Item"/> property (the indexer in C#) throws exceptions when attempting to retrieve nonexistent keys.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class (<c>openWith</c> is the name of the Dictionary used in this example).
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet5" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet5" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet5" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.cs" id="Snippet4" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.fs" id="Snippet4" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/Overview/source.vb" id="Snippet4" />
+        /// </remarks>
         public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
         {
             ref TValue valRef = ref FindValue(key);
@@ -1452,14 +1851,43 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Attempts to add the specified key and value to the dictionary.
+        /// </summary>
+        /// <param name="key">The key of the element to add.</param>
+        /// <param name="value">The value of the element to add. It can be <see langword="null"/>.</param>
+        /// <returns><see langword="true"/> if the key/value pair was added to the dictionary successfully; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Unlike the <see cref="System.Collections.Generic.Dictionary{T,U}.Add"/> method, this method doesn't throw an exception if the element with the given key exists in the dictionary. Unlike the Dictionary indexer, <c>TryAdd</c> doesn't override the element if the element with the given key exists in the dictionary. If the key already exists, <c>TryAdd</c> does nothing and returns <c>false</c>.
+        /// </remarks>
         public bool TryAdd(TKey key, TValue value) =>
             TryInsert(key, value, InsertionBehavior.None);
 
+        /// <summary>
+        /// Gets a value that indicates whether the dictionary is read-only.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only; otherwise, <see langword="false"/>. In the default implementation of <see cref="T:System.Collections.Generic.Dictionary`2"/>, this property always returns <see langword="false"/>.</value>
         bool ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly => false;
 
         void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int index) =>
             CopyTo(array, index);
 
+        /// <summary>
+        /// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"/> to an array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">The one-dimensional array that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"/>. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than 0.</exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="array"/> is multidimensional. -or- <paramref name="array"/> does not have zero-based indexing. -or- The number of elements in the source <see cref="T:System.Collections.Generic.ICollection`1"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>. -or- The type of the source <see cref="T:System.Collections.Generic.ICollection`1"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.</exception>
+        /// <remarks>
+        /// <note type="note">
+        /// If the type of the source <see cref="System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <c>array</c>, the nongeneric implementations of <see cref="System.Collections.ICollection.CopyTo">CopyTo</see> throw an <see cref="System.InvalidCastException"/>, whereas the generic implementations throw an <see cref="System.ArgumentException"/>.
+        /// </note>
+        /// Each element copied from a <see cref="System.Collections.Generic.Dictionary{T,U}"/> is a <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> structure representing a value and its key.
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// </remarks>
         void ICollection.CopyTo(Array array, int index)
         {
             if (array == null)
@@ -1529,6 +1957,22 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>An <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the collection.</returns>
+        /// <remarks>
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended, instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. The <see cref="System.Collections.IEnumerator.Reset"/> method also brings the enumerator back to this position.  At this position, the <see cref="System.Collections.IEnumerator.Current"/> property is undefined. Therefore, you must call the <see cref="System.Collections.IEnumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.IEnumerator.Current"/>.
+        /// The <see cref="System.Collections.IEnumerator.Current"/> property returns the same element until either the <see cref="System.Collections.IEnumerator.MoveNext"/> or <see cref="System.Collections.IEnumerator.Reset"/> method is called. <see cref="System.Collections.IEnumerator.MoveNext"/> sets <see cref="System.Collections.IEnumerator.Current"/> to the next element.
+        /// If <see cref="System.Collections.IEnumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.IEnumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.IEnumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.IEnumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.IEnumerator.Current"/> is undefined. To set <see cref="System.Collections.IEnumerator.Current"/> to the first element of the collection again, you can call <see cref="System.Collections.IEnumerator.Reset"/> followed by <see cref="System.Collections.IEnumerator.MoveNext"/>.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding elements or changing the capacity, the enumerator is irrecoverably invalidated and the next call to <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> or <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.System#Collections#IEnumerator#Reset"/> throws an <see cref="System.InvalidOperationException"/>.
+        /// .NET Core 3.0+ only: The only mutating methods which do not invalidate enumerators are <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> and <see cref="System.Collections.Generic.Dictionary{T,U}.Clear"/>.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// </remarks>
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<KeyValuePair<TKey, TValue>>)this).GetEnumerator();
 
         /// <summary>
@@ -1629,18 +2073,104 @@ namespace System.Collections.Generic
             _freeCount = 0;
         }
 
+        /// <summary>
+        /// Gets a value that indicates whether access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe).
+        /// </summary>
+        /// <value><see langword="true"/> if access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe); otherwise, <see langword="false"/>. In the default implementation of <see cref="T:System.Collections.Generic.Dictionary`2"/>, this property always returns <see langword="false"/>.</value>
+        /// <remarks>
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which can cause the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+        /// The <see cref="System.Collections.ICollection.SyncRoot"/> property returns an object that can be used to synchronize access to the <see cref="System.Collections.ICollection"/>. Synchronization is effective only if all threads lock the object before accessing the collection.
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         bool ICollection.IsSynchronized => false;
 
+        /// <summary>
+        /// Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+        /// </summary>
+        /// <value>An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.</value>
+        /// <remarks>
+        /// <code language="csharp">
+        /// </code>
+        /// <code language="vb">
+        /// </code>
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// Enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// The <see cref="System.Collections.ICollection.SyncRoot"/> property returns an object that can be used to synchronize access to the <see cref="System.Collections.ICollection"/>. Synchronization is effective only if all threads lock the object before accessing the collection. The following code shows the use of the <see cref="System.Collections.ICollection.SyncRoot"/> property.
+        /// ODE0 
+        /// ODE1 
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         object ICollection.SyncRoot => this;
 
+        /// <summary>
+        /// Gets a value that indicates whether the <see cref="T:System.Collections.IDictionary"/> has a fixed size.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="T:System.Collections.IDictionary"/> has a fixed size; otherwise, <see langword="false"/>. In the default implementation of <see cref="T:System.Collections.Generic.Dictionary`2"/>, this property always returns <see langword="false"/>.</value>
+        /// <remarks>
+        /// A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
+        /// A collection with a fixed size is simply a collection with a wrapper that prevents adding and removing elements; therefore, if changes are made to the underlying collection, including the addition or removal of elements, the fixed-size collection reflects those changes.
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         bool IDictionary.IsFixedSize => false;
 
+        /// <summary>
+        /// Gets a value that indicates whether the <see cref="T:System.Collections.IDictionary"/> is read-only.
+        /// </summary>
+        /// <value><see langword="true"/> if the <see cref="T:System.Collections.IDictionary"/> is read-only; otherwise, <see langword="false"/>. In the default implementation of <see cref="T:System.Collections.Generic.Dictionary`2"/>, this property always returns <see langword="false"/>.</value>
+        /// <remarks>
+        /// A collection that is read-only does not allow the addition, removal, or modification of elements after the collection is created.
+        /// A collection that is read-only is simply a collection with a wrapper that prevents modifying the collection; therefore, if changes are made to the underlying collection, the read-only collection reflects those changes.
+        /// Getting the value of this property is an O(1) operation.
+        /// </remarks>
         bool IDictionary.IsReadOnly => false;
 
+        /// <summary>
+        /// Gets an <see cref="T:System.Collections.ICollection"/> containing the keys of the <see cref="T:System.Collections.IDictionary"/>.
+        /// </summary>
+        /// <value>An <see cref="T:System.Collections.ICollection"/> containing the keys of the <see cref="T:System.Collections.IDictionary"/>.</value>
+        /// <remarks>
+        /// The order of the keys in the returned <see cref="System.Collections.ICollection"/> is unspecified, but it is guaranteed to be the same order as the corresponding values in the <see cref="System.Collections.ICollection"/> returned by the <see cref="System.Collections.IDictionary.Values"/> property.
+        /// Getting the value of this property is an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Keys"/> property of the <see cref="System.Collections.IDictionary">IDictionary</see> interface with a <see cref="System.Collections.Generic.Dictionary{T,U}"/>, to list the keys in the dictionary. The example also shows how to enumerate the key/value pairs in the dictionary; note that the enumerator for the <see cref="System.Collections.IDictionary">IDictionary</see> interface returns <see cref="System.Collections.DictionaryEntry"/> objects rather than <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> objects.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Keys/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Keys/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Keys/source.vb":::
+        /// </remarks>
         ICollection IDictionary.Keys => Keys;
 
+        /// <summary>
+        /// Gets an <see cref="T:System.Collections.ICollection"/> containing the values in the <see cref="T:System.Collections.IDictionary"/>.
+        /// </summary>
+        /// <value>An <see cref="T:System.Collections.ICollection"/> containing the values in the <see cref="T:System.Collections.IDictionary"/>.</value>
+        /// <remarks>
+        /// The order of the values in the returned <see cref="System.Collections.ICollection"/> is unspecified, but it is guaranteed to be the same order as the corresponding keys in the <see cref="System.Collections.ICollection"/> returned by the <see cref="System.Collections.IDictionary.Keys"/> property.
+        /// Getting the value of this property is an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Values"/> property of the <see cref="System.Collections.IDictionary">IDictionary</see> interface with a <see cref="System.Collections.Generic.Dictionary{T,U}"/>, to list the values in the dictionary. The example also shows how to enumerate the key/value pairs in the dictionary; note that the enumerator for the <see cref="System.Collections.IDictionary">IDictionary</see> interface returns <see cref="System.Collections.DictionaryEntry"/> objects rather than <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> objects.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Values/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Values/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Values/source.vb":::
+        /// </remarks>
         ICollection IDictionary.Values => Values;
 
+        /// <summary>
+        /// Gets or sets the value with the specified key.
+        /// </summary>
+        /// <param name="key">The key of the value to get.</param>
+        /// <value>The value associated with the specified key, or <see langword="null"/> if <paramref name="key"/> is not in the dictionary or <paramref name="key"/> is of a type that is not assignable to the key type <paramref name="TKey"/> of the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</value>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentException">A value is being assigned, and <paramref name="key"/> is of a type that is not assignable to the key type <paramref name="TKey"/> of the <see cref="T:System.Collections.Generic.Dictionary`2"/>. -or- A value is being assigned and is of a type that isn't assignable to the value type <paramref name="TValue"/> of the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</exception>
+        /// <remarks>
+        /// This property provides the ability to access a specific value in the collection by using the following C# syntax: <c>myCollection[key]</c> (<c>myCollection(key)</c> in Visual Basic).
+        /// You can also use the <see cref="System.Collections.IDictionary.Item"/> property to add new elements by setting the value of a key that does not exist in the dictionary; for example, <c>myCollection[&quot;myNonexistentKey&quot;] = myValue</c>. However, if the specified key already exists in the dictionary, setting the <see cref="System.Collections.IDictionary.Item"/> property overwrites the old value. In contrast, the <see cref="System.Collections.IDictionary.Add"/> method does not modify existing elements.
+        /// The C# language uses the [this](/dotnet/csharp/language-reference/keywords/this) keyword to define the indexers instead of implementing the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item"/> property. Visual Basic implements <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item"/> as a default property, which provides the same indexing functionality.
+        /// Getting or setting the value of this property approaches an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item"/> property (the indexer in C#) of the <see cref="System.Collections.IDictionary">IDictionary</see> interface with a <see cref="System.Collections.Generic.Dictionary{T,U}"/>, and ways the property differs from the <see cref="System.Collections.Generic.Dictionary{T,U}.Item">Item</see> property.
+        /// The example shows that, like the <see cref="System.Collections.Generic.Dictionary{T,U}.Item">Item</see> property, the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item">System%23Collections%23IDictionary%23Item</see> property can change the value associated with an existing key and can be used to add a new key/value pair if the specified key is not in the dictionary. The example also shows that unlike the <see cref="System.Collections.Generic.Dictionary{T,U}.Item">Item</see> property, the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item">System%23Collections%23IDictionary%23Item</see> property does not throw an exception if <c>key</c> is not in the dictionary, returning a null reference instead. Finally, the example demonstrates that getting the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Item">System%23Collections%23IDictionary%23Item</see> property returns a null reference if <c>key</c> is not the correct data type, and that setting the property throws an exception if <c>key</c> is not the correct data type.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Item/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Item/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Item/source.vb":::
+        /// </remarks>
         object? IDictionary.this[object key]
         {
             get
@@ -1692,6 +2222,22 @@ namespace System.Collections.Generic
             return key is TKey;
         }
 
+        /// <summary>
+        /// Adds the specified key and value to the dictionary.
+        /// </summary>
+        /// <param name="key">The object to use as the key.</param>
+        /// <param name="value">The object to use as the value.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="key"/> is of a type that is not assignable to the key type <paramref name="TKey"/> of the <see cref="T:System.Collections.Generic.Dictionary`2"/>. -or- <paramref name="value"/> is of a type that is not assignable to <paramref name="TValue"/>, the type of values in the <see cref="T:System.Collections.Generic.Dictionary`2"/>. -or- A value with the same key already exists in the <see cref="T:System.Collections.Generic.Dictionary`2"/>.</exception>
+        /// <remarks>
+        /// You can also use the <see cref="System.Collections.IDictionary.Item"/> property to add new elements by setting the value of a key that does not exist in the dictionary; for example, <c>myCollection[&quot;myNonexistentKey&quot;] = myValue</c>. However, if the specified key already exists in the dictionary, setting the <see cref="System.Collections.IDictionary.Item"/> property overwrites the old value. In contrast, the <see cref="System.Collections.IDictionary.Add"/> method throws an exception if the specified key already exists.
+        /// If <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/> is less than the capacity, this method approaches an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.Dictionary{T,U}.Count"/>.
+        /// The following code example shows how to access the <see cref="System.Collections.Generic.Dictionary{T,U}"/> class through the <see cref="System.Collections.IDictionary">IDictionary</see> interface. The code example creates an empty <see cref="System.Collections.Generic.Dictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key, or when a key or value of the wrong data type is supplied.
+        /// The code example demonstrates the use of several other members of the <see cref="System.Collections.IDictionary">IDictionary</see> interface.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Add/source.cs" id="Snippet1" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Add/source.fs" id="Snippet1" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Add/source.vb" id="Snippet1" />
+        /// </remarks>
         void IDictionary.Add(object key, object? value)
         {
             if (key == null)
@@ -1719,6 +2265,20 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Determines whether the <see cref="T:System.Collections.IDictionary"/> contains an element with the specified key.
+        /// </summary>
+        /// <param name="key">The key to locate in the <see cref="T:System.Collections.IDictionary"/>.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.IDictionary"/> contains an element with the specified key; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method returns <c>false</c> if <c>key</c> is of a type that is not assignable to the key type <c>TKey</c> of the <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// This method approaches an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Contains"/> method of the <see cref="System.Collections.IDictionary">IDictionary</see> interface with a <see cref="System.Collections.Generic.Dictionary{T,U}"/>. The example demonstrates that the method returns <c>false</c> if a key of the wrong data type is supplied.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Contains/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Contains/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Contains/source.vb":::
+        /// </remarks>
         bool IDictionary.Contains(object key)
         {
             if (IsCompatibleKey(key))
@@ -1729,8 +2289,41 @@ namespace System.Collections.Generic
             return false;
         }
 
+        /// <summary>
+        /// Returns an <see cref="T:System.Collections.IDictionaryEnumerator"/> for the <see cref="T:System.Collections.IDictionary"/>.
+        /// </summary>
+        /// <returns>An <see cref="T:System.Collections.IDictionaryEnumerator"/> for the <see cref="T:System.Collections.IDictionary"/>.</returns>
+        /// <remarks>
+        /// For purposes of enumeration, each item is a <see cref="System.Collections.DictionaryEntry"/> structure.
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended, instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. The <see cref="System.Collections.IEnumerator.Reset"/> method also brings the enumerator back to this position.  At this position, <see cref="System.Collections.IDictionaryEnumerator.Entry"/> is undefined. Therefore, you must call the <see cref="System.Collections.IEnumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.IDictionaryEnumerator.Entry"/>.
+        /// The <see cref="System.Collections.IDictionaryEnumerator.Entry"/> property returns the same element until either the <see cref="System.Collections.IEnumerator.MoveNext"/> or <see cref="System.Collections.IEnumerator.Reset"/> method is called. <see cref="System.Collections.IEnumerator.MoveNext"/> sets <see cref="System.Collections.IDictionaryEnumerator.Entry"/> to the next element.
+        /// If <see cref="System.Collections.IEnumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.IEnumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.IEnumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.IEnumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.IDictionaryEnumerator.Entry"/> is undefined. To set <see cref="System.Collections.IDictionaryEnumerator.Entry"/> to the first element of the collection again, you can call <see cref="System.Collections.IEnumerator.Reset"/> followed by <see cref="System.Collections.IEnumerator.MoveNext"/>.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding elements or changing the capacity, the enumerator is irrecoverably invalidated and the next call to <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.MoveNext"/> or <see cref="System.Collections.Generic.Dictionary{T,U}.Enumerator.System#Collections#IEnumerator#Reset"/> throws an <see cref="System.InvalidOperationException"/>.
+        /// .NET Core 3.0+ only: The only mutating methods which do not invalidate enumerators are <see cref="System.Collections.Generic.Dictionary{T,U}.Remove"/> and <see cref="System.Collections.Generic.Dictionary{T,U}.Clear"/>.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// The following code example shows how to enumerate the key/value pairs in the dictionary by using the <c>foreach</c> statement (<c>For Each</c> in Visual Basic), which hides the use of the enumerator. In particular, note that the enumerator for the <see cref="System.Collections.IDictionary">IDictionary</see> interface returns <see cref="System.Collections.DictionaryEntry"/> objects rather than <see cref="System.Collections.Generic.KeyValuePair{T,U}"/> objects.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.GetEnumerator/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.GetEnumerator/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.GetEnumerator/source.vb":::
+        /// </remarks>
         IDictionaryEnumerator IDictionary.GetEnumerator() => new Enumerator(this, Enumerator.DictEntry);
 
+        /// <summary>
+        /// Removes the element with the specified key from the <see cref="T:System.Collections.IDictionary"/>.
+        /// </summary>
+        /// <param name="key">The key of the element to remove.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method approaches an O(1) operation.
+        /// The following code example shows how to use the <see cref="System.Collections.Generic.Dictionary{T,U}.System#Collections#IDictionary#Remove"/> of the <see cref="System.Collections.IDictionary">IDictionary</see> interface with a <see cref="System.Collections.Generic.Dictionary{T,U}"/>.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Remove/source.cs":::
+        /// :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Remove/source.fs":::
+        /// :::code language="vb" source="~/snippets/visualbasic/System.Collections.Generic/DictionaryTKey,TValue/System.Collections.IDictionary.Remove/source.vb":::
+        /// </remarks>
         void IDictionary.Remove(object key)
         {
             if (IsCompatibleKey(key))

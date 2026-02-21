@@ -6,6 +6,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace System.Collections.Generic
 {
+    /// <summary>
+    /// Provides extension methods for generic collections.
+    /// </summary>
     public static class CollectionExtensions
     {
         public static TValue? GetValueOrDefault<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dictionary, TKey key) =>

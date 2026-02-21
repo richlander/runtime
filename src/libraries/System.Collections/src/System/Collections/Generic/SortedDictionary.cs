@@ -878,13 +878,61 @@ namespace System.Collections.Generic
     [System.Runtime.CompilerServices.TypeForwardedFrom("System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")]
     public sealed class TreeSet<T> : SortedSet<T>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedDictionary`2"/> class that is empty and uses the default <see cref="T:System.Collections.Generic.IComparer`1"/> implementation for the key type.
+        /// </summary>
+        /// <remarks>
+        /// Every key in a <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> must be unique according to the default comparer.
+        /// <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> requires a comparer implementation to perform key comparisons. This constructor uses the default generic equality comparer <see cref="System.Collections.Generic.Comparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IComparable{T}">IComparable{T}</see> generic interface, the default comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public TreeSet()
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedDictionary`2"/> class that is empty and uses the default <see cref="T:System.Collections.Generic.IComparer`1"/> implementation for the key type.
+        /// </summary>
+        /// <remarks>
+        /// Every key in a <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> must be unique according to the default comparer.
+        /// <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> requires a comparer implementation to perform key comparisons. This constructor uses the default generic equality comparer <see cref="System.Collections.Generic.Comparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IComparable{T}">IComparable{T}</see> generic interface, the default comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         public TreeSet(IComparer<T>? comparer) : base(comparer) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedDictionary`2"/> class that is empty and uses the default <see cref="T:System.Collections.Generic.IComparer`1"/> implementation for the key type.
+        /// </summary>
+        /// <remarks>
+        /// Every key in a <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> must be unique according to the default comparer.
+        /// <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> requires a comparer implementation to perform key comparisons. This constructor uses the default generic equality comparer <see cref="System.Collections.Generic.Comparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IComparable{T}">IComparable{T}</see> generic interface, the default comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         internal TreeSet(TreeSet<T> set, IComparer<T>? comparer) : base(set, comparer) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedDictionary`2"/> class that is empty and uses the default <see cref="T:System.Collections.Generic.IComparer`1"/> implementation for the key type.
+        /// </summary>
+        /// <remarks>
+        /// Every key in a <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> must be unique according to the default comparer.
+        /// <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> requires a comparer implementation to perform key comparisons. This constructor uses the default generic equality comparer <see cref="System.Collections.Generic.Comparer{T}.Default">Default</see>. If type <c>TKey</c> implements the <see cref="System.IComparable{T}">IComparable{T}</see> generic interface, the default comparer uses that implementation. Alternatively, you can specify an implementation of the <see cref="System.Collections.Generic.IComparer{T}"/> generic interface by using a constructor that accepts a <c>comparer</c> parameter.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates an empty <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> of strings with string keys and uses the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method to add some elements. The example demonstrates that the <see cref="System.Collections.Generic.SortedDictionary{T,U}.Add"/> method throws an <see cref="System.ArgumentException"/> when attempting to add a duplicate key.
+        /// This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedDictionary{T,U}"/> class.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.cs" interactive="try-dotnet-method" id="Snippet2":::
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedDictionaryTKey,TValue/Overview/source.vb" id="Snippet2" />
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         private TreeSet(SerializationInfo siInfo, StreamingContext context) : base(siInfo, context) { }
 

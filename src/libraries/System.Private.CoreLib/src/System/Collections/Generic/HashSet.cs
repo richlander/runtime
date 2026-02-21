@@ -10,6 +10,19 @@ using System.Runtime.Serialization;
 
 namespace System.Collections.Generic
 {
+    /// <summary>
+    /// Represents a set of values.
+    /// </summary>
+    /// <typeparam name="T">The type of elements in the hash set.</typeparam>
+    /// <remarks>
+    /// For more information about this API, see <see href="/dotnet/fundamentals/runtime-libraries/system-collections-generic-hashset{t}">Supplemental API remarks for HashSet&lt;T&gt;</see>.
+    /// </remarks>
+    /// <example>
+    /// The following example demonstrates how to merge two disparate sets. This example creates two <see cref="System.Collections.Generic.HashSet{T}"/> objects and populates them with even and odd numbers, respectively. A third <see cref="System.Collections.Generic.HashSet{T}"/> object is created from the set that contains the even numbers. The example then calls the <see cref="System.Collections.Generic.HashSet{T}.UnionWith"/> method, which adds the odd number set to the third set.
+    /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/HashSetT/Overview/Program.cs" interactive="try-dotnet-method" id="Snippet01":::
+    /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/HashSetT/Overview/Program.fs" id="Snippet01" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/HashSetT/Overview/Program.vb" id="Snippet01" />
+    /// </example>
     [DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
     [DebuggerDisplay("Count = {Count}")]
     [Serializable]
@@ -50,8 +63,27 @@ namespace System.Collections.Generic
 
         #region Constructors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that is empty and uses the default equality comparer for the set type.
+        /// </summary>
+        /// <remarks>
+        /// The capacity of a <see cref="System.Collections.Generic.HashSet{T}"/> object is the number of elements that the object can hold. A <see cref="System.Collections.Generic.HashSet{T}"/> object's capacity automatically increases as elements are added to the object.
+        /// This constructor is an O(1) operation.
+        /// The following example demonstrates how to create and populate two <see cref="System.Collections.Generic.HashSet{T}"/> objects. This example is part of a larger example provided for the <see cref="System.Collections.Generic.HashSet{T}.UnionWith"/> method.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/HashSetT/Overview/Program.cs" id="Snippet03" />
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/HashSetT/Overview/Program.fs" id="Snippet03" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/HashSetT/Overview/Program.vb" id="Snippet03" />
+        /// </remarks>
         public HashSet() : this((IEqualityComparer<T>?)null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that is empty and uses the specified equality comparer for the set type.
+        /// </summary>
+        /// <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing values in the set, or <see langword="null"/> to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> implementation for the set type.</param>
+        /// <remarks>
+        /// The capacity of a <see cref="System.Collections.Generic.HashSet{T}"/> object is the number of elements that the object can hold. A <see cref="System.Collections.Generic.HashSet{T}"/> object's capacity automatically increases as elements are added to the object.
+        /// This constructor is an O(1) operation.
+        /// </remarks>
         public HashSet(IEqualityComparer<T>? comparer)
         {
             // For reference types, we always want to store a comparer instance, either
@@ -81,10 +113,46 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that is empty, but has reserved space for <paramref name="capacity"/> items and uses the default equality comparer for the set type.
+        /// </summary>
+        /// <param name="capacity">The initial size of the <see cref="T:System.Collections.Generic.HashSet`1"/>.</param>
+        /// <remarks>
+        /// Since resizes are relatively expensive (require rehashing), this attempts to minimize the need to resize by setting the initial capacity based on the value of the <c>capacity</c>.
+        /// </remarks>
         public HashSet(int capacity) : this(capacity, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that uses the default equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
+        /// </summary>
+        /// <param name="collection">The collection whose elements are copied to the new set.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="collection"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// The capacity of a <see cref="System.Collections.Generic.HashSet{T}"/> object is the number of elements that the object can hold. A <see cref="System.Collections.Generic.HashSet{T}"/> object's capacity automatically increases as elements are added to the object.
+        /// If <c>collection</c> contains duplicates, the set will contain one of each unique element. No exception will be thrown. Therefore, the size of the resulting set is not identical to the size of <c>collection</c>.
+        /// This constructor is an O(<c>n</c>) operation, where <c>n</c> is the number of elements in the <c>collection</c> parameter.
+        /// The following example shows how to create a <see cref="System.Collections.Generic.HashSet{T}"/> collection from an existing set. In this example, two sets are created with even and odd integers, respectively. A third <see cref="System.Collections.Generic.HashSet{T}"/> object is then created from the even integer set.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/HashSetT/Overview/Program.cs" interactive="try-dotnet-method" id="Snippet01":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/HashSetT/Overview/Program.fs" id="Snippet01" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/HashSetT/Overview/Program.vb" id="Snippet02" />
+        /// </remarks>
         public HashSet(IEnumerable<T> collection) : this(collection, null) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that uses the specified equality comparer for the set type, contains elements copied from the specified collection, and has sufficient capacity to accommodate the number of elements copied.
+        /// </summary>
+        /// <param name="collection">The collection whose elements are copied to the new set.</param>
+        /// <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing values in the set, or <see langword="null"/> to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> implementation for the set type.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="collection"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// The capacity of a <see cref="System.Collections.Generic.HashSet{T}"/> object is the number of elements that the object can hold. A <see cref="System.Collections.Generic.HashSet{T}"/> object's capacity automatically increases as elements are added to the object.
+        /// If <c>collection</c> contains duplicates, the set will contain one of each unique element. No exception will be thrown. Therefore, the size of the resulting set is not identical to the size of <c>collection</c>.
+        /// This constructor is an O(<c>n</c>) operation, where <c>n</c> is the number of elements in the <c>collection</c> parameter.
+        /// The following example uses a supplied <see cref="System.Collections.Generic.IEqualityComparer{T}"/> to allow case-insensitive comparisons on the elements of a  <see cref="System.Collections.Generic.HashSet{T}"/> collection of vehicle types.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/HashSetT/.ctor/source2.cs" interactive="try-dotnet-method" id="Snippet03":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/HashSetT/.ctor/source2.fs" id="Snippet03" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/HashSetT/.ctor/source2.vb" id="Snippet03" />
+        /// </remarks>
         public HashSet(IEnumerable<T> collection, IEqualityComparer<T>? comparer) : this(comparer)
         {
             if (collection == null)
@@ -118,6 +186,14 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class that uses the specified equality comparer for the set type, and has sufficient capacity to accommodate <paramref name="capacity"/> elements.
+        /// </summary>
+        /// <param name="capacity">The initial size of the <see cref="T:System.Collections.Generic.HashSet`1"/>.</param>
+        /// <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing values in the set, or null (Nothing in Visual Basic) to use the default <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation for the set type.</param>
+        /// <remarks>
+        /// Since resizes are relatively expensive (require rehashing), this attempts to minimize the need to resize by setting the initial capacity based on the value of the <c>capacity</c>.
+        /// </remarks>
         public HashSet(int capacity, IEqualityComparer<T>? comparer) : this(comparer)
         {
             if (capacity < 0)
@@ -131,6 +207,14 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.HashSet`1"/> class with serialized data.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object that contains the information required to serialize the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</param>
+        /// <remarks>
+        /// This constructor is called during deserialization to reconstitute an object that is transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         protected HashSet(SerializationInfo info, StreamingContext context)
@@ -191,6 +275,14 @@ namespace System.Collections.Generic
 
         #region ICollection<T> methods
 
+        /// <summary>
+        /// Adds an item to an <see cref="T:System.Collections.Generic.ICollection`1"/> object.
+        /// </summary>
+        /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/> object.</param>
+        /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        /// <remarks>
+        /// If <see cref="System.Collections.Generic.List{T}.Count"/> is less than <see cref="System.Collections.Generic.List{T}.Capacity"/>, this method is an O(1) operation. If the capacity must be increased to accommodate the new element, this method becomes an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.List{T}.Count"/>.
+        /// </remarks>
         void ICollection<T>.Add(T item) => AddIfNotPresent(item, out _);
 
         /// <summary>Removes all elements from the <see cref="HashSet{T}"/> object.</summary>
@@ -289,6 +381,19 @@ namespace System.Collections.Generic
 #endif
         }
 
+        /// <summary>
+        /// Removes the specified element from a <see cref="T:System.Collections.Generic.HashSet`1"/> object.
+        /// </summary>
+        /// <param name="item">The element to remove.</param>
+        /// <returns><see langword="true"/> if the element is successfully found and removed; otherwise, <see langword="false"/>. This method returns <see langword="false"/> if <paramref name="item"/> is not found in the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</returns>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.HashSet{T}"/> object does not contain the specified element, the object remains unchanged. No exception is thrown.
+        /// This method is an O(1) operation.
+        /// The following example demonstrates how to remove values from a <see cref="System.Collections.Generic.HashSet{T}"/> collection using the <see cref="System.Collections.Generic.HashSet{T}.Remove"/> method. In this example, zero is arbitrarily removed from the <see cref="System.Collections.Generic.HashSet{T}"/> collection.
+        /// :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/HashSetT/Contains/Program.cs" interactive="try-dotnet-method" id="Snippet02":::
+        /// <code lang="fsharp" source="~/snippets/fsharp/System.Collections.Generic/HashSetT/Contains/Program.fs" id="Snippet02" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/HashSetT/Contains/Program.vb" id="Snippet02" />
+        /// </remarks>
         public bool Remove(T item)
         {
             if (_buckets != null)
@@ -361,6 +466,13 @@ namespace System.Collections.Generic
         /// </summary>
         public int Capacity => _entries?.Length ?? 0;
 
+        /// <summary>
+        /// Gets a value indicating whether a collection is read-only.
+        /// </summary>
+        /// <value><see langword="true"/> if the collection is read-only; otherwise, <see langword="false"/>.</value>
+        /// <remarks>
+        /// Retrieving the value of this property is an O(1) operation.
+        /// </remarks>
         bool ICollection<T>.IsReadOnly => false;
 
         #endregion
@@ -680,18 +792,72 @@ namespace System.Collections.Generic
 
         #region IEnumerable methods
 
+        /// <summary>
+        /// Returns an enumerator that iterates through a <see cref="T:System.Collections.Generic.HashSet`1"/> object.
+        /// </summary>
+        /// <returns>A <see cref="T:System.Collections.Generic.HashSet`1.Enumerator"/> object for the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</returns>
+        /// <remarks>
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. At this position, the <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/> property is undefined. Therefore, you must call the <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/>.
+        /// The <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/> property returns the same object until <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> is called. <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> sets <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/> to the next element.
+        /// If <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/> is undefined. You cannot set <see cref="System.Collections.Generic.HashSet{T}.Enumerator.Current"/> to the first element of the collection again; you must create a new enumerator object instead.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and the next call to <see cref="System.Collections.Generic.HashSet{T}.Enumerator.MoveNext"/> or <see cref="System.Collections.Generic.HashSet{T}.Enumerator.System#Collections#IEnumerator#Reset"/> throws an <see cref="System.InvalidOperationException"/>.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// </remarks>
         public Enumerator GetEnumerator() => new Enumerator(this);
 
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>An <see cref="T:System.Collections.Generic.IEnumerator`1"/> object that can be used to iterate through the collection.</returns>
+        /// <remarks>
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended, instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. At this position, the <see cref="System.Collections.Generic.IEnumerator{T}.Current"/> property is undefined. Therefore, you must call the <see cref="System.Collections.IEnumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.Generic.IEnumerator{T}.Current"/>.
+        /// The <see cref="System.Collections.Generic.IEnumerator{T}.Current"/> property returns the same object until <see cref="System.Collections.IEnumerator.MoveNext"/> is called. <see cref="System.Collections.IEnumerator.MoveNext"/> sets <see cref="System.Collections.Generic.IEnumerator{T}.Current"/> to the next element.
+        /// If <see cref="System.Collections.IEnumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.IEnumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.IEnumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.IEnumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.Generic.IEnumerator{T}.Current"/> is undefined. You cannot set <see cref="System.Collections.Generic.IEnumerator{T}.Current"/> to the first element of the collection again; you must create a new enumerator object instead.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and its behavior is undefined.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// </remarks>
         IEnumerator<T> IEnumerable<T>.GetEnumerator() =>
             Count == 0 ? SZGenericArrayEnumerator<T>.Empty :
             GetEnumerator();
 
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.</returns>
+        /// <remarks>
+        /// The <c>foreach</c> statement of the C# language (<c>For Each</c> in Visual Basic) hides the complexity of enumerators. Therefore, using <c>foreach</c> is recommended, instead of directly manipulating the enumerator.
+        /// Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
+        /// Initially, the enumerator is positioned before the first element in the collection. <see cref="System.Collections.IEnumerator.Reset"/> also brings the enumerator back to this position.  At this position, the <see cref="System.Collections.IEnumerator.Current"/> property is undefined. Therefore, you must call the <see cref="System.Collections.IEnumerator.MoveNext"/> method to advance the enumerator to the first element of the collection before reading the value of <see cref="System.Collections.IEnumerator.Current"/>.
+        /// The <see cref="System.Collections.IEnumerator.Current"/> property returns the same object until either <see cref="System.Collections.IEnumerator.MoveNext"/> or <see cref="System.Collections.IEnumerator.Reset"/> is called. <see cref="System.Collections.IEnumerator.MoveNext"/> sets <see cref="System.Collections.IEnumerator.Current"/> to the next element.
+        /// If <see cref="System.Collections.IEnumerator.MoveNext"/> passes the end of the collection, the enumerator is positioned after the last element in the collection and <see cref="System.Collections.IEnumerator.MoveNext"/> returns <c>false</c>. When the enumerator is at this position, subsequent calls to <see cref="System.Collections.IEnumerator.MoveNext"/> also return <c>false</c>. If the last call to <see cref="System.Collections.IEnumerator.MoveNext"/> returned <c>false</c>, <see cref="System.Collections.IEnumerator.Current"/> is undefined. To set <see cref="System.Collections.IEnumerator.Current"/> to the first element of the collection again, you can call <see cref="System.Collections.IEnumerator.Reset"/> followed by <see cref="System.Collections.IEnumerator.MoveNext"/>.
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and its behavior is undefined.
+        /// The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+        /// Default implementations of collections in the <see cref="System.Collections.Generic">Generic</see> namespace are not synchronized.
+        /// This method is an O(1) operation.
+        /// </remarks>
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<T>)this).GetEnumerator();
 
         #endregion
 
         #region ISerializable methods
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface and returns the data needed to serialize a <see cref="T:System.Collections.Generic.HashSet`1"/> object.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object that contains the information required to serialize the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.HashSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="info"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Calling this method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.HashSet{T}.Count"/>.
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -717,6 +883,14 @@ namespace System.Collections.Generic
 
         #region IDeserializationCallback methods
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface and raises the deserialization event when the deserialization is complete.
+        /// </summary>
+        /// <param name="sender">The source of the deserialization event.</param>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object associated with the current <see cref="T:System.Collections.Generic.HashSet`1"/> object is invalid.</exception>
+        /// <remarks>
+        /// Calling this method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.HashSet{T}.Count"/>.
+        /// </remarks>
         public virtual void OnDeserialization(object? sender)
         {
             HashHelpers.SerializationInfoTable.TryGetValue(this, out SerializationInfo? siInfo);
@@ -1175,6 +1349,14 @@ namespace System.Collections.Generic
             return uniqueCount == Count && unfoundCount == 0;
         }
 
+        /// <summary>
+        /// Copies the elements of a <see cref="T:System.Collections.Generic.HashSet`1"/> object to an array.
+        /// </summary>
+        /// <param name="array">The one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.HashSet`1"/> object. The array must have zero-based indexing.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <see cref="System.Collections.Generic.HashSet{T}.Count"/>.
+        /// </remarks>
         public void CopyTo(T[] array) => CopyTo(array, 0, Count);
 
         /// <summary>Copies the elements of a <see cref="HashSet{T}"/> object to an array, starting at the specified array index.</summary>
@@ -1182,6 +1364,18 @@ namespace System.Collections.Generic
         /// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
         public void CopyTo(T[] array, int arrayIndex) => CopyTo(array, arrayIndex, Count);
 
+        /// <summary>
+        /// Copies the specified number of elements of a <see cref="T:System.Collections.Generic.HashSet`1"/> object to an array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">The one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.HashSet`1"/> object. The array must have zero-based indexing.</param>
+        /// <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <param name="count">The number of elements to copy to <paramref name="array"/>.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0. -or- <paramref name="count"/> is less than 0.</exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="arrayIndex"/> is greater than the length of the destination <paramref name="array"/>. -or- <paramref name="count"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.</exception>
+        /// <remarks>
+        /// This method is an O(<c>n</c>) operation, where <c>n</c> is <c>count</c>.
+        /// </remarks>
         public void CopyTo(T[] array, int arrayIndex, int count)
         {
             if (array == null)

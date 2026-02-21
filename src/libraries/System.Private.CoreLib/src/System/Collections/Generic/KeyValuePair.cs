@@ -9,6 +9,9 @@ using System.Text;
 namespace System.Collections.Generic
 {
     // Provides the Create factory method for KeyValuePair<TKey, TValue>.
+    /// <summary>
+    /// Creates instances of the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> struct.
+    /// </summary>
     public static class KeyValuePair
     {
         // Creates a new KeyValuePair<TKey, TValue> from the given values.
@@ -23,6 +26,9 @@ namespace System.Collections.Generic
     // A KeyValuePair holds a key and a value from a dictionary.
     // It is used by the IEnumerable<T> implementation for both IDictionary<TKey, TValue>
     // and IReadOnlyDictionary<TKey, TValue>.
+    /// <summary>
+    /// Creates instances of the <see cref="T:System.Collections.Generic.KeyValuePair`2"/> struct.
+    /// </summary>
     [Serializable]
     [TypeForwardedFrom("mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")]
     public readonly struct KeyValuePair<TKey, TValue>

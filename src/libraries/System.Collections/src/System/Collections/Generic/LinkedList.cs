@@ -584,6 +584,22 @@ namespace System.Collections.Generic
     }
 
     // Note following class is not serializable since we customized the serialization of LinkedList.
+    /// <summary>
+    /// Represents a doubly linked list.
+    /// </summary>
+    /// <typeparam name="T">Specifies the element type of the linked list.</typeparam>
+    /// <remarks>
+    /// <see cref="System.Collections.Generic.LinkedList{T}"/> is a general-purpose linked list. It supports enumerators and implements the <see cref="System.Collections.ICollection"/> interface, consistent with other collection classes in the .NET Framework.
+    /// <see cref="System.Collections.Generic.LinkedList{T}"/> provides separate nodes of type <see cref="System.Collections.Generic.LinkedListNode{T}"/>, so insertion and removal are O(1) operations.
+    /// You can remove nodes and reinsert them, either in the same list or in another list, which results in no additional objects allocated on the heap. Because the list also maintains an internal count, getting the <see cref="System.Collections.Generic.LinkedList{T}.Count"/> property is an O(1) operation.
+    /// Each node in a <see cref="System.Collections.Generic.LinkedList{T}"/> object is of the type <see cref="System.Collections.Generic.LinkedListNode{T}"/>. Because the <see cref="System.Collections.Generic.LinkedList{T}"/> is doubly linked, each node points forward to the <see cref="System.Collections.Generic.LinkedListNode{T}.Next"/> node and backward to the <see cref="System.Collections.Generic.LinkedListNode{T}.Previous"/> node.
+    /// Lists that contain reference types perform better when a node and its value are created at the same time. <see cref="System.Collections.Generic.LinkedList{T}"/> accepts <c>null</c> as a valid <see cref="System.Collections.Generic.LinkedListNode{T}.Value"/> property for reference types and allows duplicate values.
+    /// If the <see cref="System.Collections.Generic.LinkedList{T}"/> is empty, the <see cref="System.Collections.Generic.LinkedList{T}.First"/> and <see cref="System.Collections.Generic.LinkedList{T}.Last"/> properties contain <c>null</c>.
+    /// The <see cref="System.Collections.Generic.LinkedList{T}"/> class does not support chaining, splitting, cycles, or other features that can leave the list in an inconsistent state. The list remains consistent on a single thread. The only multithreaded scenario supported by <see cref="System.Collections.Generic.LinkedList{T}"/> is multithreaded read operations.
+    /// The following code example demonstrates many features of the <see cref="System.Collections.Generic.LinkedList{T}"/> class.
+    /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/LinkedListT/Overview/source.cs" id="Snippet1" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/LinkedListT/Overview/source.vb" id="Snippet1" />
+    /// </remarks>
     public sealed class LinkedListNode<T>
     {
         internal LinkedList<T>? list;
@@ -591,11 +607,33 @@ namespace System.Collections.Generic
         internal LinkedListNode<T>? prev;
         internal T item;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.LinkedList`1"/> class that is empty.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="System.Collections.Generic.LinkedList{T}"/> accepts <c>null</c> as a valid <see cref="System.Collections.Generic.LinkedListNode{T}.Value"/> for reference types and allows duplicate values.
+        /// If the <see cref="System.Collections.Generic.LinkedList{T}"/> is empty, the <see cref="System.Collections.Generic.LinkedList{T}.First"/> and <see cref="System.Collections.Generic.LinkedList{T}.Last"/> properties contain <c>null</c>.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates and initializes a <see cref="System.Collections.Generic.LinkedList{T}"/> of type <see cref="System.String"/>, adds several nodes, and then displays its contents.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/LinkedListT/.ctor/llctor.cs" id="Snippet1" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/LinkedListT/.ctor/llctor.vb" id="Snippet1" />
+        /// </remarks>
         public LinkedListNode(T value)
         {
             item = value;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.LinkedList`1"/> class that is empty.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="System.Collections.Generic.LinkedList{T}"/> accepts <c>null</c> as a valid <see cref="System.Collections.Generic.LinkedListNode{T}.Value"/> for reference types and allows duplicate values.
+        /// If the <see cref="System.Collections.Generic.LinkedList{T}"/> is empty, the <see cref="System.Collections.Generic.LinkedList{T}.First"/> and <see cref="System.Collections.Generic.LinkedList{T}.Last"/> properties contain <c>null</c>.
+        /// This constructor is an O(1) operation.
+        /// The following code example creates and initializes a <see cref="System.Collections.Generic.LinkedList{T}"/> of type <see cref="System.String"/>, adds several nodes, and then displays its contents.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/LinkedListT/.ctor/llctor.cs" id="Snippet1" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/LinkedListT/.ctor/llctor.vb" id="Snippet1" />
+        /// </remarks>
         internal LinkedListNode(LinkedList<T> list, T value)
         {
             this.list = list;

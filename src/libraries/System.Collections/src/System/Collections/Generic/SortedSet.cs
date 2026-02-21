@@ -42,6 +42,18 @@ namespace System.Collections.Generic
         RightLeft
     }
 
+    /// <summary>
+    /// Represents a collection of objects that is maintained in sorted order.
+    /// </summary>
+    /// <typeparam name="T">The type of elements in the set.</typeparam>
+    /// <remarks>
+    /// A <see cref="System.Collections.Generic.SortedSet{T}"/> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are not allowed. Changing the sort values of existing items is not supported and may lead to unexpected behavior.
+    /// For a thread safe alternative to <see cref="System.Collections.Generic.SortedSet{T}"/>, see <see cref="System.Collections.Immutable.ImmutableSortedSet{T}"/>
+    /// The following example demonstrates a <see cref="System.Collections.Generic.SortedSet{T}"/> class that is created with the constructor that takes an <see cref="System.Collections.Generic.IComparer{T}"/> as a parameter. This comparer (<c>ByFileExtension</c>) is used to sort a list of file names by their extensions.
+    /// This example demonstrates how to create a sorted set of media file names, remove unwanted elements, view a range of elements, and compare the set with another sorted set.
+    /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet1" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet1" />
+    /// </remarks>
     [DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
     [DebuggerDisplay("Count = {Count}")]
     [Serializable]
@@ -68,19 +80,48 @@ namespace System.Collections.Generic
 
         #region Constructors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedSet`1"/> class.
+        /// </summary>
         public SortedSet()
         {
             comparer = Comparer<T>.Default;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedSet`1"/> class that uses a specified comparer.
+        /// </summary>
+        /// <param name="comparer">The default comparer to use for comparing objects.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="comparer"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// The following example defines a comparer (<c>ByFileExtension</c>) that is used to construct a sorted set that sorts file names by their extensions. This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedSet{T}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet2" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet2" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet9" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet9" />
+        /// </remarks>
         public SortedSet(IComparer<T>? comparer)
         {
             this.comparer = comparer ?? Comparer<T>.Default;
         }
 
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedSet`1"/> class that contains elements copied from a specified enumerable collection.
+        /// </summary>
+        /// <param name="collection">The enumerable collection to be copied.</param>
+        /// <remarks>
+        /// Duplicate elements in the enumerable collection are not copied into the new instance of the <see cref="System.Collections.Generic.SortedSet{T}"/> class, and no exceptions are thrown.
+        /// This constructor is an <c>O(n log n)</c> operation, where <c>n</c> is the number of elements in the <c>collection</c> parameter.
+        /// </remarks>
         public SortedSet(IEnumerable<T> collection) : this(collection, Comparer<T>.Default) { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedSet`1"/> class that contains elements copied from a specified enumerable collection and that uses a specified comparer.
+        /// </summary>
+        /// <param name="collection">The enumerable collection to be copied.</param>
+        /// <param name="comparer">The default comparer to use for comparing objects.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="collection"/> is <see langword="null"/>.</exception>
         public SortedSet(IEnumerable<T> collection, IComparer<T>? comparer)
             : this(comparer)
         {
@@ -126,6 +167,14 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedSet`1"/> class that contains serialized data.
+        /// </summary>
+        /// <param name="info">The object that contains the information that is required to serialize the <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <param name="context">The structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <remarks>
+        /// This constructor is called during deserialization to reconstitute an object that is transmitted over a stream.
+        /// </remarks>
         [Obsolete(Obsoletions.LegacyFormatterImplMessage, DiagnosticId = Obsoletions.LegacyFormatterImplDiagId, UrlFormat = Obsoletions.SharedUrlFormat)]
         [EditorBrowsable(EditorBrowsableState.Never)]
         protected SortedSet(SerializationInfo info, StreamingContext context) => siInfo = info;
@@ -263,6 +312,13 @@ namespace System.Collections.Generic
 
         #region Properties
 
+        /// <summary>
+        /// Gets the number of elements in the <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <value>The number of elements in the <see cref="T:System.Collections.Generic.SortedSet`1"/>.</value>
+        /// <remarks>
+        /// Retrieving the value of this property is an <c>O(1)</c> operation.
+        /// </remarks>
         public int Count
         {
             get
@@ -272,12 +328,45 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Gets the <see cref="T:System.Collections.Generic.IComparer`1"/> object that is used to order the values in the <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <value>The comparer that is used to order the values in the <see cref="T:System.Collections.Generic.SortedSet`1"/>.</value>
+        /// <remarks>
+        /// The returned comparer can be either the default comparer of the type for a <see cref="System.Collections.Generic.SortedSet{T}"/>, or the comparer used for its constructor.
+        /// Retrieving the value of this property is an <c>O(1)</c> operation.
+        /// </remarks>
         public IComparer<T> Comparer => comparer;
 
+        /// <summary>
+        /// Gets a value that indicates whether a <see cref="T:System.Collections.ICollection"/> is read-only.
+        /// </summary>
+        /// <value><see langword="true"/> if the collection is read-only; otherwise, <see langword="false"/>.</value>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.Generic.ICollection{T}"/> interface.
+        /// A collection that is read-only does not allow the addition, removal, or modification of elements after the collection is created.
+        /// A collection that is read-only is simply a collection with a wrapper that prevents modifying the collection; therefore, if changes are made to the underlying collection, the read-only collection reflects those changes.
+        /// Getting the value of this property is an <c>O(1)</c> operation.
+        /// </remarks>
         bool ICollection<T>.IsReadOnly => false;
 
+        /// <summary>
+        /// Gets a value that indicates whether access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe).
+        /// </summary>
+        /// <value><see langword="true"/> if access to the <see cref="T:System.Collections.ICollection"/> is synchronized; otherwise, <see langword="false"/>.</value>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.ICollection"/> interface.
+        /// </remarks>
         bool ICollection.IsSynchronized => false;
 
+        /// <summary>
+        /// Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+        /// </summary>
+        /// <value>An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>. In the default implementation of <see cref="T:System.Collections.Generic.Dictionary`2.KeyCollection"/>, this property always returns the current instance.</value>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.ICollection"/> interface.
+        /// This method is an <c>O(1)</c> operation.
+        /// </remarks>
         object ICollection.SyncRoot => this;
 
         #endregion
@@ -296,8 +385,29 @@ namespace System.Collections.Generic
 
         #region ICollection<T> members
 
+        /// <summary>
+        /// Adds an element to the set and returns a value that indicates if it was successfully added.
+        /// </summary>
+        /// <param name="item">The element to add to the set.</param>
+        /// <returns><see langword="true"/> if <paramref name="item"/> is added to the set; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The <see cref="System.Collections.Generic.SortedSet{T}"/> class does not accept duplicate elements. If <c>item</c> is already in the set, this method returns <c>false</c> and does not throw an exception.
+        /// If <see cref="System.Collections.Generic.SortedSet{T}.Count"/> already equals the capacity of the <see cref="System.Collections.Generic.SortedSet{T}"/> object, the capacity is automatically adjusted to accommodate the new item.
+        /// The following example adds elements to a sorted set. This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedSet{T}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet3" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet3" />
+        /// </remarks>
         public bool Add(T item) => AddIfNotPresent(item); // Hack so the implementation can be made virtual
 
+        /// <summary>
+        /// Adds an item to an <see cref="T:System.Collections.Generic.ICollection`1"/> object.
+        /// </summary>
+        /// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"/> object.</param>
+        /// <exception cref="T:System.NotSupportedException">The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.</exception>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.Generic.ICollection{T}"/> interface.
+        /// If <see cref="System.Collections.Generic.List{T}.Count"/> is less than <see cref="System.Collections.Generic.List{T}.Capacity"/>, this method is an <c>O(1)</c> operation. If the capacity must be increased to accommodate the new element, this method becomes an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.List{T}.Count"/>.
+        /// </remarks>
         void ICollection<T>.Add(T item) => Add(item);
 
         internal virtual bool AddIfNotPresent(T item)
@@ -376,6 +486,16 @@ namespace System.Collections.Generic
             return true;
         }
 
+        /// <summary>
+        /// Removes a specified item from the <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <param name="item">The element to remove.</param>
+        /// <returns><see langword="true"/> if the element is found and successfully removed; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.SortedSet{T}"/> object does not contain the specified element, the object remains unchanged and no exception is thrown.
+        /// <c>item</c> can be <c>null</c> for reference types.
+        /// This method is an <c>O(log n)</c> operation.
+        /// </remarks>
         public bool Remove(T item) => DoRemove(item); // Hack so the implementation can be made virtual
 
         internal virtual bool DoRemove(T item)
@@ -497,6 +617,12 @@ namespace System.Collections.Generic
             return foundMatch;
         }
 
+        /// <summary>
+        /// Removes all elements from the set.
+        /// </summary>
+        /// <remarks>
+        /// This method is an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public virtual void Clear()
         {
             root = null;
@@ -504,12 +630,52 @@ namespace System.Collections.Generic
             ++version;
         }
 
+        /// <summary>
+        /// Determines whether the set contains a specific element.
+        /// </summary>
+        /// <param name="item">The element to locate in the set.</param>
+        /// <returns><see langword="true"/> if the set contains <paramref name="item"/>; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// This method is an <c>O(log n)</c> operation.
+        /// </remarks>
         public virtual bool Contains(T item) => FindNode(item) != null;
 
+        /// <summary>
+        /// Copies the complete <see cref="T:System.Collections.Generic.SortedSet`1"/> to a compatible one-dimensional array, starting at the beginning of the target array.
+        /// </summary>
+        /// <param name="array">A one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.SortedSet`1"/>.</param>
+        /// <exception cref="T:System.ArgumentException">The number of elements in the source <see cref="T:System.Collections.Generic.SortedSet`1"/> exceeds the number of elements that the destination array can contain.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// The indexing of <c>array</c> must be zero-based.
+        /// </remarks>
         public void CopyTo(T[] array) => CopyTo(array, 0, Count);
 
+        /// <summary>
+        /// Copies the complete <see cref="T:System.Collections.Generic.SortedSet`1"/> to a compatible one-dimensional array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">A one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.SortedSet`1"/>. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <exception cref="T:System.ArgumentException">The number of elements in the source array is greater than the available space from <paramref name="index"/> to the end of the destination array.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than zero.</exception>
+        /// <remarks>
+        /// This method is an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public void CopyTo(T[] array, int index) => CopyTo(array, index, Count);
 
+        /// <summary>
+        /// Copies a specified number of elements from <see cref="T:System.Collections.Generic.SortedSet`1"/> to a compatible one-dimensional array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">A one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.SortedSet`1"/>. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <param name="count">The number of elements to copy.</param>
+        /// <exception cref="T:System.ArgumentException">The number of elements in the source array is greater than the available space from <paramref name="index"/> to the end of the destination array.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than zero. -or- <paramref name="count"/> is less than zero.</exception>
+        /// <remarks>
+        /// This method is an <c>O(n)</c> operation, where <c>n</c> is <c>count</c>.
+        /// </remarks>
         public void CopyTo(T[] array, int index, int count)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -537,6 +703,17 @@ namespace System.Collections.Generic
             });
         }
 
+        /// <summary>
+        /// Copies the complete <see cref="T:System.Collections.Generic.SortedSet`1"/> to a compatible one-dimensional array, starting at the specified array index.
+        /// </summary>
+        /// <param name="array">A one-dimensional array that is the destination of the elements copied from the <see cref="T:System.Collections.Generic.SortedSet`1"/>. The array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+        /// <exception cref="T:System.ArgumentException">The number of elements in the source array is greater than the available space from <paramref name="index"/> to the end of the destination array.</exception>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is <see langword="null"/>.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index"/> is less than zero.</exception>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.ICollection"/> interface.
+        /// </remarks>
         void ICollection.CopyTo(Array array, int index)
         {
             ArgumentNullException.ThrowIfNull(array);
@@ -590,10 +767,34 @@ namespace System.Collections.Generic
 
         #region IEnumerable<T> members
 
+        /// <summary>
+        /// Returns an enumerator that iterates through the <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <returns>An enumerator that iterates through the <see cref="T:System.Collections.Generic.SortedSet`1"/> in sorted order.</returns>
+        /// <remarks>
+        /// An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and the next call to <see cref="System.Collections.Generic.SortedSet{T}.Enumerator.MoveNext"/> or <see cref="System.Collections.Generic.SortedSet{T}.Enumerator.System#Collections#IEnumerator#Reset"/> throws an <see cref="System.InvalidOperationException"/>.
+        /// This method is an <c>O(log n)</c> operation.
+        /// </remarks>
         public Enumerator GetEnumerator() => new Enumerator(this);
 
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>An enumerator that can be used to iterate through the collection.</returns>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.Generic.IEnumerable{T}"/> interface.
+        /// This method is an <c>O(log n)</c> operation.
+        /// </remarks>
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => GetEnumerator();
 
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>An enumerator that can be used to iterate through the collection.</returns>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Collections.IEnumerable"/> interface.
+        /// This method is an <c>O(log n)</c> operation.
+        /// </remarks>
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<T>)this).GetEnumerator();
 
         #endregion
@@ -840,6 +1041,14 @@ namespace System.Collections.Generic
 
         #region ISet members
 
+        /// <summary>
+        /// Modifies the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object so that it contains all elements that are present in either the current object or the specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Any duplicate elements in <c>other</c> are ignored.
+        /// </remarks>
         public void UnionWith(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -980,6 +1189,15 @@ namespace System.Collections.Generic
             return root;
         }
 
+        /// <summary>
+        /// Modifies the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object so that it contains only elements that are also in a specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method ignores any duplicate elements in <c>other</c>.
+        /// If the collection represented by the <c>other</c> parameter is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/> and <c>m</c> is the number of elements in <c>other</c>.
+        /// </remarks>
         public virtual void IntersectWith(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1062,6 +1280,18 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Removes all elements that are in a specified collection from the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.
+        /// </summary>
+        /// <param name="other">The collection of items to remove from the <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method removes any element in the current <see cref="System.Collections.Generic.SortedSet{T}"/> that is also in <c>other</c>. Duplicate values in <c>other</c> are ignored.
+        /// This method is an <c>O(n log m)</c> operation, where <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/> and <c>n</c> is the number of elements in <c>other</c>.
+        /// The following example removes elements from a sorted set that are duplicated in another sorted set. This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedSet{T}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet6" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet6" />
+        /// </remarks>
         public void ExceptWith(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1100,6 +1330,15 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Modifies the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object so that it contains only elements that are present either in the current object or in the specified collection, but not both.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Any duplicate elements in <c>other</c> are ignored.
+        /// If the <c>other</c> parameter is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(n log m)</c> operation. Otherwise, this method is an <c>O(n log m) + O(n log n)</c> operation, where <c>n</c> is the number of elements in <c>other</c> and <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public void SymmetricExceptWith(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1167,6 +1406,17 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Determines whether a <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a subset of the specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a subset of <paramref name="other"/>; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// An empty set is a subset of any other collection, including an empty set; therefore, this method returns <c>true</c> if the collection represented by the current <see cref="System.Collections.Generic.SortedSet{T}"/> object is empty, even if the <c>other</c> parameter is an empty set.
+        /// This method always returns <c>false</c> if <see cref="System.Collections.Generic.SortedSet{T}.Count"/> is greater than the number of elements in <c>other</c>.
+        /// If the collection represented by <c>other</c> is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/> and <c>m</c> is the number of elements in <c>other</c>.
+        /// </remarks>
         public bool IsSubsetOf(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1202,6 +1452,17 @@ namespace System.Collections.Generic
             return true;
         }
 
+        /// <summary>
+        /// Determines whether a <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a proper subset of the specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a proper subset of <paramref name="other"/>; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// An empty set is a subset of any other collection. Therefore, this method returns <c>true</c> if the collection represented by the current <see cref="System.Collections.Generic.SortedSet{T}"/> object is empty unless the <c>other</c> parameter is also an empty set.
+        /// This method always returns <c>false</c> if <see cref="System.Collections.Generic.SortedSet{T}.Count"/> is greater than or equal to the number of elements in <c>other</c>.
+        /// If the collection represented by <c>other</c> is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, then this method is an <c>O(n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/> and <c>m</c> is the number of elements in <c>other</c>.
+        /// </remarks>
         public bool IsProperSubsetOf(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1226,6 +1487,17 @@ namespace System.Collections.Generic
             return result.UniqueCount == Count && result.UnfoundCount > 0;
         }
 
+        /// <summary>
+        /// Determines whether a <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a superset of the specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a superset of <paramref name="other"/>; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// All collections, including the empty set, are supersets of the empty set. Therefore, this method returns <c>true</c> if the collection represented by the <c>other</c> parameter is empty, even if the current <see cref="System.Collections.Generic.SortedSet{T}"/> object is empty.
+        /// This method always returns <c>false</c> if <see cref="System.Collections.Generic.SortedSet{T}.Count"/> is less than the number of elements in <c>other</c>.
+        /// If the collection represented by <c>other</c> is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is the number of elements in <c>other</c> and <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public bool IsSupersetOf(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1253,6 +1525,17 @@ namespace System.Collections.Generic
             return ContainsAllElements(other);
         }
 
+        /// <summary>
+        /// Determines whether a <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a proper superset of the specified collection.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.SortedSet`1"/> object is a proper superset of <paramref name="other"/>; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// An empty set is a subset of any other collection. Therefore, this method returns <c>true</c> if the collection represented by the <c>other</c> parameter is empty unless the current <see cref="System.Collections.Generic.SortedSet{T}"/> collection is also empty.
+        /// This method always returns <c>false</c> if <see cref="System.Collections.Generic.SortedSet{T}.Count"/> is less than or equal to the number of elements in <c>other</c>.
+        /// If the collection represented by <c>other</c> is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is the number of elements in <c>other</c> and <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public bool IsProperSupersetOf(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1285,6 +1568,16 @@ namespace System.Collections.Generic
             return result.UniqueCount < Count && result.UnfoundCount == 0;
         }
 
+        /// <summary>
+        /// Determines whether the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object and the specified collection contain the same elements.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object is equal to <paramref name="other"/>; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This method ignores the order of elements and any duplicate elements in <c>other</c>.
+        /// If the collection represented by <c>other</c> is a <see cref="System.Collections.Generic.SortedSet{T}"/> collection with the same equality comparer as the current <see cref="System.Collections.Generic.SortedSet{T}"/> object, this method is an <c>O(log n)</c> operation. Otherwise, this method is an <c>O(n + m)</c> operation, where <c>n</c> is the number of elements in <c>other</c> and <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         public bool SetEquals(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1313,6 +1606,16 @@ namespace System.Collections.Generic
             return result.UniqueCount == Count && result.UnfoundCount == 0;
         }
 
+        /// <summary>
+        /// Determines whether the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object and a specified collection share common elements.
+        /// </summary>
+        /// <param name="other">The collection to compare to the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <returns><see langword="true"/> if the <see cref="T:System.Collections.Generic.SortedSet`1"/> object and <paramref name="other"/> share at least one common element; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="other"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Any duplicate elements in <c>other</c> are ignored.
+        /// This method is an <c>O(n log m)</c> operation, where <c>m</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/> and <c>n</c> is the number of elements in <c>other</c>.
+        /// </remarks>
         public bool Overlaps(IEnumerable<T> other)
         {
             ArgumentNullException.ThrowIfNull(other);
@@ -1422,6 +1725,21 @@ namespace System.Collections.Generic
             return result;
         }
 
+        /// <summary>
+        /// Removes all elements that match the conditions defined by the specified predicate from a <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <param name="match">The delegate that defines the conditions of the elements to remove.</param>
+        /// <returns>The number of elements that were removed from the <see cref="T:System.Collections.Generic.SortedSet`1"/> collection.</returns>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="match"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// <c>match</c> must not modify the <see cref="System.Collections.Generic.SortedSet{T}"/>. Doing so can cause unexpected results.
+        /// Calling this method is an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// The following example removes unwanted elements from a sorted set. This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedSet{T}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet8" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet8" />
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet4" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet4" />
+        /// </remarks>
         public int RemoveWhere(Predicate<T> match)
         {
             ArgumentNullException.ThrowIfNull(match);
@@ -1454,6 +1772,13 @@ namespace System.Collections.Generic
 
         #region ISorted members
 
+        /// <summary>
+        /// Gets the minimum value in the <see cref="T:System.Collections.Generic.SortedSet`1"/>, as defined by the comparer.
+        /// </summary>
+        /// <value>The minimum value in the set.</value>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.SortedSet{T}"/> has no elements, then the <see cref="System.Collections.Generic.SortedSet{T}.Min"/> property returns the default value of <c>T</c>.
+        /// </remarks>
         public T? Min => MinInternal;
 
         internal virtual T? MinInternal
@@ -1475,6 +1800,13 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Gets the maximum value in the <see cref="T:System.Collections.Generic.SortedSet`1"/>, as defined by the comparer.
+        /// </summary>
+        /// <value>The maximum value in the set.</value>
+        /// <remarks>
+        /// If the <see cref="System.Collections.Generic.SortedSet{T}"/> has no elements, then the <see cref="System.Collections.Generic.SortedSet{T}.Max"/> property returns the default value of <c>T</c>.
+        /// </remarks>
         public T? Max => MaxInternal;
 
         internal virtual T? MaxInternal
@@ -1496,6 +1828,10 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Returns an <see cref="T:System.Collections.Generic.IEnumerable`1"/> that iterates over the <see cref="T:System.Collections.Generic.SortedSet`1"/> in reverse order.
+        /// </summary>
+        /// <returns>An enumerator that iterates over the <see cref="T:System.Collections.Generic.SortedSet`1"/> in reverse order.</returns>
         public IEnumerable<T> Reverse()
         {
             Enumerator e = new Enumerator(this, reverse: true);
@@ -1505,6 +1841,20 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Returns a view of a subset in a <see cref="T:System.Collections.Generic.SortedSet`1"/>.
+        /// </summary>
+        /// <param name="lowerValue">The lowest desired value in the view.</param>
+        /// <param name="upperValue">The highest desired value in the view.</param>
+        /// <returns>A subset view that contains only the values in the specified range.</returns>
+        /// <exception cref="T:System.ArgumentException"><paramref name="lowerValue"/> is more than <paramref name="upperValue"/> according to the comparer.</exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">A tried operation on the view was outside the range specified by <paramref name="lowerValue"/> and <paramref name="upperValue"/>.</exception>
+        /// <remarks>
+        /// This method returns a view of the range of elements that fall between <c>lowerValue</c> and <c>upperValue</c>, as defined by the comparer. This method does not copy elements from the <see cref="System.Collections.Generic.SortedSet{T}"/>, but provides a window into the underlying <see cref="System.Collections.Generic.SortedSet{T}"/> itself. You can make changes in both the view and in the underlying <see cref="System.Collections.Generic.SortedSet{T}"/>.
+        /// The following example uses the <see cref="System.Collections.Generic.SortedSet{T}.GetViewBetween"/> method to list only the AVI files from a sorted set of media file names. The comparer evaluates file names according to their extensions. The <c>lowerValue</c> is "AVI" and the <c>upperValue</c> is only one value higher, "AVJ", to get the view of all AVI files. This code example is part of a larger example provided for the <see cref="System.Collections.Generic.SortedSet{T}"/> class.
+        /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/SortedSetT/Overview/program.cs" id="Snippet5" />
+        /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/SortedSetT/Overview/program.vb" id="Snippet5" />
+        /// </remarks>
         public virtual SortedSet<T> GetViewBetween(T? lowerValue, T? upperValue)
         {
             if (Comparer.Compare(lowerValue, upperValue) > 0)
@@ -1525,8 +1875,26 @@ namespace System.Collections.Generic
         }
 #endif
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface, and returns the data that you need to serialize the <see cref="T:System.Collections.Generic.SortedSet`1"/> instance.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object that contains the information that is required to serialize the <see cref="T:System.Collections.Generic.SortedSet`1"/> instance.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.SortedSet`1"/> instance.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="info"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Runtime.Serialization.ISerializable"/> interface.
+        /// </remarks>
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context) => GetObjectData(info, context);
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface and returns the data that you must have to serialize a <see cref="T:System.Collections.Generic.SortedSet`1"/> object.
+        /// </summary>
+        /// <param name="info">A <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object that contains the information that is required to serialize the <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <param name="context">A <see cref="T:System.Runtime.Serialization.StreamingContext"/> structure that contains the source and destination of the serialized stream associated with the <see cref="T:System.Collections.Generic.SortedSet`1"/> object.</param>
+        /// <exception cref="T:System.ArgumentNullException"><paramref name="info"/> is <see langword="null"/>.</exception>
+        /// <remarks>
+        /// Calling this method is an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         protected virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             ArgumentNullException.ThrowIfNull(info);
@@ -1543,8 +1911,24 @@ namespace System.Collections.Generic
             }
         }
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.IDeserializationCallback"/> interface, and raises the deserialization event when the deserialization is completed.
+        /// </summary>
+        /// <param name="sender">The source of the deserialization event.</param>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object associated with the current <see cref="T:System.Collections.Generic.SortedSet`1"/> instance is invalid.</exception>
+        /// <remarks>
+        /// This member is an explicit interface member implementation. It can be used only when the <see cref="System.Collections.Generic.SortedSet{T}"/> instance is cast to an <see cref="System.Runtime.Serialization.IDeserializationCallback"/> interface.
+        /// </remarks>
         void IDeserializationCallback.OnDeserialization(object? sender) => OnDeserialization(sender);
 
+        /// <summary>
+        /// Implements the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface, and raises the deserialization event when the deserialization is completed.
+        /// </summary>
+        /// <param name="sender">The source of the deserialization event.</param>
+        /// <exception cref="T:System.Runtime.Serialization.SerializationException">The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object associated with the current <see cref="T:System.Collections.Generic.SortedSet`1"/> object is invalid.</exception>
+        /// <remarks>
+        /// Calling this method is an <c>O(n)</c> operation, where <c>n</c> is <see cref="System.Collections.Generic.SortedSet{T}.Count"/>.
+        /// </remarks>
         protected virtual void OnDeserialization(object? sender)
         {
             if (comparer != null)

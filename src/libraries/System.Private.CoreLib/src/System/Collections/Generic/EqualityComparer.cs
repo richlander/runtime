@@ -7,6 +7,19 @@ using System.Runtime.Serialization;
 
 namespace System.Collections.Generic
 {
+    /// <summary>
+    /// Provides a base class for implementations of the <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> generic interface.
+    /// </summary>
+    /// <typeparam name="T">The type of objects to compare.</typeparam>
+    /// <remarks>
+    /// Derive from this class to provide a custom implementation of the <see cref="System.Collections.Generic.IEqualityComparer{T}"/> generic interface for use with collection classes such as the <see cref="System.Collections.Generic.Dictionary{T,U}"/> generic class, or with methods such as <see cref="System.Collections.Generic.List{T}.Sort">Sort</see>.
+    /// The <see cref="System.Collections.Generic.EqualityComparer{T}.Default"/> property checks whether type <c>T</c> implements the <see cref="System.IEquatable{T}">IEquatable{T}</see> generic interface and, if so, returns an <see cref="System.Collections.Generic.EqualityComparer{T}"/> that invokes the implementation of the <see cref="System.IEquatable{T}.Equals">Equals</see> method. Otherwise, it returns an <see cref="System.Collections.Generic.EqualityComparer{T}"/>, as provided by <c>T</c>.
+    /// In .NET 8 and later versions, we recommend using the <see cref="System.Collections.Generic.EqualityComparer{T}.Create(System.Func{{},{},System.Boolean},System.Func{{},System.Int32})">Int32})</see> method to create instances of this type.
+    /// The following example creates a dictionary collection of objects of type <c>Box</c> with an equality comparer. Two boxes are considered equal if their dimensions are the same. It then adds the boxes to the collection.
+    /// The dictionary is recreated with an equality comparer that defines equality in a different way: Two boxes are considered equal if their volumes are the same.
+    /// <code lang="csharp" source="~/snippets/csharp/System.Collections.Generic/EqualityComparerT/Overview/program.cs" id="Snippet1" />
+    /// <code lang="vb" source="~/snippets/visualbasic/System.Collections.Generic/EqualityComparerT/Overview/program.vb" id="Snippet1" />
+    /// </remarks>
     [Serializable]
     [TypeForwardedFrom("mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")]
     public abstract partial class EqualityComparer<T> : IEqualityComparer, IEqualityComparer<T>
@@ -34,9 +47,33 @@ namespace System.Collections.Generic
             return new DelegateEqualityComparer<T>(equals, getHashCode);
         }
 
+        /// <summary>
+        /// When overridden in a derived class, determines whether two objects of type <typeparamref name="T"/> are equal.
+        /// </summary>
+        /// <param name="x">The first object to compare.</param>
+        /// <param name="y">The second object to compare.</param>
+        /// <returns><see langword="true"/> if the specified objects are equal; otherwise, <see langword="false"/>.</returns>
+        /// <remarks>
+        /// The <see cref="System.Collections.Generic.EqualityComparer{T}.Equals"/> method is reflexive, symmetric, and transitive. That is, it returns <c>true</c> if used to compare an object with itself; <c>true</c> for two objects <c>x</c> and <c>y</c> if it is <c>true</c> for <c>y</c> and <c>x</c>; and <c>true</c> for two objects <c>x</c> and <c>z</c> if it is <c>true</c> for <c>x</c> and <c>y</c> and also <c>true</c> for <c>y</c> and <c>z</c>.
+        /// </remarks>
         public abstract bool Equals(T? x, T? y);
+        /// <summary>
+        /// When overridden in a derived class, serves as a hash function for the specified object for hashing algorithms and data structures, such as a hash table.
+        /// </summary>
+        /// <param name="obj">The object for which to get a hash code.</param>
+        /// <returns>A hash code for the specified object.</returns>
+        /// <exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is <see langword="null"/>.</exception>
         public abstract int GetHashCode([DisallowNull] T obj);
 
+        /// <summary>
+        /// Returns a hash code for the specified object.
+        /// </summary>
+        /// <param name="obj">The <see cref="T:System.Object"/> for which a hash code is to be returned.</param>
+        /// <returns>A hash code for the specified object.</returns>
+        /// <exception cref="T:System.ArgumentNullException">The type of <paramref name="obj"/> is a reference type and <paramref name="obj"/> is <see langword="null"/>. -or- <paramref name="obj"/> is of a type that cannot be cast to type <typeparamref name="T"/>.</exception>
+        /// <remarks>
+        /// This method is a wrapper for the <see cref="System.Collections.Generic.EqualityComparer{T}.GetHashCode%28{}%29"/> method, so <c>obj</c> must be a type that can be cast to the type specified by the generic type argument <c>T</c> of the current instance.
+        /// </remarks>
         int IEqualityComparer.GetHashCode(object? obj)
         {
             if (obj == null) return 0;
@@ -45,6 +82,17 @@ namespace System.Collections.Generic
             return 0;
         }
 
+        /// <summary>
+        /// Determines whether the specified objects are equal.
+        /// </summary>
+        /// <param name="x">The first object to compare.</param>
+        /// <param name="y">The second object to compare.</param>
+        /// <returns><see langword="true"/> if the specified objects are equal; otherwise, <see langword="false"/>.</returns>
+        /// <exception cref="T:System.ArgumentException"><paramref name="x"/> or <paramref name="y"/> is of a type that cannot be cast to type <typeparamref name="T"/>.</exception>
+        /// <remarks>
+        /// This method is a wrapper for the <see cref="System.Collections.Generic.EqualityComparer{T}.Equals%28{}%2C{}%29"/> method, so <c>obj</c> must be cast to the type specified by the generic argument <c>T</c> of the current instance. If it cannot be cast to <c>T</c>, an <see cref="System.ArgumentException"/> is thrown.
+        /// Comparing <c>null</c> is allowed and does not generate an exception.
+        /// </remarks>
         bool IEqualityComparer.Equals(object? x, object? y)
         {
             if (x == y) return true;
