@@ -11,6 +11,10 @@ using System.Runtime.Versioning;
 
 namespace System.Collections.Immutable
 {
+    /// <summary>
+    /// Provides methods for creating an array that is immutable; meaning it cannot be changed once it is created.
+    /// **NuGet package**: <see href="https://www.nuget.org/packages/System.Collections.Immutable/">System.Collections.Immutable</see> (<see href="https://learn.microsoft.com/dotnet/api/system.collections.immutable?#remarks">about immutable collections and how to install</see>)
+    /// </summary>
     [CollectionBuilder(typeof(ImmutableArray), nameof(ImmutableArray.Create))]
     public readonly partial struct ImmutableArray<T> : IReadOnlyList<T>, IList<T>, IEquatable<ImmutableArray<T>>, IList, IImmutableArray, IStructuralComparable, IStructuralEquatable, IImmutableList<T>
     {

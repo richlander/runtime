@@ -315,6 +315,9 @@ namespace System.Collections.Immutable
             return this.AddRange(pairs, false);
         }
 
+        /// <summary>
+        /// See the <see cref="IImmutableDictionary{TKey, TValue}"/> interface.
+        /// </summary>
         internal ImmutableDictionary<TKey, TValue> AddRange(ReadOnlySpan<KeyValuePair<TKey, TValue>> pairs, KeyCollisionBehavior collisionBehavior = KeyCollisionBehavior.ThrowIfValueDifferent)
         {
             return AddRange(pairs, this.Origin, collisionBehavior).Finalize(this);
