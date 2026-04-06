@@ -14,6 +14,8 @@ When NOT running under CCA, skip the `code-review` skill if the user has stated 
 
 Before making changes to a directory, search for `README.md` files in that directory and its parent directories up to the repository root. Read any you find — they contain conventions, patterns, and architectural context relevant to your work.
 
+For C# safety-boundary migrations that introduce inner `unsafe {}` blocks and outer `unsafe` / `safe` decisions, use the `csharp-safety-migration` skill in [`.github/skills/csharp-safety-migration/SKILL.md`](/.github/skills/csharp-safety-migration/SKILL.md).
+
 If the changes are intended to improve performance, or if they could negatively impact performance, use the `performance-benchmark` skill to validate the impact before completing.
 
 You MUST follow all code-formatting and naming conventions defined in [`.editorconfig`](/.editorconfig).

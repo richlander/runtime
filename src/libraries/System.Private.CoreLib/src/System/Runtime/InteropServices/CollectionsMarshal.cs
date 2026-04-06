@@ -28,12 +28,7 @@ namespace System.Runtime.InteropServices
                 int size = list._size;
                 T[] items = list._items;
                 Debug.Assert(items is not null, "Implementation depends on List<T> always having an array.");
-
-                if ((uint)size > (uint)items.Length)
-                {
-                    // List<T> was erroneously mutated concurrently with this call, leading to a count larger than its array.
-                    ThrowHelper.ThrowInvalidOperationException_ConcurrentOperationsNotSupported();
-                }
+                Debug.Assert((uint)size <= (uint)items.Length, "Implementation depends on List<T> size not exceeding the current backing array.");
 
                 Debug.Assert(typeof(T[]) == list._items.GetType(), "Implementation depends on List<T> always using a T[] and not U[] where U : T.");
                 span = new Span<T>(ref MemoryMarshal.GetArrayDataReference(items), size);
