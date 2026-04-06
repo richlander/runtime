@@ -396,9 +396,12 @@ namespace System.Collections.Generic
 
         /// <summary>Swaps the values in the two references, regardless of whether the two references are the same.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static void Swap(ref T i, ref T j)
+        private static safe void Swap(ref T i, ref T j)
         {
-            Debug.Assert(!Unsafe.AreSame(ref i, ref j));
+            unsafe
+            {
+                Debug.Assert(!Unsafe.AreSame(ref i, ref j));
+            }
 
             T t = i;
             i = j;
@@ -455,53 +458,56 @@ namespace System.Collections.Generic
             }
         }
 
-        private static unsafe int PickPivotAndPartition(Span<T> keys)
+        private static safe int PickPivotAndPartition(Span<T> keys)
         {
             Debug.Assert(keys.Length >= Array.IntrosortSizeThreshold);
 
-            // Use median-of-three to select a pivot. Grab a reference to the 0th, Length-1th, and Length/2th elements, and sort them.
-            ref T zeroRef = ref MemoryMarshal.GetReference(keys);
-            ref T lastRef = ref Unsafe.Add(ref zeroRef, keys.Length - 1);
-            ref T middleRef = ref Unsafe.Add(ref zeroRef, (keys.Length - 1) >> 1);
-            SwapIfGreater(ref zeroRef, ref middleRef);
-            SwapIfGreater(ref zeroRef, ref lastRef);
-            SwapIfGreater(ref middleRef, ref lastRef);
-
-            // Select the middle value as the pivot, and move it to be just before the last element.
-            ref T nextToLastRef = ref Unsafe.Add(ref zeroRef, keys.Length - 2);
-            T pivot = middleRef;
-            Swap(ref middleRef, ref nextToLastRef);
-
-            // Walk the left and right pointers, swapping elements as necessary, until they cross.
-            ref T leftRef = ref zeroRef, rightRef = ref nextToLastRef;
-            while (Unsafe.IsAddressLessThan(ref leftRef, ref rightRef))
+            unsafe
             {
-                if (pivot == null)
+                // Use median-of-three to select a pivot. Grab a reference to the 0th, Length-1th, and Length/2th elements, and sort them.
+                ref T zeroRef = ref MemoryMarshal.GetReference(keys);
+                ref T lastRef = ref Unsafe.Add(ref zeroRef, keys.Length - 1);
+                ref T middleRef = ref Unsafe.Add(ref zeroRef, (keys.Length - 1) >> 1);
+                SwapIfGreater(ref zeroRef, ref middleRef);
+                SwapIfGreater(ref zeroRef, ref lastRef);
+                SwapIfGreater(ref middleRef, ref lastRef);
+
+                // Select the middle value as the pivot, and move it to be just before the last element.
+                ref T nextToLastRef = ref Unsafe.Add(ref zeroRef, keys.Length - 2);
+                T pivot = middleRef;
+                Swap(ref middleRef, ref nextToLastRef);
+
+                // Walk the left and right pointers, swapping elements as necessary, until they cross.
+                ref T leftRef = ref zeroRef, rightRef = ref nextToLastRef;
+                while (Unsafe.IsAddressLessThan(ref leftRef, ref rightRef))
                 {
-                    while (Unsafe.IsAddressLessThan(ref leftRef, ref nextToLastRef) && (leftRef = ref Unsafe.Add(ref leftRef, 1)) == null) ;
-                    while (Unsafe.IsAddressGreaterThan(ref rightRef, ref zeroRef) && (rightRef = ref Unsafe.Add(ref rightRef, -1)) != null) ;
-                }
-                else
-                {
-                    while (Unsafe.IsAddressLessThan(ref leftRef, ref nextToLastRef) && GreaterThan(ref pivot, ref leftRef = ref Unsafe.Add(ref leftRef, 1))) ;
-                    while (Unsafe.IsAddressGreaterThan(ref rightRef, ref zeroRef) && LessThan(ref pivot, ref rightRef = ref Unsafe.Add(ref rightRef, -1))) ;
+                    if (pivot == null)
+                    {
+                        while (Unsafe.IsAddressLessThan(ref leftRef, ref nextToLastRef) && (leftRef = ref Unsafe.Add(ref leftRef, 1)) == null) ;
+                        while (Unsafe.IsAddressGreaterThan(ref rightRef, ref zeroRef) && (rightRef = ref Unsafe.Add(ref rightRef, -1)) != null) ;
+                    }
+                    else
+                    {
+                        while (Unsafe.IsAddressLessThan(ref leftRef, ref nextToLastRef) && GreaterThan(ref pivot, ref leftRef = ref Unsafe.Add(ref leftRef, 1))) ;
+                        while (Unsafe.IsAddressGreaterThan(ref rightRef, ref zeroRef) && LessThan(ref pivot, ref rightRef = ref Unsafe.Add(ref rightRef, -1))) ;
+                    }
+
+                    if (Unsafe.IsAddressGreaterThanOrEqualTo(ref leftRef, ref rightRef))
+                    {
+                        break;
+                    }
+
+                    Swap(ref leftRef, ref rightRef);
                 }
 
-                if (Unsafe.IsAddressGreaterThanOrEqualTo(ref leftRef, ref rightRef))
+                // Put the pivot in the correct location.
+                if (!Unsafe.AreSame(ref leftRef, ref nextToLastRef))
                 {
-                    break;
+                    Swap(ref leftRef, ref nextToLastRef);
                 }
 
-                Swap(ref leftRef, ref rightRef);
+                return (int)((nint)Unsafe.ByteOffset(ref zeroRef, ref leftRef) / sizeof(T));
             }
-
-            // Put the pivot in the correct location.
-            if (!Unsafe.AreSame(ref leftRef, ref nextToLastRef))
-            {
-                Swap(ref leftRef, ref nextToLastRef);
-            }
-
-            return (int)((nint)Unsafe.ByteOffset(ref zeroRef, ref leftRef) / sizeof(T));
         }
 
         private static void HeapSort(Span<T> keys)
@@ -542,20 +548,24 @@ namespace System.Collections.Generic
             keys[i - 1] = d;
         }
 
-        private static void InsertionSort(Span<T> keys)
+        private static safe void InsertionSort(Span<T> keys)
         {
-            for (int i = 0; i < keys.Length - 1; i++)
+            unsafe
             {
-                T t = Unsafe.Add(ref MemoryMarshal.GetReference(keys), i + 1);
-
-                int j = i;
-                while (j >= 0 && (t == null || LessThan(ref t, ref Unsafe.Add(ref MemoryMarshal.GetReference(keys), j))))
+                ref T keysRef = ref MemoryMarshal.GetReference(keys);
+                for (int i = 0; i < keys.Length - 1; i++)
                 {
-                    Unsafe.Add(ref MemoryMarshal.GetReference(keys), j + 1) = Unsafe.Add(ref MemoryMarshal.GetReference(keys), j);
-                    j--;
-                }
+                    T t = Unsafe.Add(ref keysRef, i + 1);
 
-                Unsafe.Add(ref MemoryMarshal.GetReference(keys), j + 1) = t!;
+                    int j = i;
+                    while (j >= 0 && (t == null || LessThan(ref t, ref Unsafe.Add(ref keysRef, j))))
+                    {
+                        Unsafe.Add(ref keysRef, j + 1) = Unsafe.Add(ref keysRef, j);
+                        j--;
+                    }
+
+                    Unsafe.Add(ref keysRef, j + 1) = t!;
+                }
             }
         }
 
